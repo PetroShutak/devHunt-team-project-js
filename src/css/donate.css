@@ -1,31 +1,40 @@
 .donate-container {
-    width: 335px;
-    height: 352px;
-    background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-box-shadow: 0px 10px 10px rgba(245, 245, 247, 0.1);
-border-radius: 16px;
-overflow: scroll;
+  width: 335px;
+  height: 352px;
+  padding-left: 40px;
+  padding-top: 24px;
+  background: var(--support-section-color);
+  box-shadow: 0px 10px 10px rgba(245, 245, 247, 0.1);
+  border-radius: 16px;
+  overflow: scroll;
 }
 
-.donate-paragraph{
-    font-family: var(--header-color-ligth);
-};
+.donate-paragraph {
+  color: var(--header-color-ligth);
+  font: var(--main-font);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 32px;
 
-.donate-header{
-    display: flex;
+  letter-spacing: -0.04em;
+}
+
+.donate-header {
+  display: flex;
 }
 
 .donate-index {
-font-family: 'DM Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 18px;
-color: #FFFFFF;
-letter-spacing: -0.04em;
-};
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--header-color-ligth);
+  letter-spacing: -0.04em;
+}
 
 .donate-fund {
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
 }
