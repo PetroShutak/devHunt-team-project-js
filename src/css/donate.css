@@ -35,8 +35,15 @@
 
 .donate-fund {
   display: flex;
+  align-items: center;
   flex-direction: row;
   gap: 16px;
+}
+
+.donate-item-link {
+  margin-left: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .donate-img {
