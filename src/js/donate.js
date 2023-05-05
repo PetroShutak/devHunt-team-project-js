@@ -2,11 +2,11 @@ function generateDonateFundsMarkup(donateFunds) {
   const markup = donateFunds
     .map(fund => {
       return `
-      <div class="donate-fund">
+      <li class="donate-fund">
         <a href="${fund.url}" target="_blank">
-          <img src="${fund.img}" alt="${fund.title}">
+          <img class="grayscale" src="${fund.img}" alt="${fund.title}">
         </a>
-      </div>
+      </li>
     `;
     })
     .join('');
@@ -18,7 +18,8 @@ const donateFunds = [
   {
     title: 'Save the Children',
     url: 'https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',
-    img: null,
+    img: '../donate-images/image 3.png',
+    // ../donate-images/image 3.png
   },
   {
     title: 'Project HOPE',
@@ -28,7 +29,7 @@ const donateFunds = [
   {
     title: 'UNITED24',
     url: 'https://u24.gov.ua/uk',
-    img: null,
+    img: '../donate-images/unaited24_1x.png',
   },
   {
     title: 'International Medical   Corps',
