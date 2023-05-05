@@ -1,17 +1,18 @@
-function creatingMainMarkup(data) {
-  return data
-    .map(card => {
-      return `<a class="gallery-link" href="">
-                    <h2>Best Sellers <span>Books</span></h2>
-                    <ul class="results">
-                        <li class="result">
-                        <h3 class="category">Category</h3>
-                        <img src="" alt="" />
-                        <p class="name">Name</p>
-                        <p class="author">Author</p>
-                        </li>
-                    </ul>
-                </a>`;
-    })
-    .join(' ');
-}
+import { getRefs } from './homeRefs';
+import { fetchingCategories } from './homeFetchingFun';
+import { renderingHomePage } from './homeRenderingHomePage';
+import renderingByCategory from './homeRenderingByCategory';
+
+const { ulRef } = getRefs();
+
+fetchingCategories().then(response => {
+  for (let elem of response) {
+    ulRef.insertAdjacentHTML(
+      'beforeend',
+      `<li class="menu-category">${elem.list_name}</li>`
+    );
+  }
+  ulRef.addEventListener('click', renderingByCategory);
+});
+
+renderingHomePage();
