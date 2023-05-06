@@ -1,3 +1,4 @@
+// Different markup for home page and for category filtered Page due to CSS issues.
 export function createBookCard(book) {
   return `  <a class="gallery-book-link" href="">
               <div class="gallery-book-card">
@@ -8,6 +9,7 @@ export function createBookCard(book) {
             </a>`;
 }
 
+// Different markup for Home Page and for Category-filtered Page due to CSS issues.
 export function createHomeBookCard(book) {
   return `  <a class="gallery-book-home-link" href="">
               <div class="gallery-book-card">

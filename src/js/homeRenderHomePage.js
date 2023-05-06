@@ -1,10 +1,11 @@
 import { getRefs } from './homeRefs';
-import { fetchingTopBooks } from './homeFetchingFun';
+import { fetchingTopBooks } from './homeFetchFunctions';
 import { createHomeBookCard } from './homeCreateBookCard';
-import renderingByCategory from './homeRenderingByCategory';
+import renderingByCategory from './homeRenderByCategory';
 const { galleryRef } = getRefs();
 
 export function renderingHomePage() {
+  galleryRef.innerHTML = '';
   if (document.documentElement.clientWidth < 768) {
     galleryRef.insertAdjacentHTML(
       'beforeend',

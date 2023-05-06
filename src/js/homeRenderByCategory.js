@@ -1,10 +1,12 @@
 import { getRefs } from './homeRefs';
 import { createBookCard } from './homeCreateBookCard';
-import { fetchingByCategory } from './homeFetchingFun';
-import { renderingHomePage } from './homeRenderingHomePage';
+import { fetchingByCategory } from './homeFetchFunctions';
+import { renderingHomePage } from './homeRenderHomePage';
 const { galleryRef } = getRefs();
 
 export default function renderingByCategory(e) {
+  document.querySelector('.is-active').classList.remove('is-active');
+  e.target.classList.add('is-active');
   galleryRef.innerHTML = '';
   if (e.target.innerHTML === 'See more') {
     galleryRef.insertAdjacentHTML(
