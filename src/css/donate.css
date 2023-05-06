@@ -49,8 +49,8 @@
 .donate-img {
   filter: brightness(0) invert(1);
   -webkit-filter: brightness(0) invert(1);
-  width: 149px;
-  height: 55px;
+  width: 129px;
+  height: 32px;
 }
 
 .donate-emblem {
