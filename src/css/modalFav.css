@@ -23,7 +23,7 @@
     transform: translate(-50%, -50%);
     width: 335px;
     height: 762px;
-    background-color: #D0D0D0;
+    background-color: #FFFFFF;
 }
 
 .close-modal-btn-fav {
@@ -100,10 +100,18 @@
         font-family: DM Sans;
         font-style: Bold;
         font-size: 12px;
-        line-height: 1, 28;
+        line-height: 1,28;
         margin: 40px 38px;
         border-radius: 40px;
         border: 2px solid #4F2EE8;
+        background-color: #FFFFFF;
+        transition: color var(--timing-function), color var(--animation-duration);
 
+    }
+
+    .choice-btn:hover,
+    .choice-btn:focus {
+        color: #FFFFFF;
+        background-color: #4F2EE8;
     }
 }
