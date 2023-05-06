@@ -33,6 +33,11 @@
   letter-spacing: -0.04em;
 }
 
+.donate-funds-list{
+  margin-top: 40px;
+  margin-bottom: 68px;
+}
+
 .donate-fund {
   display: flex;
   align-items: center;
@@ -56,4 +61,28 @@
 .donate-emblem {
   width: 20px;
   height: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  .donate-container {
+   height: 472px;
+  }
+
+  .donate-funds-list{
+  margin-top: 40px;
+  margin-bottom: 84px;
+}
+  
+}
+  
+@media screen and (min-width: 1440px) {
+   .donate-container {
+    width: 356px;
+   height: 490px;
+  }
+
+  .donate-funds-list{
+  margin-top: 40px;
+  margin-bottom: 102px;
+}
 }
