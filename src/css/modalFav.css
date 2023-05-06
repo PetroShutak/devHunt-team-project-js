@@ -1,0 +1,41 @@
+@media screen and (max-width: 480px) {
+    .backdrop {
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #B4AFAF;
+    }
+
+    .modal-fav {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 335px;
+        height: 762px;
+        background-color: #D0D0D0;
+    }
+
+    .close-modal-btn-fav {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        background-color: transparent;
+        border: transparent;
+        padding: 0;
+        color: var (--primary-text-color-ligth);
+    }
+
+    .modal-close-btn-icon {
+        fill: var(--primary-text-color-ligth);
+        transition: fill var(--timing-function), fill var(--animation-duration);
+    }
+
+    .close-modal-btn-fav:hover .modal-close-btn-icon,
+    .close-modal-btn-fav:focus .modal-close-btn-icon {
+        fill: var(--accent-color-ligth)
+    }
+}
