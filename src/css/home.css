@@ -77,7 +77,7 @@
 .gallery-see-more-btn {
   width: 124px;
   height: 46px;
-  background-color: white;
+  background-color: transparent;
   border: 2px solid #4f2ee8;
   border-radius: 23px;
   color: #111111;
