@@ -15,7 +15,6 @@
   font-weight: 700;
   font-size: 28px;
   line-height: 32px;
-
   letter-spacing: -0.04em;
 }
 
@@ -37,12 +36,18 @@
 
 .donate-fund {
   display: flex;
+  align-items: center;
   flex-direction: row;
   gap: 16px;
 }
 
-.donate-emblem {
- color: white;
- width: 20px;
- height: 32px;
+.donate-item-link {
+  margin-left: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.donate-img {
+  filter: brightness(0) invert(1);
+  -webkit-filter: brightness(0) invert(1);
 }
