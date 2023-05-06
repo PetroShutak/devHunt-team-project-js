@@ -16,7 +16,7 @@ export default function renderingCategories() {
         `<li class="menu-category">${elem.list_name}</li>`
       );
     }
-    const categoriesRef = document.querySelectorAll('.menu-category');
+    const categoriesRef = document.querySelectorAll('.nav-category-item');
     for (let i = 0; i < categoriesRef.length; i++) {
       categoriesRef[i].addEventListener('click', renderingByCategory);
     }
