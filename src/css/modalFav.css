@@ -1,41 +1,109 @@
+.backdrop {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #B4AFAF;
+    transition: opacity var(--timing-function), opacity var(--animation-duration),
+        visibility var(--timing-function), visibility var(--animation-duration);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.modal-fav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 335px;
+    height: 762px;
+    background-color: #D0D0D0;
+}
+
+.close-modal-btn-fav {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background-color: transparent;
+    border: transparent;
+    padding: 0;
+    color: var (--primary-text-color-ligth);
+}
+
+.modal-close-btn-icon {
+    fill: var(--primary-text-color-ligth);
+    transition: fill var(--timing-function), fill var(--animation-duration);
+}
+
+.close-modal-btn-fav:hover .modal-close-btn-icon,
+.close-modal-btn-fav:focus .modal-close-btn-icon {
+    fill: var(--accent-color-ligth)
+}
+
+/* ================ MEDIA RULES ================ */
+
 @media screen and (max-width: 480px) {
-    .backdrop {
-        position: fixed;
-        z-index: 100;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #B4AFAF;
+    .container-modal-fav {
+        padding: 40px 24px;
     }
 
-    .modal-fav {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 335px;
-        height: 762px;
-        background-color: #D0D0D0;
+    .title-img-modal {
+        width: 287px;
+        height: 408px;
+        padding: 40px 24px;
     }
 
-    .close-modal-btn-fav {
-        position: absolute;
-        top: 18px;
-        right: 18px;
-        background-color: transparent;
-        border: transparent;
-        padding: 0;
-        color: var (--primary-text-color-ligth);
+    .title-name {
+        font-family: DM Sans;
+        font-style: Bold;
+        font-size: 16px; 
+        line-height: 1,12;
+        margin-top: 14px;
+        color: #111111;
     }
 
-    .modal-close-btn-icon {
-        fill: var(--primary-text-color-ligth);
-        transition: fill var(--timing-function), fill var(--animation-duration);
+    .title-author {
+        font-family: DM Sans;
+        font-style: Italic;
+        font-size: 12px;
+        line-height: 1,12;
+        margin-top: 4px;
+        color: #B4AFAF;
     }
 
-    .close-modal-btn-fav:hover .modal-close-btn-icon,
-    .close-modal-btn-fav:focus .modal-close-btn-icon {
-        fill: var(--accent-color-ligth)
+    .description-book {
+        width: 287px;
+        height: auto;
+        font-family: DM Sans;
+        font-style: Regular;
+        font-size: 12px;
+        line-height: 1,28;
+        margin-top: 18px;
+    }
+
+    .shop-book {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-top: 14px;
+    }
+
+    .choice-btn {
+        width: 211px;
+        height: 46px;
+        font-family: DM Sans;
+        font-style: Bold;
+        font-size: 12px;
+        line-height: 1, 28;
+        margin: 40px 38px;
+        border-radius: 40px;
+        border: 2px solid #4F2EE8;
+
     }
 }
