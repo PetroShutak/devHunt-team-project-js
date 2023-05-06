@@ -23,20 +23,20 @@
   background-color: yellowgreen;
 }
 
-.category-item {
+.nav-category-item {
   color: rgba(17, 17, 17, 0.6);
   cursor: pointer;
   transform: scale(0.97);
   transform-origin: center left;
 }
 
-.category-item:not(:last-child) {
+.nav-category-item:not(:last-child) {
   margin-bottom: 24px;
 }
 
-.category-item.active,
-.category-item:hover,
-.category-item:focus {
+.nav-category-item.active,
+.nav-category-item:hover,
+.nav-category-item:focus {
   text-transform: uppercase;
   font-weight: 700;
   color: blue;

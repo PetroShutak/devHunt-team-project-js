@@ -5,6 +5,7 @@ import { renderingHomePage } from './homeRenderingHomePage';
 const { galleryRef } = getRefs();
 
 export default function renderingByCategory(e) {
+  console.log(e);
   galleryRef.innerHTML = '';
   if (e.target.innerHTML === 'See more') {
     galleryRef.insertAdjacentHTML(

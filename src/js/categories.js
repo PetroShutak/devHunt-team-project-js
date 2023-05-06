@@ -13,10 +13,12 @@ const renderCategories = async () => {
   try {
     const category = await getCategoryList();
     category_list.innerHTML = await markupCategoriesList(category);
-    const listCategory = document.querySelectorAll('.category-item');
+    const listCategory = document.querySelectorAll('.nav-category-item');
     listCategory.forEach(itemCategory => {
       itemCategory.addEventListener('click', event => {
-        const ActiveCategory = document.querySelector('.category-item.active');
+        const ActiveCategory = document.querySelector(
+          '.nav-category-item.active'
+        );
         if (ActiveCategory) {
           ActiveCategory.classList.remove('active');
         }
@@ -29,20 +31,20 @@ const renderCategories = async () => {
 };
 
 renderCategories();
-category_list.addEventListener('click', renderingByCategory);
+category_list.addEventListener('click', checkCategory);
 
-function returnCategoryName(event) {
-  console.log(event);
-  const categoryName = event.target.dataset.id;
-  return categoryName;
+function checkCategory(e) {
+  if (e.target.dataset.id) {
+    renderingByCategory(e);
+  }
 }
 
 function markupCategoriesList(categories) {
-  return `<li class="category-item active" data-id="all-categories">
+  return `<li class="nav-category-item active" data-id="all-categories">
         All categories</li>
         ${categories
           .map(
-            category => `<li class="category-item" data-id="${category.list_name}">
+            category => `<li class="nav-category-item" data-id="${category.list_name}">
         ${category.list_name}
         </li>`
           )
