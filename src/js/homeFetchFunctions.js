@@ -2,12 +2,15 @@ import axios from 'axios';
 import Notiflix from 'notiflix';
 
 export async function fetchingByCategory(query) {
+  console.log('query', query);
   try {
     const response = await axios.get(
       `https://books-backend.p.goit.global/books/category?category=${query}`
     );
-    if (!response) {
-      Notiflix.Notify("Sorry, we didn't find anything. Try another category.");
+    if (response.data.length === 0) {
+      Notiflix.Notify.info(
+        "Sorry, we didn't find anything. Try another category."
+      );
       return;
     }
     return response.data;
@@ -21,8 +24,8 @@ export async function fetchingTopBooks() {
     const response = await axios.get(
       `https://books-backend.p.goit.global/books/top-books`
     );
-    if (!response) {
-      Notiflix.Notify("Some categories weren't found.");
+    if (response.data.length === 0) {
+      Notiflix.Notify.info("Some categories weren't found.");
       return;
     }
     return response.data;
@@ -36,8 +39,8 @@ export async function fetchingCategories() {
     const response = await axios.get(
       'https://books-backend.p.goit.global/books/category-list'
     );
-    if (!response) {
-      Notiflix.Notify("Some categories weren't found.");
+    if (response.data.length === 0) {
+      Notiflix.Notify.info("Some categories weren't found.");
       return;
     }
     return response.data;

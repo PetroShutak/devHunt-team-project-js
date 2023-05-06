@@ -50,9 +50,11 @@ export default function renderingByCategory(e) {
   var galleryListRef = document.querySelector('.gallery-list2');
 
   const query = e.target.innerHTML.split(' ').join('%20');
-  fetchingByCategory(query).then(response =>
-    response.map(book =>
-      galleryListRef.insertAdjacentHTML('beforeend', createBookCard(book))
-    )
-  );
+  fetchingByCategory(query).then(response => {
+    if (response) {
+      response.map(book =>
+        galleryListRef.insertAdjacentHTML('beforeend', createBookCard(book))
+      );
+    }
+  });
 }

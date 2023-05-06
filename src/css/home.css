@@ -229,6 +229,10 @@
     margin-right: 0px;
   }
 
+  .gallery-book-link:not(:nth-child(3n)) {
+    margin-right: 0px;
+  }
+
   .gallery-book-link:not(:nth-child(5n)) {
     margin-right: 24px;
   }
