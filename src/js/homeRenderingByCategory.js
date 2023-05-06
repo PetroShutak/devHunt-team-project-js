@@ -5,6 +5,7 @@ import { renderingHomePage } from './homeRenderingHomePage';
 const { galleryRef } = getRefs();
 
 export default function renderingByCategory(e) {
+  console.log(e);
   galleryRef.innerHTML = '';
   if (e.target.innerHTML === 'See more') {
     galleryRef.insertAdjacentHTML(
@@ -30,7 +31,7 @@ export default function renderingByCategory(e) {
     );
     return;
   }
-  if (e.target.innerHTML === 'All categories') {
+  if (e.target.dataset.id === 'all-categories') {
     renderingHomePage();
     return;
   }
@@ -47,10 +48,10 @@ export default function renderingByCategory(e) {
   );
   var galleryListRef = document.querySelector('.gallery-list2');
 
-  const query = e.target.innerHTML.split(' ').join('%20');
-  fetchingByCategory(query).then(response =>
-    response.map(book =>
-      galleryListRef.insertAdjacentHTML('beforeend', createBookCard(book))
-    )
-  );
+  const query = e.target.dataset.id;
+  fetchingByCategory(query).then(response => {
+    response.map(book => {
+      galleryListRef.insertAdjacentHTML('beforeend', createBookCard(book));
+    });
+  });
 }
