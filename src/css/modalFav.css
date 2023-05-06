@@ -50,6 +50,7 @@
 
 @media screen and (max-width: 480px) {
     .container-modal-fav {
+        max-width: 335px;
         padding: 40px 24px;
     }
 
@@ -101,6 +102,7 @@
         font-style: Bold;
         font-size: 12px;
         line-height: 1,28;
+        padding: 14px 23px;
         margin: 40px 38px;
         border-radius: 40px;
         border: 2px solid #4F2EE8;
@@ -114,4 +116,20 @@
         color: #FFFFFF;
         background-color: #4F2EE8;
     }
+}
+
+
+@media screen and (min-width: 768px) {
+    .container-modal-fav {
+        max-width: 579px;
+        padding: 40px 40px;
+        }
+
+    .container-modal-fav {
+        display: flex;
+    }
+
+    
+
+    
 }
