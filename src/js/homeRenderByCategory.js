@@ -1,12 +1,10 @@
 import { getRefs } from './homeRefs';
 import { createBookCard } from './homeCreateBookCard';
-import { fetchingByCategory } from './homeFetchFunctions';
-import { renderingHomePage } from './homeRenderHomePage';
+import { fetchingByCategory } from './homeFetchingFun';
+import { renderingHomePage } from './homeRenderingHomePage';
 const { galleryRef } = getRefs();
 
 export default function renderingByCategory(e) {
-  document.querySelector('.is-active').classList.remove('is-active');
-  e.target.classList.add('is-active');
   galleryRef.innerHTML = '';
   if (e.target.innerHTML === 'See more') {
     galleryRef.insertAdjacentHTML(
@@ -50,11 +48,9 @@ export default function renderingByCategory(e) {
   var galleryListRef = document.querySelector('.gallery-list2');
 
   const query = e.target.innerHTML.split(' ').join('%20');
-  fetchingByCategory(query).then(response => {
-    if (response) {
-      response.map(book =>
-        galleryListRef.insertAdjacentHTML('beforeend', createBookCard(book))
-      );
-    }
-  });
+  fetchingByCategory(query).then(response =>
+    response.map(book =>
+      galleryListRef.insertAdjacentHTML('beforeend', createBookCard(book))
+    )
+  );
 }
