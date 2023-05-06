@@ -1,4 +1,5 @@
 import axios from 'axios';
+import renderingByCategory from './homeRenderingByCategory';
 const category_list = document.querySelector('.nav-categories');
 
 async function getCategoryList() {
@@ -28,6 +29,13 @@ const renderCategories = async () => {
 };
 
 renderCategories();
+category_list.addEventListener('click', renderingByCategory);
+
+function returnCategoryName(event) {
+  console.log(event);
+  const categoryName = event.target.dataset.id;
+  return categoryName;
+}
 
 function markupCategoriesList(categories) {
   return `<li class="category-item active" data-id="all-categories">

@@ -5,6 +5,7 @@ import { renderingHomePage } from './homeRenderingHomePage';
 const { galleryRef } = getRefs();
 
 export default function renderingByCategory(e) {
+  console.log(e);
   galleryRef.innerHTML = '';
   if (e.target.innerHTML === 'See more') {
     galleryRef.insertAdjacentHTML(
@@ -30,7 +31,7 @@ export default function renderingByCategory(e) {
     );
     return;
   }
-  if (e.target.innerHTML === 'All categories') {
+  if (e.target.dataset.id === 'all-categories') {
     renderingHomePage();
     return;
   }
