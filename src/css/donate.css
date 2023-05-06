@@ -21,6 +21,8 @@
 
 .donate-header {
   display: flex;
+  flex-direction: row;
+  gap: 16px;
 }
 
 .donate-index {
@@ -37,4 +39,10 @@
   display: flex;
   flex-direction: row;
   gap: 16px;
+}
+
+.donate-emblem {
+ color: white;
+ width: 20px;
+ height: 32px;
 }
