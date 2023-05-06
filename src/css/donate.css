@@ -54,16 +54,14 @@
 .donate-img {
   filter: brightness(0) invert(1);
   -webkit-filter: brightness(0) invert(1);
-  /* width: fit-content; */
-  width: 129px;
-/* height: fit-content; */
-  height: 32px;
+   height: 32px;
+  object-fit: contain;
 }
 
 .donate-emblem {
-  width: 20px;
-  height: 32px;
-}
+   width: 20px;
+  height: 32px; 
+  } 
 
 /* .donate-arrow {
   

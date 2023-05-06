@@ -1,21 +1,3 @@
-// function generateDonateFundsMarkup(donateFunds) {
-//   const markup = donateFunds
-//     .map((fund, index) => {
-//       const foundIndex = String(index + 1).padStart(2, '0');
-//       return `
-//         <li class="donate-fund">
-//           <span class="donate-index">${foundIndex}</span>
-//           <a href="${fund.url}" target="_blank" class = 'donate-item-link'>
-//             <img  class="donate-img" src="${fund.img}" alt="${fund.title}">
-//           </a>
-//         </li>
-//       `;
-//     })
-//     .join('');
-
-//   return markup;
-// }
-
 function generateDonateFundsMarkup(donateFunds) {
   const isRetina = window.devicePixelRatio > 1; // Check if user has a retina display
 
