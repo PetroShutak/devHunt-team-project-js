@@ -1,1 +1,0 @@
-import"./styles-fac82e35.js";function n(t){try{const o=localStorage.getItem(t);return o===null?{shoppinglist}:JSON.parse(o)}catch(o){console.log(o)}}window.addEventListener("load",()=>{n("shoppinglist")});
