@@ -38,14 +38,10 @@
 .donate-funds-visible {
   width: 159px;
   height: 220px;
-  overflow: hidden;
-  overflow: scroll;
+  overflow: auto;
   scroll-behavior: smooth;
 }
 
-.donate-funds-list {
-  margin-bottom: 68px;
-}
 
 .donate-fund {
   display: flex;
@@ -144,9 +140,7 @@
   .donate-funds-visible {
     height: 320px;
 }
-  .donate-funds-list{
-    margin-bottom: 84px;
-}
+ 
 }
   
 @media screen and (min-width: 1440px) {
@@ -155,7 +149,5 @@
    height: 490px;
   }
 
-  .donate-funds-list{
-   margin-bottom: 102px;
-}
+ 
 }
