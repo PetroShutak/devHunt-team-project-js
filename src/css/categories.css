@@ -29,6 +29,13 @@
 }
 
 .nav-category-item {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+
   color: rgba(17, 17, 17, 0.6);
   cursor: pointer;
   transform: scale(0.97);
