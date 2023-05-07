@@ -9,7 +9,7 @@
 }
 
 .header-container {
-    display: flex;
+    /* display: flex; */
     align-items: center;
     margin: 0 auto;
     justify-content: space-between;
@@ -21,9 +21,7 @@
     display: flex;
     justify-content: space-between;
 }
-.header-mobile-burger {
-    margin-left: 50px;
-}
+
 .header-container {
     border: 1.5px solid #111111;
     border-radius: 0px 0px 8px 8px;
@@ -36,6 +34,7 @@
     border-radius: 20px;
     box-shadow: inset 1px 1px 2px rgba(0, 0, 0, .1);
     cursor: pointer;
+   
 }
 
 .span-theme {
@@ -88,6 +87,7 @@ border-radius: 36px;
     align-items: baseline;
 }
 .div-theme {
+    position: relative;
     display: flex;
     align-items: center;
    
@@ -121,9 +121,7 @@ border-radius: 36px;
 }
 /*------------------MODAL-----------------------------*/
 
-.header-modal-container {
-    position: relative;
-}
+
 @keyframes slide-down {
     0% {
         transform: translateY(-100%);
@@ -133,36 +131,34 @@ border-radius: 36px;
         transform: translateY(0%);
     }
 }
-
+.header-mobile-box {
+    position: relative;
+}
 .header-modal {
     position: absolute;
-    top: -100%;
-    right: -25%;
+    top: -45px;
+    right: -20px;
     width: 100%;
-    background: transparent;
     width: 375px;
     height: 750px;
+    margin-top: 64px;
     display: none;
     z-index: 1;
-animation-name: slide-down;
+    animation-name: slide-down;
     animation-duration: 0.5s;
     animation-timing-function: ease-out;
-}
-
-.header-modal-contenr {
-    margin-top: 63px;
-    width: 375px;
-    height: 686px;
     background: radial-gradient(183.6% 183.01% at 59.76% -23.42%,
-        #4F2EE8 18.03%,
-        #FFFFFF 100%) ;
+                #4F2EE8 18.03%,
+                #FFFFFF 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
-        align-items: flex-start;
+    align-items: flex-start;
 }
+
+
 .header-modal-image {
-background-image: url(./images/Group\ 6.png);
+background-image: url(../images/Group\ 6.png);
 width: 100%;
 height: 350px;
 position: absolute;
@@ -174,7 +170,7 @@ background-repeat: no-repeat;
 
 .menu-toggle-close {
     position: absolute;
-    top: 20px;
+    top: -42px;
     right: 20px;
     background-color: transparent;
     border: none;
@@ -242,12 +238,16 @@ background-repeat: no-repeat;
 .header-item-icon-modal {
     fill: #FFFFFF;
 }
- .header-mobile-burger .show {
+
+.hidden {
     display: none;
 }
 /*---------------------------------------------*/
 @media screen and (max-width: 767px) {
-.header-nav-item  {
+.header-nav  {
+    display: none;
+}
+.header-modal {
     display: none;
 }
 .header-user {
@@ -259,7 +259,14 @@ background-repeat: no-repeat;
     padding-bottom: 18px;
 }
 }
-
+.header-box {
+    display: flex;
+    justify-content: space-between;
+}
+.label-them {
+    position: absolute;
+right: 45px;
+}
 @media screen and (min-width: 768px) {
     .header-mobile-burger {
         display: none;
@@ -268,9 +275,7 @@ background-repeat: no-repeat;
         padding-top: 14px;
         padding-bottom: 13px;
         }
-        .div-theme {
-            margin-right: 64px;
-        }
+       
         .header-modal-container,
         .header-modal,
         .header-modal-content {
