@@ -1,5 +1,5 @@
-import found1 from './img/01-found-1.png';
-import found1x from './img/01-found-2.png';
+import found1 from '../img/01-found-1.png';
+import found1x from '../img/01-found-2.png';
 
 function generateDonateFundsMarkup(donateFunds) {
   const isRetina = window.devicePixelRatio > 1.1; // Check if user has a retina display
