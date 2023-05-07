@@ -1,15 +1,13 @@
 .nav-categories-section {
-  margin-top: 40px;
-  margin-bottom: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .nav-categories-list {
   display: block;
   height: 228px;
   overflow: auto;
-  max-width: 335px;
-  font-weight: 400;
-  font-size: 16px;
+  width: 335px;
 }
 
 /* scrollbar */
@@ -22,7 +20,7 @@
 }
 .nav-categories-list::-webkit-scrollbar-thumb {
   background-color: #e0e0e0;
-  border-radius: 4px;
+  border-radius: 12px;
 }
 .nav-categories-list::-webkit-scrollbar-thumb:hover {
   background-color: #b4afaf;
@@ -49,17 +47,43 @@
 .nav-category-item.active,
 .nav-category-item:hover,
 .nav-category-item:focus {
-  font-family: 'DM Sans';
-  font-style: normal;
   font-weight: 700;
   font-size: 16px;
   text-transform: uppercase;
   transform: scale(1);
 
-  line-height: 1.12;
-
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-
   color: #4f2ee8;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-categories-list {
+    width: 337px;
+    height: 472px;
+  }
+
+  .nav-categories-list::-webkit-scrollbar {
+    height: 167px;
+  }
+  .nav-category-item {
+    font-size: 18px;
+    line-height: 1.33;
+  }
+
+  .nav-category-item.active,
+  .nav-category-item:hover,
+  .nav-category-item:focus {
+    font-size: 18px;
+    line-height: 1.33;
+  }
+
+  .nav-category-item:not(:last-child) {
+    margin-bottom: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .nav-categories-list {
+    width: 356px;
+    height: 472px;
+  }
 }
