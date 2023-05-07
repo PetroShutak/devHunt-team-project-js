@@ -1,11 +1,12 @@
 import { getRefs } from './homeRefs';
-import { createBookCard } from './homeCreateBookCard';
-import { fetchingByCategory } from './homeFetchingFun';
-import { renderingHomePage } from './homeRenderingHomePage';
+import { createBookCard } from './createBookCard';
+import { fetchingByCategory } from './apiService';
+import { renderingHomePage } from './renderingHomePage';
+import addBooksListeners from './addBooksListeners';
 const { galleryRef } = getRefs();
 
 export default function renderingByCategory(e) {
-  console.log(e);
+  console.log('rendering by category1');
   galleryRef.innerHTML = '';
   if (e.target.innerHTML === 'See more') {
     galleryRef.insertAdjacentHTML(
@@ -31,16 +32,20 @@ export default function renderingByCategory(e) {
     );
     return;
   }
-  if (e.target.dataset.id === 'all-categories') {
+  if (e.target.innerHTML.trim() === 'All categories') {
     renderingHomePage();
     return;
   }
   galleryRef.insertAdjacentHTML(
     'beforeend',
     `<h2 class="gallery-title">${e.target.innerHTML
+      .trim()
       .split(' ')
       .slice(0, length - 1)
-      .join(' ')} <span>${e.target.innerHTML.split(' ').pop()}</span></h2>`
+      .join(' ')} <span>${e.target.innerHTML
+      .trim()
+      .split(' ')
+      .pop()}</span></h2>`
   );
   galleryRef.insertAdjacentHTML(
     'beforeend',
@@ -48,10 +53,11 @@ export default function renderingByCategory(e) {
   );
   var galleryListRef = document.querySelector('.gallery-list2');
 
-  const query = e.target.dataset.id;
+  const query = e.target.innerHTML.trim().split(' ').join('%20');
   fetchingByCategory(query).then(response => {
-    response.map(book => {
-      galleryListRef.insertAdjacentHTML('beforeend', createBookCard(book));
-    });
+    response.map(book =>
+      galleryListRef.insertAdjacentHTML('beforeend', createBookCard(book))
+    );
+    addBooksListeners();
   });
 }

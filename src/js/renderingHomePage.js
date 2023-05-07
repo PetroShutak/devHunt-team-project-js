@@ -1,10 +1,13 @@
 import { getRefs } from './homeRefs';
-import { fetchingTopBooks } from './homeFetchingFun';
-import { createHomeBookCard } from './homeCreateBookCard';
-import renderingByCategory from './homeRenderingByCategory';
+import { fetchingTopBooks } from './apiService';
+import { createHomeBookCard } from './createBookCard';
+import renderingByCategory from './renderingByCategory';
+import addBooksListeners from './addBooksListeners';
 const { galleryRef } = getRefs();
 
 export function renderingHomePage() {
+  console.log('rendering Home Page');
+  galleryRef.innerHTML = '';
   if (document.documentElement.clientWidth < 768) {
     galleryRef.insertAdjacentHTML(
       'beforeend',
@@ -29,6 +32,7 @@ export function renderingHomePage() {
       for (let i = 0; i < btnRef.length; i++) {
         btnRef[i].addEventListener('click', renderingByCategory);
       }
+      addBooksListeners();
     });
   } else if (document.documentElement.clientWidth < 1440) {
     galleryRef.insertAdjacentHTML(
@@ -59,6 +63,7 @@ export function renderingHomePage() {
       for (let i = 0; i < btnRef.length; i++) {
         btnRef[i].addEventListener('click', renderingByCategory);
       }
+      addBooksListeners();
     });
   } else {
     galleryRef.insertAdjacentHTML(
@@ -89,6 +94,7 @@ export function renderingHomePage() {
       for (let i = 0; i < btnRef.length; i++) {
         btnRef[i].addEventListener('click', renderingByCategory);
       }
+      addBooksListeners();
     });
   }
 }
