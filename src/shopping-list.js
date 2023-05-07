@@ -1,3 +1,4 @@
+import "./js/donate";
 export {
     save,
     load,
