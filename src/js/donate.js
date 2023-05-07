@@ -9,7 +9,7 @@ function generateDonateFundsMarkup(donateFunds) {
         <li class="donate-fund">
           <span class="donate-index">${foundIndex}</span>
           <a href="${fund.url}" target="_blank" class='donate-item-link'>
-            <img class="donate-img" src="${foundImage}" alt="${fund.title}">
+            <img class="donate-img" src="${foundImage}" alt="${fund.title}" type="image/png">
           </a>
         </li>
       `;
