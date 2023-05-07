@@ -15,11 +15,14 @@
   </head>
   <body>
     <header>
+      <load ="partials/header.html" />
     </header>
     <main>
       <section>
         <div class="container container-shopping-list">
-          <div class="shopping-list-support"></div>
+          <div class="shopping-list-support">
+            <load ="partials/donate.html" />
+          </div>
           <div>
             <h1 class="shoping-list-header">
               Shopping <span class="shoping-list-part">List</span>
@@ -42,9 +45,7 @@
                 <li class="item-shopping-list">
                   <div class="shopping-list-thumb">
                     <button class="delete-shopping-list-btn" type="button">
-                      <svg class="delete-shopping-list-icon">
-                        <use href="./images/icon.svg#icon-trash"></use>
-                      </svg>
+                      <img src = "images/trash-03.svg"/>
                     </button>
                     <div class="cover-shopping-list">
                       <img
