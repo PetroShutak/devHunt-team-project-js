@@ -1,9 +1,3 @@
-/* .container {
-  width: 375px;
-  margin-left: auto;
-  margin-right: auto;
-} */
-
 .gallery {
   padding: 40px 0px 80px 0px;
   outline: 1px solid red;
@@ -47,7 +41,7 @@
   border-radius: 8px;
 }
 
-.gallery-book-card:hover .gallery-book-cover::before {
+.gallery-book-card:hover .gallery-book-cover::after {
   transform: translateY(0);
 }
 
@@ -171,11 +165,6 @@
 }
 
 @media screen and (min-width: 1440px) {
-  /* .container {
-    width: 1440px;
-    padding: 0 24px;
-  } */
-
   .gallery-book-card {
     width: 180px;
   }
@@ -237,14 +226,14 @@
     margin-bottom: 40px;
   }
 
-  .gallery-book-cover::before {
+  .gallery-book-cover::after {
+    content: 'QUICK VIEW';
     position: absolute;
     left: 0px;
     top: 186px;
-    z-index: 8000;
+    z-index: 9999999;
     width: 180px;
     height: 70px;
-    content: 'QUICK VIEW';
     font-weight: 500;
     font-size: 14px;
     line-height: 1.29;
