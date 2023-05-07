@@ -19,6 +19,7 @@ function generateDonateFundsMarkup(donateFunds) {
   return markup;
 }
 
+
 const donateFunds = [
   {
     title: 'Save the Children',
