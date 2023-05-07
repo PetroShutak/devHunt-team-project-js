@@ -23,16 +23,12 @@ function generateDonateFundsMarkup(donateFunds) {
   const markup = donateFunds
     .map((fund, index) => {
       const foundIndex = String(index + 1).padStart(2, '0');
-      // const foundImage = isRetina ? fund.retinaImg : fund.img;
+      const foundImage = isRetina ? fund.retinaImg : fund.img;
       return `
         <li class="donate-fund">
           <span class="donate-index">${foundIndex}</span>
           <a href="${fund.url}" target="_blank" class='donate-item-link' crossorigin="anonymous" rel="noopener noreferrer nofollow" aria-label="${fund.title}">
-          <picture>
-          <source srcset="${fund.img} 1x, ${fund.retinaImg} 2x" type="image/png" />
-          <img class="donate-img" src="${fund.img}" alt="${fund.title}" loading="lazy">
-          </picture>
-
+          <img class="donate-img" src="${foundImage}" alt="${fund.title}" loading="lazy">
           </a>
         </li>
       `;
