@@ -167,10 +167,10 @@
 @media screen and (min-width: 768px) and (max-width: 1439px) {
   .container {
     width: 768px;
-    padding: 0 32px;
+    padding: 0 32px; 
     margin-left: 0;
     margin-right: 0;
-  }
+  }  
   .shoping-list-header {
     font-size: 48px;
     line-height: 52px;
@@ -246,7 +246,7 @@
   .container {
     width: 1440px;
     padding: 0 24px;
-  }
+  } 
   .shoping-list-header {
     margin-left: 40px;
     font-size: 48px;
