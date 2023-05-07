@@ -62,12 +62,27 @@
    width: 20px;
   height: 32px; 
   } 
+/*---------------------------- Стрілка --------------------------------------------*/
+.donate-arrow {
+  width: 32px;
+  height: 32px;
+  fill: rgb(46, 12, 91);
+  background-color: white;
+  border-radius: 50%;
 
-/* .donate-arrow {
-  
-} */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-down-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 
+/* -----------------------!Стрілка!--------------------------------- */
 
 @media screen and (min-width: 768px) {
   .donate-container {
