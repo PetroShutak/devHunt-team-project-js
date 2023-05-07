@@ -1,6 +1,7 @@
-import { renderingHomePage } from './homeRenderHomePage';
 import throttle from 'lodash.throttle';
 import { getRefs } from './homeRefs';
+import { renderingHomePage } from './renderingHomePage';
+import renderingByCategory from './renderingByCategory';
 
 renderingHomePage();
 

@@ -1,21 +1,20 @@
 // Different markup for home page and for category filtered Page due to CSS issues.
 export function createBookCard(book) {
-  return `  <a class="gallery-book-link" href="">
+  return `  <div class="gallery-book-link" data-id="${book._id}">
               <div class="gallery-book-card">
-              <div class="gallery-book-cover" style="background-image: url('${book.book_image}')"></div>
+                <img class="gallery-book-cover" src="${book.book_image}"></img>
                 <p class="gallery-book-name">${book.title}</p>
                 <p class="gallery-author">${book.author}</p>
               </div>
-            </a>`;
+            </div>`;
 }
 
-// Different markup for Home Page and for Category-filtered Page due to CSS issues.
 export function createHomeBookCard(book) {
-  return `  <a class="gallery-book-home-link" href="">
+  return `  <div class="gallery-book-home-link" data-id="${book._id}">
               <div class="gallery-book-card">
-                <div class="gallery-book-cover" style="background-image: url('${book.book_image}')"></div>
+                <img class="gallery-book-cover" src="${book.book_image}"></img>
                 <p class="gallery-book-name">${book.title}</p>
                 <p class="gallery-author">${book.author}</p>
               </div>
-            </a>`;
+            </div>`;
 }
