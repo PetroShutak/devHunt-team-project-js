@@ -79,3 +79,4 @@ const donateFunds = [
 
 const container = document.querySelector('.donate-funds-list');
 container.innerHTML = generateDonateFundsMarkup(donateFunds);
+
