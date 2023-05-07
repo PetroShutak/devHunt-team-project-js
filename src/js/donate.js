@@ -80,3 +80,17 @@ const donateFunds = [
 const container = document.querySelector('.donate-funds-list');
 container.innerHTML = generateDonateFundsMarkup(donateFunds);
 
+
+// Button function
+const donateButton = document.querySelector('.donate-button');
+const donateButtonUp = document.querySelector('.donate-button-up');
+
+ donateButton.addEventListener('click', function () {
+   donateButton.style.display = 'none';
+   donateButtonUp.style.display = 'block';
+ });
+
+ donateButtonUp.addEventListener('click', function () {
+   donateButtonUp.style.display = 'none';
+   donateButton.style.display = 'block';
+ });
