@@ -101,6 +101,11 @@
   width: 32px;
   height: 32px;
 }
+
+.donate-button:hover,
+.donate-arrow:focus {
+  background-color: var(--bgc-ligth-theme);
+}
 /* -----------------------! Arrow!--------------------------------- */
 
 
@@ -127,6 +132,12 @@
   transform: rotate(180deg);
   width: 32px;
   height: 32px;
+}
+
+.donate-button-up:focus,
+.donate-arrow-up:hover {
+  background-color: var(--accent-color-dark) ;
+  border-radius: 50%;
 }
 /* -----------------------! Arrow up!--------------------------------- */
 

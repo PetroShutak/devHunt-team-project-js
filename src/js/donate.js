@@ -104,3 +104,9 @@ donateButtonUp.addEventListener('click', function () {
     behavior: 'smooth',
   });
 });
+
+// Reverse button---------------------------------
+const observer = new IntersectionObserver(callback, options);
+
+const sentinel = document.querySelector('#sentinel');
+observer.observe(sentinel);
