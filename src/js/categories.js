@@ -1,5 +1,5 @@
 import axios from 'axios';
-import renderingByCategory from './homeRenderByCategory';
+import renderingByCategory from './renderingByCategory';
 const category_list = document.querySelector('.nav-categories');
 
 async function getCategoryList() {
