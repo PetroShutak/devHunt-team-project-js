@@ -23,10 +23,10 @@ Notiflix needs to be appended to the "<`+r+'>" element, but you called it before
         All categories</li>
         ${t.map(e=>`<li class="nav-category-item" data-id="${e.list_name}">
         ${e.list_name}
-        </li>`).join("")}`}function io(t){const e=window.devicePixelRatio>1;return t.map((i,o)=>{const a=String(o+1).padStart(2,"0"),s=e?i.retinaImg:i.img;return`
+        </li>`).join("")}`}function io(t){const e=window.devicePixelRatio>1.1;return t.map((i,o)=>{const a=String(o+1).padStart(2,"0"),s=e?i.retinaImg:i.img;return`
         <li class="donate-fund">
           <span class="donate-index">${a}</span>
-          <a href="${i.url}" target="_blank" class='donate-item-link'>
+          <a href="${i.url}" target="_blank" class='donate-item-link' crossorigin="anonymous" rel="noopener noreferrer nofollow" aria-label="${i.title}">
             <img class="donate-img" src="${s}" alt="${i.title}" type="image/png">
           </a>
         </li>
