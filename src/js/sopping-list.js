@@ -27,7 +27,7 @@ function load(key) {
 
 
 function remove(key) {
-// зберігаєвидаляє значення в форматі з JSON
+// видаляє значення в форматі з JSON
     localStorage.removeItem(key);
 }
 
@@ -35,8 +35,9 @@ window.addEventListener('load', () => {
     const data = load('shoppinglist');
     if(data) {
 // відбувається відображення даних
-    } else {
-//якщо список пустий
-        console.log('This page is empty, add some books and proceed to order.');
-    }
+    } 
+//     else {
+// //якщо список пустий
+//         console.log('This page is empty, add some books and proceed to order.');
+//     }
 });
