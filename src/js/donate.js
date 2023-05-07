@@ -96,9 +96,55 @@ const donateFunds = [
   },
 ];
 
+// const containerDonate = document.querySelector('.donate-funds-list');
+// containerDonate.innerHTML = generateDonateFundsMarkup(donateFunds);
 const container = document.querySelector('.donate-funds-list');
-// container.innerHTML = generateDonateFundsMarkup(donateFunds);
 container.insertAdjacentHTML(
   'beforeend',
   generateDonateFundsMarkup(donateFunds)
 );
+
+// Button function--------------------------------------
+const donateButton = document.querySelector('.donate-button');
+const donateButtonUp = document.querySelector('.donate-button-up');
+const donateFound = document.querySelector('.donate-funds-visible');
+
+donateButton.addEventListener('click', function () {
+  donateButton.style.display = 'none';
+  donateButtonUp.style.display = 'block';
+
+    donateFound.scrollTo({
+    top: 10000,
+    behavior: 'smooth',
+  });
+});
+
+donateButtonUp.addEventListener('click', function () {
+  donateButtonUp.style.display = 'none';
+  donateButton.style.display = 'block';
+
+  donateFound.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+});
+
+// Reverse button---------------------------------
+// const observer = new IntersectionObserver(callback, options);
+
+// const sentinel = document.querySelector('#sentinel');
+// observer.observe(sentinel);
+
+// function onSentinelIntersection(entries) {
+//   entries.forEach((entry) => {
+//     if (entry.isIntersecting) {
+//       donateButtonUp.style.display = 'none';
+//     } else {
+//       donateButtonUp.style.display = 'block';
+//     }
+//   });
+// }
+// const observer = new IntersectionObserver(onSentinelIntersection, { rootMargin: '0px', threshold: 1 });
+
+// const sentinel = document.querySelector('#sentinel');
+// observer.observe(sentinel);
