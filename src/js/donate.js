@@ -130,7 +130,21 @@ donateButtonUp.addEventListener('click', function () {
 });
 
 // Reverse button---------------------------------
-const observer = new IntersectionObserver(callback, options);
+// const observer = new IntersectionObserver(callback, options);
 
-const sentinel = document.querySelector('#sentinel');
-observer.observe(sentinel);
+// const sentinel = document.querySelector('#sentinel');
+// observer.observe(sentinel);
+
+// function onSentinelIntersection(entries) {
+//   entries.forEach((entry) => {
+//     if (entry.isIntersecting) {
+//       donateButtonUp.style.display = 'none';
+//     } else {
+//       donateButtonUp.style.display = 'block';
+//     }
+//   });
+// }
+// const observer = new IntersectionObserver(onSentinelIntersection, { rootMargin: '0px', threshold: 1 });
+
+// const sentinel = document.querySelector('#sentinel');
+// observer.observe(sentinel);
