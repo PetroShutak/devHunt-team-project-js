@@ -14,23 +14,30 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <header>
-      <load ="partials/header.html" />
-    </header>
-    <main>
-      <aside>
-        <load ="partials/categories.html" />
-        <load ="partials/donate.html" />
-      </aside>
-      <load ="partials/home.html" />
-      <!-- <load ="partials/modal_item.html" /> -->
-      <!-- <load ="partials/modal_login.html" /> -->
-      <!-- <load ="partials/footer.html" /> -->
-      <!-- <load ="partials/footer.html" /> -->
-    </main>
-    <footer>
-      <load ="partials/footer.html" />
-    </footer>
+    <div class="wrapper-body">
+      <header>
+        <load ="partials/header.html" />
+      </header>
+      <main class="main-wrapper">
+        <div class="container">
+          <aside>
+            <load ="partials/categories.html" />
+            <load ="partials/donate.html" />
+          </aside>
+        </div>
+      <div>
+        <load ="partials/home.html" />
+      </div>
+        <!-- <load ="partials/modal_item.html" /> -->
+        <!-- <load ="partials/modal_login.html" /> -->
+        <!-- <load ="partials/footer.html" /> -->
+        <!-- <load ="partials/footer.html" /> -->
+      </main>
+      <footer>
+        <load ="partials/footer.html" />
+      </footer>
+    </div>
+   
 
     <!-- <load  ="partials/modal_favorite.html" /> -->
     <script type="module" src="/main.js"></script>
