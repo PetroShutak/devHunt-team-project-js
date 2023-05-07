@@ -11,6 +11,7 @@ for (let i = 0; i < categoriesRef.length; i++) {
 }
 
 onresize = throttle(() => {
+  const activeCategory = document.querySelector('.active');
   if (activeCategory.innerHTML.trim() === 'All categories') {
     renderingHomePage();
   }

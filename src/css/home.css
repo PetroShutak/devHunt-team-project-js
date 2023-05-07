@@ -122,11 +122,6 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1439.99px) {
-  /* .container {
-    width: 768px;
-    padding: 0 32px;
-  } */
-
   .gallery {
     padding: 100px 0px 100px 0px;
   }
@@ -198,7 +193,7 @@
     width: 996px;
     float: right;
     padding: 40px 0px 72px 0px;
-    margin-right: calc(100vw - 1416px);
+    /* margin-right: calc(100vw - 1416px); */
   }
 
   .menu {

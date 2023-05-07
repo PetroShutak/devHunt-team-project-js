@@ -6,7 +6,7 @@ export default function onBookClick(e) {
     const bookInfo = document.querySelector('.container-modal-fav');
     bookInfo.innerHTML = '';
     const markup = `<img
-                        srcset="/images/Rectangle3x@320 3x"
+                        class="img-book"
                         src="${book.book_image}"
                         alt="${book.title}"
                     />
