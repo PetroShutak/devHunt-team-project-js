@@ -1,4 +1,7 @@
 import { fetchingByBook } from './apiService';
+import amazon from '../images/amazon.png';
+import appleBooks from '../images/apple-books.png';
+import bookShop from '../images/book-shop.png';
 
 export default function onBookClick(e) {
   console.log('onBookClick=>', e.currentTarget);
@@ -17,7 +20,7 @@ export default function onBookClick(e) {
                         <ul class="shop-book">
                         <li class="name-shop-book">
                             <img
-                            src="/images/amazon.png"
+                            src="${amazon}"
                             alt="logo Amazon"
                             width="62"
                             height="19"
@@ -25,7 +28,7 @@ export default function onBookClick(e) {
                         </li>
                         <li class="name-shop-book">
                             <img
-                            src="/images/apple-books.png"
+                            src="${appleBooks}"
                             alt="logo Yellow shop"
                             width="33"
                             height="32"
@@ -33,7 +36,7 @@ export default function onBookClick(e) {
                         </li>
                         <li class="name-shop-book">
                             <img
-                            src="/images/book-shop.png"
+                            src="${bookShop}"
                             alt="logo Dark shop"
                             width="38"
                             height="36"
