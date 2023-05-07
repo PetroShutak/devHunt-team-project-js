@@ -1,13 +1,14 @@
 import { getRefs } from './homeRefs';
-import { createBookCard } from './homeCreateBookCard';
-import { fetchingByCategory } from './homeFetchFunctions';
-import { renderingHomePage } from './homeRenderHomePage';
+import { createBookCard } from './createBookCard';
+import { fetchingByCategory } from './apiService';
+import { renderingHomePage } from './renderingHomePage';
+import addBooksListeners from './addBooksListeners';
 const { galleryRef } = getRefs();
 
 export default function renderingByCategory(e) {
-  console.log(e.target.innerHTML.trim());
+  console.log('rendering by category1');
   galleryRef.innerHTML = '';
-  if (e.target.innerHTML.trim() === 'See more') {
+  if (e.target.innerHTML === 'See more') {
     galleryRef.insertAdjacentHTML(
       'beforeend',
       `<h2 class="gallery-title">${e.target.dataset.category
@@ -35,8 +36,6 @@ export default function renderingByCategory(e) {
     renderingHomePage();
     return;
   }
-
-  // click on the categories section:
   galleryRef.insertAdjacentHTML(
     'beforeend',
     `<h2 class="gallery-title">${e.target.innerHTML
@@ -55,10 +54,10 @@ export default function renderingByCategory(e) {
   var galleryListRef = document.querySelector('.gallery-list2');
 
   const query = e.target.innerHTML.trim().split(' ').join('%20');
-  console.log('query', query);
-  fetchingByCategory(query).then(response =>
+  fetchingByCategory(query).then(response => {
     response.map(book =>
       galleryListRef.insertAdjacentHTML('beforeend', createBookCard(book))
-    )
-  );
+    );
+    addBooksListeners();
+  });
 }
