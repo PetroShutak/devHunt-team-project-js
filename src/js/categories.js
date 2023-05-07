@@ -1,6 +1,6 @@
 import axios from 'axios';
 import renderingByCategory from './renderingByCategory';
-const category_list = document.querySelector('.nav-categories');
+const category_list = document.querySelector('.nav-categories-list');
 
 async function getCategoryList() {
   const { data } = await axios.get(
