@@ -1,5 +1,5 @@
 function generateDonateFundsMarkup(donateFunds) {
-  const isRetina = window.devicePixelRatio > 1; // Check if user has a retina display
+  const isRetina = window.devicePixelRatio > 1.1; // Check if user has a retina display
 
   const markup = donateFunds
     .map((fund, index) => {
@@ -8,7 +8,7 @@ function generateDonateFundsMarkup(donateFunds) {
       return `
         <li class="donate-fund">
           <span class="donate-index">${foundIndex}</span>
-          <a href="${fund.url}" target="_blank" class='donate-item-link'>
+          <a href="${fund.url}" target="_blank" class='donate-item-link' crossorigin="anonymous" rel="noopener noreferrer nofollow" aria-label="${fund.title}">
             <img class="donate-img" src="${foundImage}" alt="${fund.title}" type="image/png">
           </a>
         </li>
@@ -18,7 +18,6 @@ function generateDonateFundsMarkup(donateFunds) {
 
   return markup;
 }
-
 
 const donateFunds = [
   {
