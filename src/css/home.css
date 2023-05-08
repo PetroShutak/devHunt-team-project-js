@@ -1,5 +1,5 @@
 .gallery {
-  padding: 40px 0px 80px 0px;
+  padding-bottom: 80px;
   outline: 1px solid red;
 }
 
@@ -116,9 +116,9 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1439.99px) {
-  .gallery {
+  /* .gallery {
     padding: 100px 0px 100px 0px;
-  }
+  } */
 
   .gallery-book-card {
     width: 218px;
@@ -179,9 +179,11 @@
   }
 
   .gallery {
-    width: 996px;
+    /* width: 996px; */
     float: right;
-    padding: 40px 0px 72px 0px;
+    padding-top: 40px;
+    padding-left: 40px;
+    /* padding: 40px 0px 72px 0px; */
     /* margin-right: calc(100vw - 1416px); */
   }
 

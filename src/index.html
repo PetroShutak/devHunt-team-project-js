@@ -18,26 +18,31 @@
       <header>
         <load ="partials/header.html" />
       </header>
-      <main class="main-wrapper">
-        <div class="container">
-          <aside>
-            <load ="partials/categories.html" />
-            <load ="partials/donate.html" />
-          </aside>
+      <main class="main-wrapper container">
+        <aside>
+          <div class="left-side">
+            <div class="home-categories">
+              <load ="partials/categories.html" />
+            </div>
+            <div class="home-donate"><load ="partials/donate.html" /></div>
+          </div>
+        </aside>
+
+        <div>
+          <load ="partials/home.html" />
         </div>
-      <div>
-        <load ="partials/home.html" />
-      </div>
+        <div>
+          <load ="partials/home.html" />
+        </div>
         <!-- <load ="partials/modal_item.html" /> -->
         <!-- <load ="partials/modal_login.html" /> -->
         <!-- <load ="partials/footer.html" /> -->
-        <!-- <load ="partials/footer.html" /> -->
+        <load ="partials/button_up.html" />
       </main>
       <footer>
         <load ="partials/footer.html" />
       </footer>
     </div>
-   
 
     <load ="partials/modal_favorite.html" />
     <script type="module" src="/main.js"></script>

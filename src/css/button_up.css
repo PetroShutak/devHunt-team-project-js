@@ -1,0 +1,37 @@
+.btn-up {
+  position: fixed;
+  width: 54px;
+  height: 54px;
+  right: 0;
+  bottom: 70px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(79, 46, 232, 0.7);
+  border-radius: 50%;
+  border: 5px solid transparent;
+  transform: translate(-50%, -50%);
+  transition: border 0.2s ease-in-out, opacity 0.5s ease-in-out;
+  opacity: 1;
+}
+.btn-up::before {
+  content: '';
+  width: 25px;
+  height: 20px;
+  background: transparent no-repeat center center;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z'/%3E%3C/svg%3E");
+}
+
+.btn-up_hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media screen and (hover: hover) and (pointer: fine) {
+  .btn-up:hover {
+    border: 5px solid rgba(192, 179, 238, 0.8);
+    border-radius: 50%;
+  }
+}
