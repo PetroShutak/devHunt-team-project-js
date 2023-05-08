@@ -22,7 +22,7 @@ body.dark-theme {
 
 .dark-theme .header-link-item.heder-active {
   color: var(--header-color-dark);
-  fill: var(--header-color-ligth);
+  /* fill: var(--header-color-ligth); */
 }
 
 .dark-theme .nav-category-item {
