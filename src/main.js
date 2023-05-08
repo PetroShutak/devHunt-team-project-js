@@ -6,3 +6,4 @@ import './js/categories';
 import './js/donate';
 import './js/modalFav';
 import './js/button_up';
+import './js/modal_autoriz';
