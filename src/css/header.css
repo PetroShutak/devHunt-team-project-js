@@ -62,14 +62,16 @@
     font-weight: 700;
     margin-left: 40px;
 }
-.header-link-item-shopping{
-    font-weight: 500;
-    margin-left: 16px;
-}
-
-.header-link-item-home {
+/* .header-link-item-shopping { */
+.header-link-item {
     border-radius: 36px;
     padding: 8px 16px;
+}
+.header-link-item-home {
+    margin-left: 40px;
+}
+.header-link-item.heder-active {
+    font-weight: 700;
 }
 .heder-active {
     background-color: rgba(234, 198, 69, 1);
