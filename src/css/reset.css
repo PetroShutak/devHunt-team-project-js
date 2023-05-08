@@ -34,7 +34,6 @@ a {
   color: inherit;
 }
 
-
 /* media rules */
 
 .container {
@@ -42,27 +41,23 @@ a {
   margin: 0 auto;
   padding: 0 20px;
 }
-@media screen and (max-width: 480px) {
+
+/* @media screen and (max-width: 480px) {
   .container {
     width: 100%;
   }
-}
+} */
 
 @media screen and (min-width: 768px) {
   .container {
-    width:768px;
+    width: 768px;
     padding: 0 32px;
   }
 }
-  
+
 @media screen and (min-width: 1440px) {
   .container {
     width: 1440px;
     padding: 0 24px;
   }
 }
-
-
-
-
-

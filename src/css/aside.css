@@ -1,5 +1,8 @@
 aside {
-  float: left;
+  float: bottom;
+  display: block;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .wrapper-body {
@@ -9,4 +12,19 @@ aside {
 }
 .main-wrapper {
   flex: 1;
+}
+
+@media screen and (min-width: 768px) {
+  aside {
+    padding-bottom: 100px;
+  }
+  .left-side {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  aside {
+    float: left;
+  }
 }
