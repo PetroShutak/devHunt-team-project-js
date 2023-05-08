@@ -6,7 +6,7 @@ import addBooksListeners from './addBooksListeners';
 const { galleryRef } = getRefs();
 
 export default function renderingByCategory(e) {
-  console.log('rendering by category1');
+  console.log('Rendering by category');
   galleryRef.innerHTML = '';
   if (e.target.innerHTML === 'See more') {
     galleryRef.insertAdjacentHTML(
