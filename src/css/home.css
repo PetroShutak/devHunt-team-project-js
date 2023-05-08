@@ -177,14 +177,16 @@
     margin-bottom: 32px;
   }
 
+  /*
   .gallery {
-    /* width: 996px; */
-    /* float: right; */
+    width: 996px; 
+     float: right;
     padding-top: 40px;
     padding-left: 40px;
-    /* padding: 40px 0px 72px 0px; */
-    /* margin-right: calc(100vw - 1416px); */
-  }
+     padding: 40px 0px 72px 0px; 
+     margin-right: calc(100vw - 1416px); 
+    }
+    */
 
   .menu {
     float: left;

@@ -11,7 +11,7 @@ aside {
   min-height: 100svh;
 } */
 .main-wrapper {
-  flex: 1;
+  display: flex;
 }
 
 @media screen and (min-width: 768px) {
