@@ -147,4 +147,26 @@ donateButtonUp.addEventListener('click', function () {
 // const observer = new IntersectionObserver(onSentinelIntersection, { rootMargin: '0px', threshold: 1 });
 
 // const sentinel = document.querySelector('#sentinel');
-// observer.observe(sentinel);
+// observer.observe(donateButtonUp);
+
+const donateFundsList = document.querySelector('.donate-funds-list');
+const intersectionObserver = new IntersectionObserver(function (entries) {
+  // Якщо intersectionRatio дорівнює 0, ціль поза зоною видимості
+  // і нам не треба ничого робити
+  if (entries[0].intersectionRatio <= 0) return;
+
+  donateButtonUp.style.display = 'block';
+  donateButton.style.display = 'none';
+});
+
+const intersectionObserver1 = new IntersectionObserver(function (entries) {
+  // Якщо intersectionRatio дорівнює 0, ціль поза зоною видимості
+  // і нам не треба ничого робити
+  if (entries[0].intersectionRatio <= 0) return;
+
+  donateButtonUp.style.display = 'none';
+  donateButton.style.display = 'block';
+});
+// почати нагляд
+intersectionObserver.observe(donateFundsList.lastElementChild);
+intersectionObserver1.observe(donateFundsList.firstElementChild);

@@ -36,10 +36,11 @@
 }
 
 .donate-funds-visible {
-  width: 159px;
+  width: 170px;
   height: 220px;
   overflow: auto;
   scroll-behavior: smooth;
+  padding-right: 20px;
 }
 
 
@@ -67,6 +68,18 @@
   width: 20px;
   height: 32px; 
   } 
+.donate-img {
+  transition: transform 500ms ease-out;
+}
+.donate-img:hover
+ {
+   transform: scale(1.15);
+  }
+
+ .donate-img:active,
+.donate-img:focus {
+       transform: scale(0.85);
+}
 
   /*-------------------------- Scroll bar--------------------------------------- */
 .donate-funds-visible::-webkit-scrollbar {
