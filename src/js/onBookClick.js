@@ -2,6 +2,7 @@ import { fetchingByBook } from './apiService';
 import amazon from '../images/amazon.png';
 import appleBooks from '../images/apple-books.png';
 import bookShop from '../images/book-shop.png';
+import addingToShopList from './shoppingListService';
 
 export default function onBookClick(e) {
   console.log('onBookClick=>', e.currentTarget);
@@ -44,9 +45,12 @@ export default function onBookClick(e) {
                         </li>
                         </ul>
                     </div>
-                    <button type="submit" class="choice-btn">ADD TO SHOPPING LIST</button>`;
+                    <button type="submit" class="choice-btn" data-id="${book._id}">ADD TO SHOPPING LIST</button>`;
     bookInfo.insertAdjacentHTML('beforeend', markup);
     const modal = document.querySelector('[data-modal]');
     modal.classList.remove('is-hidden');
+    document.body.style.overflow = 'hidden';
+    const addToShoppingListBtn = document.querySelector('.choice-btn');
+    addToShoppingListBtn.addEventListener('click', addingToShopList);
   });
 }
