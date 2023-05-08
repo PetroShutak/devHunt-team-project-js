@@ -51,7 +51,7 @@
  
         
 
-    <button class="header-user">
+    <button class="header-user js-modal-autoriz-open ">
         Sign Up
         <svg class="header-icon arrow-to-right-sign" width="20" height="20">
         <use href="./images/sprite.svg#icon-arrow-narrow-right"></use>
@@ -69,7 +69,7 @@
                 <use href="./images/icon.svg#icon-x-close"></use>
             </svg>
         </button>
-        <button class="header-user-modal">
+        <button class="header-user-modal js-modal-autoriz-open">
             Sign Up
             <svg class="header-icon arrow-to-right-sign" width="20" height="20">
                 <use href="./images/sprite.svg#icon-arrow-narrow-right"></use>
@@ -98,5 +98,39 @@
 
 
     </div>
+</div>
+
+<!---------------------------------MODAL AUTORIZED--------------------------------------->
+
+<div class="heder-backdrop is-hidden">
+<div class="heder-modal-autoriz js-modal-autoriz is-hidden">
+    <button class="modal-autoriz-close js-modal-autoriz-close ">
+        <svg class="modal-autoriz-icon" width="28" height="28">
+            <use href="../images/icon.svg#icon-x-close"></use>
+        </svg>
+    </button>
+    <form  class="modal-autoriz-form" action="">
+        <div class="header-modal-form-field">
+            <input   class="header-form-input" type="text" name="name" placeholder="NAME" autofocus autocomplete="on">
+        </div>
+        <div class="header-form-field">
+            <input  class="header-form-input header-form-input-email" type="text" name="EMAIL" placeholder="EMAIL" autofocus autocomplete="on">
+            <svg class="autoriz-icon autoriz-icon-email"  width="28px" height="28">
+                <use href="../images/sprite.svg#icon-mail-02"></use>
+            </svg>
+        </div>
+        <div class="header-form-field">
+            <input  class="header-form-input header-form-input-password" type="text" name="PASSWORD" placeholder="PASSWORD" autofocus autocomplete="on">
+            <svg class="autoriz-icon autoriz-icon-password" width="28" height="28">
+                <use href="./images/sprite.svg#icon-lock-02"></use>
+            </svg>
+        </div>
+        <button class="header-form-btn">Sign up</button>
+        <div class="header-form-link-box">
+            <a class="header-form-link header-form-up" href="">SIGN UP</a>
+            <a class="header-form-link header-form-in" href="">SIGN IN</a>
+        </div>
+    </form>
+</div>
 </div>
 </div>
