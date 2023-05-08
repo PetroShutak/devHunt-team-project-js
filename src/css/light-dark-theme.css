@@ -1,0 +1,63 @@
+body.dark-theme {
+  background-color: var(--bgc-dark-theme);
+}
+
+.dark-theme .header-container {
+  background: var(--header-color-dark);
+}
+
+.dark-theme .header-logo-icon {
+  background-image: url(../images/logo.svg);
+}
+
+
+.dark-theme .label-them {
+  background: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
+}
+
+.dark-theme .header-link-item {
+  color: var(--header-color-ligth);
+  fill: var(--header-color-ligth);
+}
+
+.dark-theme .header-link-item.heder-active {
+  color: var(--header-color-dark);
+  /* fill: var(--header-color-ligth); */
+}
+
+.dark-theme .nav-category-item {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dark-theme .header-item-icon,
+.dark-theme .header-logo-icon {
+  fill: var(--header-color-ligth);
+  /* fill: #FFFFFF; */
+}
+
+.dark-theme .nav-category-item.active,
+.dark-theme .nav-category-item:hover,
+.dark-theme .nav-category-item:active,
+.dark-theme .nav-category-item:focus {
+  color: var(--accent--text-color-dark);
+}
+
+
+.dark-theme .gallery-title,
+.dark-theme .gallery-book-name {
+  color: var(--secondary-text-color-dark);
+}
+
+.dark-theme .gallery-see-more-btn {
+  color: var(--secondary-text-color-dark);
+}
+
+/* Heder text navigation  (l 111, d fff)
+  Shopping list gallery titel (h3)  (l 111, d fff)
+  Shopping list gallery text (p)  (l 111, d fff)
+  pop up  titel (h2)
+  pop up  text (p)
+  pop up  button text
+  pop up  button close img
+  pop up  amazon
+*/
