@@ -1,6 +1,7 @@
 import onBookClick from './onBookClick';
 
 export default function addBooksListeners() {
+  console.log('Adding books listeners');
   const booksRefs = document.querySelectorAll('.gallery-book-home-link');
   const booksRefs2 = document.querySelectorAll('.gallery-book-link');
   for (let i = 0; i < booksRefs.length; i++) {

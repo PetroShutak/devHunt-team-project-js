@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #b4afaf;
+  background: rgba(17, 17, 17, 0.4);
   transition: opacity var(--timing-function), opacity var(--animation-duration),
     visibility var(--timing-function), visibility var(--animation-duration);
 }
@@ -47,6 +47,16 @@
   border: 2px solid #111111;
   border-radius: 18px;
   overflow: hidden;
+}
+
+.img-book {
+  border-radius: 8px;
+}
+
+.choice-btn:hover,
+.choice-btn:focus {
+  color: #ffffff;
+  background-color: #4f2ee8;
 }
 
 /* ================ MEDIA RULES ================ */
@@ -262,19 +272,23 @@
   .title-name {
     font-family: DM Sans;
     font-style: 700;
-    font-size: 18px;
-    line-height: 1, 16;
+    font-size: 24px;
+    line-height: 1.17;
     color: #111111;
+    font-weight: 700;
+    letter-spacing: -0.04em;
   }
 
   .title-author {
     font-family: DM Sans;
     width: 700px;
-    font-style: Italic;
+    font-style: italic;
     font-size: 14px;
-    line-height: 1, 28;
+    line-height: 1.29;
     margin-top: 8px;
     color: #b4afaf;
+    font-weight: 400;
+    letter-spacing: -0.04em;
   }
 
   .description-info {
@@ -302,20 +316,17 @@
     width: 499px;
     height: 64px;
     font-family: DM Sans;
-    font-style: Bold;
-    font-size: 12px;
-    line-height: 1, 28;
-    padding: 20px 150px;
-    margin: 40px 10px;
+    font-size: 18px;
+    line-height: 1.33;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    margin: 40px 0px;
     border-radius: 40px;
     border: 2px solid #4f2ee8;
     background-color: #ffffff;
     transition: color var(--timing-function), color var(--animation-duration);
-  }
-
-  .choice-btn:hover,
-  .choice-btn:focus {
-    color: #ffffff;
-    background-color: #4f2ee8;
+    color: #111111;
   }
 }
