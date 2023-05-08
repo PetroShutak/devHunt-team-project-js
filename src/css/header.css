@@ -72,9 +72,12 @@
 }
 
 .header-link-item-home {
-    background-color: rgba(234, 198, 69, 1);
+    
     border-radius: 36px;
     padding: 8px 16px;
+}
+.heder-active {
+background-color: rgba(234, 198, 69, 1);
 }
 .header-item {
 border-radius: 36px;
@@ -90,7 +93,6 @@ border-radius: 36px;
     position: relative;
     display: flex;
     align-items: center;
-   
 }
 .header-user {
     display: flex;
