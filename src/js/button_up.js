@@ -11,7 +11,7 @@ window.onload = function () {
     addEventListener() {
       window.addEventListener('scroll', () => {
         const scrollY = window.scrollY || document.documentElement.scrollTop;
-        scrollY > 0.8 * fullDocumentHeight && innerWidth > 375
+        scrollY > 0.8 * fullDocumentHeight && innerWidth >= 768
           ? this.show()
           : this.hide();
       });
