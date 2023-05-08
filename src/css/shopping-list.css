@@ -1,3 +1,14 @@
+.visuallyhidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .shoping-list-header {
   margin-top: 40px;
   margin-bottom: 40px;
@@ -10,20 +21,23 @@
   letter-spacing: -0.04em;
   color: var(--accent-text-color-ligth);
 }
+
 .shopping-list-text {
   font-weight: 400;
   text-align: center;
   letter-spacing: -0.02em;
   color: rgba(0, 0, 0, 0.6);
 }
+
 .shopping-list-thumb {
   display: flex;
-  position: absolute;
+  /* position: absolute; */
   flex-direction: row;
   align-items: flex-start;
   border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 16px;
 }
+
 .delete-shopping-list-btn {
   position: absolute;
   display: flex;
@@ -32,9 +46,15 @@
   border-radius: 50%;
   background-color: var(--accent-text-color-ligth);
 }
+
+.delete-shopping-list-icon {
+  fill: #fff;
+}
+
 .cover-shopping-list-img {
   border-radius: 8px;
 }
+
 .shopping-list-book-title {
   margin-bottom: 4px;
   font-style: normal;
@@ -45,6 +65,7 @@
   text-transform: uppercase;
   color: var(primary-text-color-ligth);
 }
+
 .shopping-list-book-category {
   font-style: normal;
   font-weight: 400;
@@ -53,6 +74,7 @@
   letter-spacing: 0.03em;
   color: var(--secondary-text-color-ligth);
 }
+
 .shopping-list-book-about {
   font-style: normal;
   font-weight: 400;
@@ -61,6 +83,7 @@
   letter-spacing: -0.04em;
   color: var(primary-text-color-ligth);
 }
+
 .shopping-list-book-author {
   font-style: italic;
   font-weight: 400;
@@ -69,25 +92,48 @@
   letter-spacing: -0.04em;
   color: var(--secondary-text-color-ligth);
 }
+
 .shopping-list-trading {
   display: flex;
   position: absolute;
   justify-content: center;
   align-items: center;
 }
+
 .shopping-list-trading-icon-amazon,
 .shopping-list-trading-icon-apple-books,
 .shopping-list-trading-icon-book-shop {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 }
+
 .shopping-list-trading-link {
   width: 100%;
   height: 100%;
   cursor: pointer;
 }
+
 .shopping-list-trading-link :hover {
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* .list-shopping-list {
+  display: flex;
+  flex-direction: column;
+} */
+
+.empty-shopping-list {
+  outline: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 20px;
+  /* position: absolute; */
+  width: 349px;
+  height: 309px;
+  /* left: 735px;
+  top: 304px; */
 }
 
 @media screen and (max-width: 767px) {
@@ -107,17 +153,18 @@
     font-size: 14px;
     line-height: 18px;
   }
+
   .shopping-list-book-img {
-    margin-top: 14px;
-    margin-left: 35px;
     width: 265px;
     height: 198px;
   }
+
   .shopping-list-thumb {
     padding: 14px;
     width: 335px;
     height: 170px;
   }
+
   .delete-shopping-list-btn {
     top: 14px;
     right: 14px;
@@ -162,6 +209,12 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1439px) {
+  /* .container {
+    width: 768px;
+    padding: 0 32px;
+    margin-left: auto;
+    margin-right: auto;
+  } */
   .shoping-list-header {
     font-size: 48px;
     line-height: 52px;
@@ -171,8 +224,6 @@
     line-height: 52px;
   }
   .shopping-list-text {
-    margin-top: 138px;
-    margin-left: 189px;
     width: 349px;
     height: 48px;
     font-size: 18px;
@@ -234,35 +285,47 @@
 }
 
 @media screen and (min-width: 1440px) {
+  aside {
+    margin-right: 40px;
+  }
+
+  .container-shopping-list {
+    outline: 1px solid red;
+    width: 1440px;
+    padding: 0 24px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .shoping-list-header {
     margin-left: 40px;
     font-size: 48px;
     line-height: 52px;
   }
+
   .shoping-list-part {
     font-size: 48px;
     line-height: 52px;
   }
+
   .shopping-list-text {
-    margin-top: 140px;
-    margin-left: 355px;
     width: 349px;
     height: 48px;
     font-size: 18px;
     line-height: 24px;
   }
+
   .shopping-list-book-img {
-    margin-top: 20px;
-    margin-left: 368px;
     width: 322px;
     height: 241px;
   }
+
   .shopping-list-thumb {
     margin-left: 40px;
     padding: 24px;
     width: 996px;
     height: 213px;
   }
+
   .delete-shopping-list-btn {
     top: 24px;
     right: 24px;
@@ -273,15 +336,19 @@
     width: 116px;
     height: 165px;
   }
+
   .book-interface {
     margin-left: 24px;
   }
+
   .shopping-list-book-category {
     margin-bottom: 14px;
   }
+
   .shopping-list-book-about {
     margin-bottom: 16px;
   }
+
   .shopping-list-trading {
     bottom: 24px;
     right: 24px;
@@ -290,20 +357,18 @@
   .shopping-list-trading-item:not(:last-child) {
     margin-right: 16px;
   }
+
   .shopping-list-support {
     width: 356px;
     height: 490px;
     background: radial-gradient(
-        183.6% 183.01% at 59.76% -23.42%,
-        #4f2ee8 18.03%,
-        #ffffff 100%
-      )
-      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+      183.6% 183.01% at 59.76% -23.42%,
+      #4f2ee8 18.03%,
+      #ffffff 100%
+    );
+
     box-shadow: 0px 10px 10px rgba(245, 245, 247, 0.1);
     border-radius: 16px;
     margin-top: 40px;
-  }
-  .container-shopping-list {
-    display: flex;
   }
 }
