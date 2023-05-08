@@ -1,29 +1,38 @@
-
 body.dark-theme {
   background-color: var(--bgc-dark-theme);
 }
 
-/* .dark-theme .card-sopping-lict,  */
-.dark-theme .header {
+.dark-theme .header-container {
   background: var(--header-color-dark);
 }
 
-.dark-theme .logo { 
-  background-image: url(../images/sprite.svg#icon-logo-dark);
+.dark-theme .header-logo-icon {
+  background-image: url(../images/logo.svg);
 }
-  
+
+
 .dark-theme .label-them {
   background: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
 }
-  
-/* use .header-item-icon .dark-theme, */
-.dark-theme .header-link-item-shopping-span {
+
+.dark-theme .header-link-item {
+  color: var(--header-color-ligth);
   fill: var(--header-color-ligth);
 }
 
-/* .dark-theme .menu-category, */
+.dark-theme .header-link-item.heder-active {
+  color: var(--header-color-dark);
+  fill: var(--header-color-ligth);
+}
+
 .dark-theme .nav-category-item {
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dark-theme .header-item-icon,
+.dark-theme .header-logo-icon {
+  fill: var(--header-color-ligth);
+  /* fill: #FFFFFF; */
 }
 
 .dark-theme .nav-category-item.active,
@@ -33,16 +42,14 @@ body.dark-theme {
   color: var(--accent--text-color-dark);
 }
 
-/* .dark-theme .card-sopping-lict-text, */
+
 .dark-theme .gallery-title,
-.dark-theme .gallery-book-name { 
+.dark-theme .gallery-book-name {
   color: var(--secondary-text-color-dark);
 }
 
 .dark-theme .gallery-see-more-btn {
   color: var(--secondary-text-color-dark);
-  background: var(--bgc-dark-theme);
-  /* background-color: transparent; */
 }
 
 /* Heder text navigation  (l 111, d fff)
