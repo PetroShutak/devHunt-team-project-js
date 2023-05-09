@@ -4,7 +4,7 @@ import Notiflix from 'notiflix';
 const emptyRef = document.querySelector('.empty-shopping-list');
 const booksList = document.querySelector('.shopping-list');
 
-renderingShoppingList();
+// renderingShoppingList();  !!! я закоментуваав, бо скрипт паде, і бє помилку. 
 
 function renderingShoppingList() {
   console.log('Rendering shopping list');
