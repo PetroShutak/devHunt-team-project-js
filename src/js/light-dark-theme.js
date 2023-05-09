@@ -1,4 +1,5 @@
-
+import logos from '../images/sprite.svg#icon-logo';
+import logos1 from '../images/sprite.svg#icon-logo-1';
 const inputTheme = document.querySelector('.div-theme');
 const spanTheme = document.querySelector('.span-theme');
 const logo = document.querySelector('.header-logo-icon');
@@ -30,11 +31,14 @@ function currentTheme() {
   if (indexTheme) {
     body.classList.add('dark-theme');
     spanTheme.style.left = '20px';
-    logo.innerHTML = '<use href="/images/sprite.svg#icon-logo1"></use>';
+    logo.style.backgroundImage = `url(${logos})`;
+    // logo.innerHTML = `<svg><use href="${logos1}"></use></svg>`;
+    
   } else {
     body.classList.remove('dark-theme');
     spanTheme.style.left = '2px';
-    logo.innerHTML = '<use href="/images/sprite.svg#icon-logo"></use>';
+    logo.style.backgroundImage = `url(${logos1})`
+    // logo.innerHTML = `<svg><use href="${logos}"></use></svg>`;
   }
 }
 
