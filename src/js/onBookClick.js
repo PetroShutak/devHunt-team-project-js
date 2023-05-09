@@ -2,9 +2,20 @@ import { fetchingByBook } from './apiService';
 import amazon from '../images/amazon.png';
 import appleBooks from '../images/apple-books.png';
 import bookShop from '../images/book-shop.png';
-import addingToShopList from './shoppingListService';
+import {
+  addingToShopList,
+  removingBookFromShoppingList,
+} from './shoppingListService';
 
 export default function onBookClick(e) {
+  let btnText = '';
+  if (localStorage.getItem(e.currentTarget.dataset.id)) {
+    console.log('in local storage');
+    btnText = 'Remove from shopping list';
+  } else {
+    console.log('not in local storage');
+    btnText = 'ADD TO SHOPPING LIST';
+  }
   fetchingByBook(e.currentTarget.dataset.id).then(book => {
     const bookInfo = document.querySelector('.container-modal-fav');
     bookInfo.innerHTML = '';
@@ -41,7 +52,9 @@ export default function onBookClick(e) {
                         </li>
                         </ul>
                     </div>
-                    <button type="submit" class="choice-btn" data-id="${book._id}">ADD TO SHOPPING LIST</button>`;
+                    <button type="submit" class="choice-btn" data-id="${book._id}">${btnText}</button>
+                    <p class="congrats"></p>`;
+
     bookInfo.insertAdjacentHTML('beforeend', markup);
     // modal is shown
     const modal = document.querySelector('[data-modal]');
@@ -52,6 +65,24 @@ export default function onBookClick(e) {
 
     // adding to shopping list
     const addToShoppingListBtn = document.querySelector('.choice-btn');
-    addToShoppingListBtn.addEventListener('click', addingToShopList);
+    if (addToShoppingListBtn.innerHTML === 'Remove from shopping list') {
+      addToShoppingListBtn.nextElementSibling.innerHTML =
+        'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
+    } else {
+      addToShoppingListBtn.nextElementSibling.innerHTML = '';
+    }
+
+    addToShoppingListBtn.addEventListener('click', e => {
+      if (addToShoppingListBtn.innerHTML === 'ADD TO SHOPPING LIST') {
+        addingToShopList(e);
+        addToShoppingListBtn.innerHTML = 'Remove from shopping list';
+        addToShoppingListBtn.nextElementSibling.innerHTML =
+          'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
+      } else {
+        addToShoppingListBtn.innerHTML = 'ADD TO SHOPPING LIST';
+        addToShoppingListBtn.nextElementSibling.innerHTML = '';
+        removingBookFromShoppingList(e);
+      }
+    });
   });
 }

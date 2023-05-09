@@ -9,16 +9,20 @@
   overflow: hidden;
 }
 
+aside {
+  margin-right: 40px;
+}
+
 .header-shoplist {
   margin-bottom: 40px;
 }
 
 .shoping-list-header {
-  margin-top: 40px;
+  color: #111111;
   margin-bottom: 40px;
-  font-weight: 700;
   letter-spacing: -0.04em;
-  color: var(primary-text-color-ligth);
+  font-weight: 700;
+  margin-left: 0px;
 }
 
 .shoping-list-part {
@@ -56,11 +60,8 @@
   fill: #fff;
 }
 
-.cover-shopping-list-img {
-  border-radius: 8px;
-}
-
 .shopping-list-book-title {
+  width: 90%;
   margin-bottom: 4px;
   font-style: normal;
   font-weight: 700;
@@ -69,6 +70,9 @@
   letter-spacing: -0.04em;
   text-transform: uppercase;
   color: #111111;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .shopping-list-book-category {
@@ -80,13 +84,23 @@
   color: var(--secondary-text-color-ligth);
 }
 
+.book-interface {
+  overflow: hidden;
+}
+
 .shopping-list-book-about {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
   letter-spacing: -0.04em;
-  color: var(primary-text-color-ligth);
+  color: #111111;
+  margin-bottom: 16px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* start showing ellipsis when 3rd line is reached */
+  white-space: pre-wrap; /* let the text wrap preserving spaces */
 }
 
 .shopping-list-book-author {
@@ -140,13 +154,13 @@
     font-size: 32px;
     line-height: 38px;
   }
+
   .shoping-list-part {
     font-size: 32px;
     line-height: 38px;
   }
+
   .shopping-list-text {
-    margin-top: 120px;
-    margin-left: 45px;
     width: 244px;
     height: 36px;
     font-size: 14px;
@@ -164,30 +178,53 @@
     height: 170px;
   }
 
+  .shopping-list-thumb:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .cover-shopping-list {
+    width: 100px;
+    height: 142px;
+    margin-right: 14px;
+  }
+
+  .book-interface {
+    width: 193px;
+  }
+
   .delete-shopping-list-btn {
     top: 14px;
     right: 14px;
     width: 28px;
     height: 28px;
   }
-  .cover-shopping-list-img {
-    width: 100px;
-    height: 142px;
+
+  .shopping-list-book-title {
+    display: block;
+    font-size: 16px;
+    line-height: 18px;
+    width: 144px;
+    height: 18px;
   }
 
   .shopping-list-book-category {
     margin-bottom: 8px;
   }
+
   .shopping-list-book-about {
-    margin-bottom: 16px;
+    height: 56px;
+    margin-bottom: 28px;
   }
+
   .shopping-list-trading {
     bottom: 14px;
     right: 14px;
   }
+
   .shopping-list-trading-item:not(:last-child) {
     margin-right: 8px;
   }
+
   .shopping-list-trading-icon-amazon {
     width: 32px;
     height: 11px;
@@ -196,12 +233,18 @@
     width: 16px;
     height: 16px;
   }
+
   .shopping-list-trading-icon-book-shop {
     width: 16px;
     height: 16px;
   }
-  .shopping-list-support {
+
+  .shopping-list-aside {
     display: none;
+  }
+
+  .empty-shopping-list {
+    margin-top: 120px;
   }
 }
 
@@ -209,6 +252,16 @@
   .shoping-list-header {
     font-size: 48px;
     line-height: 52px;
+  }
+
+  .shopping-list-thumb {
+    padding: 24px;
+    width: 704px;
+    height: 213px;
+  }
+
+  .shopping-list-thumb:not(:last-child) {
+    margin-bottom: 20px;
   }
 
   .shoping-list-part {
@@ -225,15 +278,10 @@
 
   .shopping-list-book-img {
     margin-top: 20px;
-    margin-left: 202px;
+    margin-left: auto;
+    margin-right: auto;
     width: 322px;
     height: 241px;
-  }
-
-  .shopping-list-thumb {
-    padding: 24px;
-    width: 704px;
-    height: 213px;
   }
 
   .delete-shopping-list-btn {
@@ -243,17 +291,13 @@
     height: 34px;
   }
 
-  .cover-shopping-list-img {
-    width: 116px;
-    height: 165px;
+  .shopping-list-book-about {
+    height: 53px;
+    margin-bottom: 48px;
   }
 
   .shopping-list-book-category {
     margin-bottom: 14px;
-  }
-
-  .shopping-list-book-about {
-    margin-bottom: 16px;
   }
 
   .shopping-list-trading {
@@ -276,25 +320,31 @@
     width: 32px;
     height: 30px;
   }
-  .shopping-list-support {
+  .shopping-list-aside {
     display: none;
+  }
+
+  .cover-shopping-list {
+    width: 116px;
+    height: 165px;
+    border-radius: 8px;
+    margin-right: 24px;
+  }
+
+  .book-interface {
+    width: 508px;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  aside {
-    margin-right: 40px;
-  }
-
   .container-shopping-list {
     width: 996px;
     margin-left: auto;
   }
+
   .shoping-list-header {
-    margin-left: 40px;
     font-size: 48px;
-    line-height: 52px;
-    margin-top: 0px;
+    line-height: 1.08;
   }
 
   .shoping-list-part {
@@ -309,9 +359,8 @@
     line-height: 24px;
   }
 
-  .shopping-list-book-img {
-    width: 322px;
-    height: 241px;
+  .book-interface {
+    width: 808px;
   }
 
   .shopping-list-thumb {
@@ -337,11 +386,8 @@
   .cover-shopping-list {
     width: 116px;
     height: 165px;
-  }
-
-  .cover-shopping-list-img {
-    width: 116px;
-    height: 165px;
+    margin-right: 24px;
+    border-radius: 8px;
   }
 
   .shopping-list-book-category {
@@ -349,7 +395,8 @@
   }
 
   .shopping-list-book-about {
-    margin-bottom: 16px;
+    height: 53px;
+    margin-bottom: 48px;
   }
 
   .shopping-list-trading {
