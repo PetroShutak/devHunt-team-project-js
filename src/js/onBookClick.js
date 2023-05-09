@@ -5,7 +5,6 @@ import bookShop from '../images/book-shop.png';
 import addingToShopList from './shoppingListService';
 
 export default function onBookClick(e) {
-  console.log('onBookClick=>', e.currentTarget);
   fetchingByBook(e.currentTarget.dataset.id).then(book => {
     const bookInfo = document.querySelector('.container-modal-fav');
     bookInfo.innerHTML = '';
@@ -44,9 +43,14 @@ export default function onBookClick(e) {
                     </div>
                     <button type="submit" class="choice-btn" data-id="${book._id}">ADD TO SHOPPING LIST</button>`;
     bookInfo.insertAdjacentHTML('beforeend', markup);
+    // modal is shown
     const modal = document.querySelector('[data-modal]');
     modal.classList.remove('is-hidden');
+
+    // remove scrolling
     document.body.style.overflow = 'hidden';
+
+    // adding to shopping list
     const addToShoppingListBtn = document.querySelector('.choice-btn');
     addToShoppingListBtn.addEventListener('click', addingToShopList);
   });

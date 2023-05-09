@@ -1,5 +1,5 @@
 import { fetchingByBook } from './apiService';
-console.log('shopping list Service');
+import Notiflix from 'notiflix';
 
 const emptyRef = document.querySelector('.empty-shopping-list');
 const booksList = document.querySelector('.shopping-list');
@@ -19,6 +19,8 @@ function renderingShoppingList() {
   } else {
     emptyRef.classList.remove('visuallyhidden');
   }
+
+  //Rendering books from locale storage
   for (let i = 0; i < localStorage.length; i++) {
     let key = localStorage.key(i);
     const book = loadFromLocalStorage(key);
@@ -83,8 +85,8 @@ function renderingShoppingList() {
 export default async function addingToShopList(e) {
   console.log(`Adding book ${e.target.dataset.id} to shopping list`);
   const book = await fetchingByBook(e.target.dataset.id);
-  // localStorage.setItem(book._id, JSON.stringify(book));
   saveToLocalStorage(book._id, book);
+  Notiflix.Notify.success('Book added to shopping list');
 }
 
 function removingBookFromShoppingList(e) {
