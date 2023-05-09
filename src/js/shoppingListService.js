@@ -32,12 +32,7 @@ function renderingShoppingList() {
         <use href="./images/icon.svg#icon-trash"></use>
       </svg>
     </button>
-    <div class="cover-shopping-list">
-      <img
-        class="cover-shopping-list-img"
-        src="${book.book_image}"
-        alt="${book.title}"
-      />
+    <div class="cover-shopping-list" style="background-image: url('${book.book_image}'); background-size: cover;">
     </div>
     <div class="book-interface">
       <h2 class="shopping-list-book-title">${book.title}</h2>
@@ -82,17 +77,16 @@ function renderingShoppingList() {
   }
 }
 
-export default async function addingToShopList(e) {
-  console.log(`Adding book ${e.target.dataset.id} to shopping list`);
+export async function addingToShopList(e) {
   const book = await fetchingByBook(e.target.dataset.id);
   saveToLocalStorage(book._id, book);
   Notiflix.Notify.success('Book added to shopping list');
 }
 
-function removingBookFromShoppingList(e) {
-  console.log(`Removing book ${e.currentTarget.dataset.id} from shoppig list`);
+export function removingBookFromShoppingList(e) {
   localStorage.removeItem(e.currentTarget.dataset.id);
   renderingShoppingList();
+  Notiflix.Notify.info('Book removed from shopping list');
 }
 
 function saveToLocalStorage(key, value) {
