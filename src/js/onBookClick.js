@@ -5,15 +5,11 @@ import bookShop from '../images/book-shop.png';
 import addingToShopList from './shoppingListService';
 
 export default function onBookClick(e) {
-  console.log('onBookClick=>', e.currentTarget);
   fetchingByBook(e.currentTarget.dataset.id).then(book => {
     const bookInfo = document.querySelector('.container-modal-fav');
     bookInfo.innerHTML = '';
-    const markup = `<img
-                        class="img-book"
-                        src="${book.book_image}"
-                        alt="${book.title}"
-                    />
+    const markup = `<div class="img-book" style="background-image: url('${book.book_image}');   background-size: cover;">
+                    </div>
                     <div class="description-info">
                         <h2 class="title-name">${book.title}</h2>
                         <h3 class="title-author">${book.author}</h3>
@@ -47,9 +43,14 @@ export default function onBookClick(e) {
                     </div>
                     <button type="submit" class="choice-btn" data-id="${book._id}">ADD TO SHOPPING LIST</button>`;
     bookInfo.insertAdjacentHTML('beforeend', markup);
+    // modal is shown
     const modal = document.querySelector('[data-modal]');
     modal.classList.remove('is-hidden');
+
+    // remove scrolling
     document.body.style.overflow = 'hidden';
+
+    // adding to shopping list
     const addToShoppingListBtn = document.querySelector('.choice-btn');
     addToShoppingListBtn.addEventListener('click', addingToShopList);
   });

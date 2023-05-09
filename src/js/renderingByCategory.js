@@ -30,6 +30,7 @@ export default function renderingByCategory(e) {
         galleryListRef.insertAdjacentHTML('beforeend', createBookCard(book))
       )
     );
+    addBooksListeners();
     return;
   }
   if (e.target.innerHTML.trim() === 'All categories') {
