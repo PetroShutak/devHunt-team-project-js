@@ -1,0 +1,36 @@
+ .footer {
+     background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
+     text-align: center;
+ }
+
+@media screen and (max-width: 1440px) {
+    .footer-list {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 1.25;
+        color: #FFFFFF;
+        margin-bottom: 8px;
+    }
+
+    .footer-year {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.25;
+        color: #111111;
+    }
+
+    .footer-link {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.25;
+        color: #111111;
+        text-decoration: underline;
+    }
+
+    .footer-goit {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.25;
+        color: orangered;
+    }
+}
