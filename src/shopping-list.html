@@ -14,32 +14,34 @@
     <title>Shopping-list</title>
   </head>
   <body>
-    <header>
+    <header class="header-shoplist">
       <load ="partials/header.html" />
     </header>
     <main>
-      <aside>
-        <load ="partials/donate.html" />
-      </aside>
-      <div class="container-shopping-list">
-        <h1 class="shoping-list-header">
-          Shopping <span class="shoping-list-part">List</span>
-        </h1>
-        <div class="shopping-list"></div>
-        <div class="empty-shopping-list">
-          <p class="shopping-list-text">
-            This page is empty, add some books and proceed to order.
-          </p>
-          <img
-            srcset="
-              ./images/shoping-list-empty-lg-2x.png,
-              ./images/shoping-list-empty-mobile-sm-2x.png,
-              ./images/shoping-list-empty-mobile-sm.png
-            "
-            src="./images/shoping-list-empty-lg.png"
-            alt="img of books"
-            class="shopping-list-book-img"
-          />
+      <div class="container">
+        <aside>
+          <load ="partials/donate.html" />
+        </aside>
+        <div class="container-shopping-list">
+          <h1 class="shoping-list-header">
+            Shopping <span class="shoping-list-part">List</span>
+          </h1>
+          <div class="shopping-list"></div>
+          <div class="empty-shopping-list">
+            <p class="shopping-list-text">
+              This page is empty, add some books and proceed to order.
+            </p>
+            <img
+              srcset="
+                ./images/shoping-list-empty-lg-2x.png,
+                ./images/shoping-list-empty-mobile-sm-2x.png,
+                ./images/shoping-list-empty-mobile-sm.png
+              "
+              src="./images/shoping-list-empty-lg.png"
+              alt="img of books"
+              class="shopping-list-book-img"
+            />
+          </div>
         </div>
       </div>
     </main>
