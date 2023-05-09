@@ -1,0 +1,76 @@
+.backdrop-command {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
+    transition: opacity var(--timing-function), opacity var(--animation-duration),
+                visibility var(--timing-function), visibility var(--animation-duration);
+}
+
+.backdrop-command.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.close-modal-btn-command {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background-color: transparent;
+    border: transparent;
+    padding: 0;
+    color: var (--primary-text-color-ligth);
+}
+
+.modal-close-btn-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+    fill: var(--primary-text-color-ligth);
+    transition: fill var(--timing-function), fill var(--animation-duration);
+}
+
+.close-modal-btn-fav:hover .modal-close-btn-icon,
+.close-modal-btn-fav:focus .modal-close-btn-icon {
+    fill: var(--accent-color-ligth);
+}
+
+.modal-command {
+    background: #FFFFFF;
+    border: 2px solid #111111;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+
+
+
+
+@media screen and (max-width: 767px) {
+    .modal-command {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 335px;
+        height: 762px;
+        background-color: #ffffff;
+        overflow: hidden;
+        overflow-x: hidden;
+        /* overflow-y: hidden; */
+    }
+
+    .container-modal-command {
+        max-width: 335px;
+        padding: 40px 24px;
+        text-align: center;
+    }
+
+}
