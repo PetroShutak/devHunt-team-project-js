@@ -44,4 +44,7 @@ aside {
   .home-donate {
     padding-left: 0px;
   }
+  .main-wrapper {
+    display: flex;
+  }
 }

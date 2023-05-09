@@ -13,87 +13,37 @@
     <link rel="stylesheet" href="./css/styles.css" />
     <title>Shopping-list</title>
   </head>
-  <body>
+  <body class="shopping-list-page">
     <header>
       <load ="partials/header.html" />
     </header>
     <main>
-      <section>
-        <div class="container container-shopping-list">
-          <div class="shopping-list-support">
-            <load ="partials/donate.html" />
-          </div>
-          <div>
-            <h1 class="shoping-list-header">
-              Shopping <span class="shoping-list-part">List</span>
-            </h1>
-            <p class="shopping-list-text">
-              This page is empty, add some books and proceed to order.
-            </p>
-            <img
-              srcset="
-                ./images/shoping-list-empty-lg-2x.png,
-                ./images/shoping-list-empty-mobile-sm-2x.png,
-                ./images/shoping-list-empty-mobile-sm.png
-              "
-              src="./images/shoping-list-empty-lg.png"
-              alt="img of books"
-              class="shopping-list-book-img"
-            />
-            <div class="shopping-list-books">
-              <ul class="list-shopping-list">
-                <li class="item-shopping-list">
-                  <div class="shopping-list-thumb">
-                    <button class="delete-shopping-list-btn" type="button">
-                      <img src = "images/trash-03.svg"/>
-                    </button>
-                    <div class="cover-shopping-list">
-                      <img
-                        class="cover-shopping-list-img"
-                        src=" "
-                        alt="Book cover"
-                      />
-                    </div>
-                    <div class="book-interface">
-                      <h2 class="shopping-list-book-title">Book title</h2>
-                      <p class="shopping-list-book-category">Book category</p>
-                      <p class="shopping-list-book-about">About</p>
-                      <p class="shopping-list-book-author">Book author</p>
-                      <ul class="shopping-list-trading">
-                        <li class="shopping-list-trading-item">
-                          <a class="shopping-list-trading-link">
-                            <img
-                              src="./images/amazon.png"
-                              class="shopping-list-trading-icon-amazon"
-                            />
-                          </a>
-                        </li>
-                        <li class="shopping-list-trading-item">
-                          <a class="shopping-list-trading-link">
-                            <img
-                              src="./images/apple-books.png"
-                              class="shopping-list-trading-icon-apple-books"
-                            />
-                          </a>
-                        </li>
-                        <li class="shopping-list-trading-item">
-                          <a class="shopping-list-trading-link">
-                            <img
-                              src="./images/book-shop.png"
-                              class="shopping-list-trading-icon-book-shop"
-                            />
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
+      <aside>
+        <load ="partials/donate.html" />
+      </aside>
+      <div class="container-shopping-list">
+        <h1 class="shoping-list-header">
+          Shopping <span class="shoping-list-part">List</span>
+        </h1>
+        <div class="shopping-list"></div>
+        <div class="empty-shopping-list">
+          <p class="shopping-list-text">
+            This page is empty, add some books and proceed to order.
+          </p>
+          <img
+            srcset="
+              ./images/shoping-list-empty-lg-2x.png,
+              ./images/shoping-list-empty-mobile-sm-2x.png,
+              ./images/shoping-list-empty-mobile-sm.png
+            "
+            src="./images/shoping-list-empty-lg.png"
+            alt="img of books"
+            class="shopping-list-book-img"
+          />
         </div>
-      </section>
+      </div>
     </main>
-    <script type="module" src= "shopping-list.js"></script>
+    <script type="module" src="./shopping-list.js"></script>
+    <!-- <script type="module" src="./js/shoppingListService.js"></script> -->
   </body>
 </html>
