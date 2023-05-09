@@ -224,14 +224,14 @@ screen and (min-resolution: 2dppx) and (max-width: 767px) {
     padding: 14px 15px;
     border: 1.5px solid var(--header-color-dark);
     border-radius: 18px;
-    top: 84px;
+    top: 30px;
     left: 20px;
     position: absolute;
     align-items: center;
 }
 .header-user-modal-out {
     top: 680px;
-    z-index: 200;
+    z-index: 300;
     background-color:var(--header-color-ligth);
     color: var(--primary-text-color-ligth);
     width: 118px;
