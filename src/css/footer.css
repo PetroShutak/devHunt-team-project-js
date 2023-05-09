@@ -1,36 +1,122 @@
- .footer {
-     background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
-     text-align: center;
- }
+@media screen and (max-width: 767px) {
+    .footer-book {
+        width: 375px;
+        background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
+        text-align: center;
+        padding-top: 18px;
+        padding-bottom: 18px;
+        margin: 0 auto;
+    }
 
-@media screen and (max-width: 1440px) {
     .footer-list {
         font-weight: 600;
-        font-size: 18px;
-        line-height: 1.25;
+        font-size: 16px;
+        line-height: 1.12;
         color: #FFFFFF;
         margin-bottom: 8px;
     }
 
     .footer-year {
         font-weight: 400;
-        font-size: 14px;
-        line-height: 1.25;
+        font-size: 12px;
+        line-height: 1.12;
         color: #111111;
     }
 
     .footer-link {
         font-weight: 400;
-        font-size: 14px;
-        line-height: 1.25;
+        font-size: 12px;
+        line-height: 1.12;
         color: #111111;
         text-decoration: underline;
     }
 
     .footer-goit {
         font-weight: 400;
-        font-size: 14px;
-        line-height: 1.25;
+        font-size: 12px;
+        line-height: 1.12;
         color: orangered;
     }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439.99px) {
+    .footer-book {
+            width: 768px;
+            background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
+            text-align: center;
+            padding-top: 24px;
+            padding-bottom: 24px;
+            margin: 0 auto;
+        }
+    
+        .footer-list {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 1.12;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+        }
+    
+        .footer-year {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.12;
+            color: #111111;
+        }
+    
+        .footer-link {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.12;
+            color: #111111;
+            text-decoration: underline;
+        }
+    
+        .footer-goit {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.12;
+            color: orangered;
+        }
+}
+
+@media screen and (min-width: 1440px) {
+    .footer-book {
+            width: 1439px;
+            background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
+            text-align: center;
+            padding-top: 24px;
+            padding-bottom: 24px;
+            margin: 0 auto;
+        }
+    
+        .footer-list {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 1.12;
+            color: #FFFFFF;
+            margin-bottom: 8px;
+        }
+    
+        .footer-year {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.12;
+            color: #111111;
+        }
+    
+        .footer-link {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.12;
+            color: #111111;
+            text-decoration: underline;
+        }
+    
+        .footer-goit {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.12;
+            color: orangered;
+        }
 }
