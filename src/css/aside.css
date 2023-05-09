@@ -1,12 +1,50 @@
 aside {
-  float: left;
+  float: bottom;
+  display: block;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
-.wrapper-body {
+/* .wrapper-body {
   display: flex;
   flex-direction: column;
   min-height: 100svh;
-}
+} */
 .main-wrapper {
   flex: 1;
+}
+
+@media screen and (min-width: 768px) {
+  aside {
+    padding-bottom: 100px;
+  }
+  .left-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .home-donate {
+    padding-left: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  aside {
+    float: left;
+  }
+
+  .left-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .home-donate {
+    padding-left: 0px;
+  }
+  .main-wrapper {
+    display: flex;
+  }
 }
