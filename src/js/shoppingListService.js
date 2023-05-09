@@ -1,37 +1,33 @@
 import { fetchingByBook } from './apiService';
+import Notiflix from 'notiflix';
+
+const emptyRef = document.querySelector('.empty-shopping-list');
+const booksList = document.querySelector('.shopping-list');
 
 renderingShoppingList();
 
-export default async function addingToShopList(e) {
-  console.log('Adding to shopping list');
-  const book = await fetchingByBook(e.target.dataset.id);
-  localStorage.setItem(book._id, JSON.stringify(book));
-  saveToLocalStorage(book._id, book);
-}
-
 function renderingShoppingList() {
-  const emptyTextRef = document.querySelector('.shopping-list-text');
-  const emptyImageRef = document.querySelector('.shopping-list-book-img');
-  const booksList = document.querySelector('.shopping-list');
+  console.log('Rendering shopping list');
+
   if (!booksList) {
     return;
   }
+  booksList.innerHTML = '';
   // Clearing the empty-shopping-list-image and text
-  if (!localStorage.key(0)) {
-    // emptyTextRef.classList.add('visuallyhidden');
-    // emptyImageRef.classList.add('visuallyhidden');
+  if (localStorage.key(0)) {
+    emptyRef.classList.add('visuallyhidden');
   } else {
-    // emptyTextRef.classList.remove('visuallyhidden');
-    // emptyImageRef.classList.remove('visuallyhidden');
+    emptyRef.classList.remove('visuallyhidden');
   }
+
+  //Rendering books from locale storage
   for (let i = 0; i < localStorage.length; i++) {
     let key = localStorage.key(i);
     const book = loadFromLocalStorage(key);
-    console.log(book);
     booksList.insertAdjacentHTML(
       'beforeend',
       `<div class="shopping-list-thumb">
-      <button class="delete-shopping-list-btn" type="button">
+      <button class="delete-shopping-list-btn" type="button" data-id="${book._id}">
       <svg class="delete-shopping-list-icon">
         <use href="./images/icon.svg#icon-trash"></use>
       </svg>
@@ -79,6 +75,24 @@ function renderingShoppingList() {
     `
     );
   }
+
+  const deleteBtnRefs = document.querySelectorAll('.delete-shopping-list-btn');
+  for (let i = 0; i < deleteBtnRefs.length; i++) {
+    deleteBtnRefs[i].addEventListener('click', removingBookFromShoppingList);
+  }
+}
+
+export default async function addingToShopList(e) {
+  console.log(`Adding book ${e.target.dataset.id} to shopping list`);
+  const book = await fetchingByBook(e.target.dataset.id);
+  saveToLocalStorage(book._id, book);
+  Notiflix.Notify.success('Book added to shopping list');
+}
+
+function removingBookFromShoppingList(e) {
+  console.log(`Removing book ${e.currentTarget.dataset.id} from shoppig list`);
+  localStorage.removeItem(e.currentTarget.dataset.id);
+  renderingShoppingList();
 }
 
 function saveToLocalStorage(key, value) {
