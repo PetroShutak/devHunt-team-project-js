@@ -4,11 +4,6 @@
  }
 
 @media screen and (max-width: 1440px) {
-    .container {
-        width: 100%;
-        padding: 16px 32px;
-    }
-
     .footer-list {
         font-weight: 600;
         font-size: 18px;
