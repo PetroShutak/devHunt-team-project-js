@@ -5,10 +5,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-<<<<<<< HEAD
-=======
   background: rgba(18, 17, 17, 0.4);
->>>>>>> main
   transition: opacity var(--timing-function), opacity var(--animation-duration),
     visibility var(--timing-function), visibility var(--animation-duration);
 }
