@@ -9,11 +9,8 @@ export default function onBookClick(e) {
   fetchingByBook(e.currentTarget.dataset.id).then(book => {
     const bookInfo = document.querySelector('.container-modal-fav');
     bookInfo.innerHTML = '';
-    const markup = `<img
-                        class="img-book"
-                        src="${book.book_image}"
-                        alt="${book.title}"
-                    />
+    const markup = `<div class="img-book" style="background-image: url('${book.book_image}');   background-size: cover;">
+                    </div>
                     <div class="description-info">
                         <h2 class="title-name">${book.title}</h2>
                         <h3 class="title-author">${book.author}</h3>

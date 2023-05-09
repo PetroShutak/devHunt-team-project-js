@@ -1,4 +1,5 @@
 import { fetchingByBook } from './apiService';
+console.log('shopping list Service');
 
 const emptyRef = document.querySelector('.empty-shopping-list');
 const booksList = document.querySelector('.shopping-list');
