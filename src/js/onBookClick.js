@@ -10,10 +10,8 @@ import {
 export default function onBookClick(e) {
   let btnText = '';
   if (localStorage.getItem(e.currentTarget.dataset.id)) {
-    console.log('in local storage');
     btnText = 'Remove from shopping list';
   } else {
-    console.log('not in local storage');
     btnText = 'ADD TO SHOPPING LIST';
   }
   fetchingByBook(e.currentTarget.dataset.id).then(book => {
