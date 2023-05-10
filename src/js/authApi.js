@@ -4,6 +4,8 @@ import { getAuthForm } from '../js/authForm';
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getDatabase } from 'firebase/database';
+
+const
 getAuthForm();
 
 // TODO: Add SDKs for Firebase products that you want to use
