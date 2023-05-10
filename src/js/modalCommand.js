@@ -7,3 +7,6 @@ import photo6 from '../img_command_photo/kostiantyn-krysenko.jpg';
 import photo7 from '../img_command_photo/anatolii-shkurpela.jpg';
 import photo8 from '../img_command_photo/yuliia-usova.jpg';
 import photo9 from '../img_command_photo/petro-kostrytsia.jpg';
+
+
+
