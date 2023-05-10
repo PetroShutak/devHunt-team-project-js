@@ -4,7 +4,7 @@ import Notiflix from 'notiflix';
 const emptyRef = document.querySelector('.empty-shopping-list');
 const booksList = document.querySelector('.shopping-list');
 
-let booksArray = [];
+export let booksArray = [];
 
 renderingShoppingList();
 

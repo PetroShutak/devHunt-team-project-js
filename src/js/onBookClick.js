@@ -5,11 +5,15 @@ import bookShop from '../images/book-shop.png';
 import {
   addingToShopList,
   removingBookFromShoppingList,
+  booksArray,
 } from './shoppingListService';
 
 export default function onBookClick(e) {
   let btnText = '';
-  if (localStorage.getItem(e.currentTarget.dataset.id)) {
+  const bookId = e.currentTarget.dataset.id;
+  const bookIndex = booksArray.findIndex(book => book._id === bookId);
+
+  if (bookIndex !== -1) {
     btnText = 'Remove from shopping list';
   } else {
     btnText = 'ADD TO SHOPPING LIST';
