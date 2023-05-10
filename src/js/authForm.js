@@ -1,4 +1,4 @@
-import axios from 'axios';
+//import axios from 'axios';
 export function getAuthForm() {
   return `
     <form class="auth-form" id="auth-form">
@@ -22,24 +22,4 @@ export function getAuthForm() {
       </button>
     </form>
   `;
-}
-
-export function authWithEmailAndPassword(email, password) {
-  const apiKey = 'AIzaSyDIwdXP5VEbTh2z8iuw4cKftPCCieqja2U';
-  return fetch(
-    `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${apiKey}`,
-    {
-      method: 'POST',
-      body: JSON.stringify({
-        email,
-        password,
-        returnSecureToken: true,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }
-  )
-    .then(response => response.json())
-    .then(data => data.idToken);
 }
