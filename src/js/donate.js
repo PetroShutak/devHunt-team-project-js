@@ -96,8 +96,6 @@ const donateFunds = [
   },
 ];
 
-// const containerDonate = document.querySelector('.donate-funds-list');
-// containerDonate.innerHTML = generateDonateFundsMarkup(donateFunds);
 const container = document.querySelector('.donate-funds-list');
 container.insertAdjacentHTML(
   'beforeend',
@@ -130,29 +128,11 @@ donateButtonUp.addEventListener('click', function () {
 });
 
 // Reverse button---------------------------------
-// const observer = new IntersectionObserver(callback, options);
-
-// const sentinel = document.querySelector('#sentinel');
-// observer.observe(sentinel);
-
-// function onSentinelIntersection(entries) {
-//   entries.forEach((entry) => {
-//     if (entry.isIntersecting) {
-//       donateButtonUp.style.display = 'none';
-//     } else {
-//       donateButtonUp.style.display = 'block';
-//     }
-//   });
-// }
-// const observer = new IntersectionObserver(onSentinelIntersection, { rootMargin: '0px', threshold: 1 });
-
-// const sentinel = document.querySelector('#sentinel');
-// observer.observe(donateButtonUp);
 
 const donateFundsList = document.querySelector('.donate-funds-list');
 const intersectionObserver = new IntersectionObserver(function (entries) {
   // Якщо intersectionRatio дорівнює 0, ціль поза зоною видимості
-  // і нам не треба ничого робити
+  // і нам не треба нічого робити
   if (entries[0].intersectionRatio <= 0) return;
 
   donateButtonUp.style.display = 'block';
@@ -161,7 +141,7 @@ const intersectionObserver = new IntersectionObserver(function (entries) {
 
 const intersectionObserver1 = new IntersectionObserver(function (entries) {
   // Якщо intersectionRatio дорівнює 0, ціль поза зоною видимості
-  // і нам не треба ничого робити
+  // і нам не треба нічого робити
   if (entries[0].intersectionRatio <= 0) return;
 
   donateButtonUp.style.display = 'none';
