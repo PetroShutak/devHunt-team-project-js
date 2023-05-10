@@ -1,3 +1,7 @@
+.header-logo-container {
+  display: flex;
+}
+
 body.dark-theme {
   background-color: var(--bgc-dark-theme);
 }
@@ -5,11 +9,6 @@ body.dark-theme {
 .dark-theme .header-container {
   background: var(--header-color-dark);
 }
-
-/* .dark-theme .header-logo-icon {
-  background-image: url(../images/logo.svg);
-} */
-
 
 .dark-theme .label-them {
   background: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
@@ -20,9 +19,8 @@ body.dark-theme {
   fill: var(--header-color-ligth);
 }
 
-.dark-theme .header-link-item.heder-active {
+.dark-theme .header-link-item .heder-active {
   color: var(--header-color-dark);
-  /* fill: var(--header-color-ligth); */
 }
 
 .dark-theme .nav-category-item {
@@ -31,8 +29,7 @@ body.dark-theme {
 
 .dark-theme .header-item-icon,
 .dark-theme .header-logo-icon {
-  fill: var(--header-color-ligth);
-  /* fill: #FFFFFF; */
+  fill: var(--header-color-ligth);  /* #FFFFFF; */
 }
 
 .dark-theme .nav-category-item.active,
@@ -58,8 +55,7 @@ body.dark-theme {
   stroke: var(--header-color-ligth);  /* #FFFFFF; */
 }
 
-/* Heder text navigation  (l 111, d fff)
-  Shopping list gallery titel (h3)  (l 111, d fff)
+/* Shopping list gallery titel (h3)  (l 111, d fff)
   Shopping list gallery text (p)  (l 111, d fff)
   pop up  titel (h2)
   pop up  text (p)
