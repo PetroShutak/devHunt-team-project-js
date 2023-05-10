@@ -16,6 +16,10 @@
   pointer-events: none;
 }
 
+.container-modal-fav {
+  transition: height 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .close-modal-btn-fav {
   position: absolute;
   top: 18px;
@@ -61,6 +65,10 @@
 
 .name-shop-book {
   filter: grayscale(100%);
+}
+
+.congrats {
+  text-align: center;
 }
 
 /* ================ MEDIA RULES ================ */

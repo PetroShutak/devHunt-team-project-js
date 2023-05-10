@@ -20,7 +20,6 @@ export default function onBookClick(e) {
   fetchingByBook(e.currentTarget.dataset.id).then(book => {
     const bookInfo = document.querySelector('.container-modal-fav');
     bookInfo.style.height = `${containerHeight}px`;
-    console.log(bookInfo.style.height);
     bookInfo.innerHTML = '';
     const markup = `<div class="img-book" style="background-image: url('${book.book_image}');   background-size: cover;">
                     </div>
