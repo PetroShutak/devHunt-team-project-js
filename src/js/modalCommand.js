@@ -32,3 +32,21 @@ const markupTeamInfo = teamMembers.reduce((acc, item) => {
 
 const team = document.querySelector('.employees-item');
 team.insertAdjacentHTML('afterbegin', markupTeamInfo);
+
+
+
+
+(() => {
+  const refs = {
+    openModalBtn: document.querySelector("[data-modal-open-command]"),
+    closeModalBtn: document.querySelector("[data-modal-close-command]"),
+    modal: document.querySelector("[data-modal-command]"),
+  };
+
+  refs.openModalBtn.addEventListener("click", toggleModal);
+  refs.closeModalBtn.addEventListener("click", toggleModal);
+
+  function toggleModal() {
+    refs.modal.classList.toggle("active");
+  }
+})();
