@@ -24,6 +24,9 @@ function renderingShoppingList() {
     //Rendering books from local storage
     for (let i = 0; i < localStorage.length; i++) {
       let key = localStorage.key(i);
+      if (key === 'userTheme') {
+        continue;
+      }
       const book = loadFromLocalStorage(key);
       booksList.insertAdjacentHTML(
         'beforeend',
