@@ -176,7 +176,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 579px;
-    height: 465px;
     background-color: #ffffff;
     overflow: hidden;
     overflow-x: hidden;
@@ -239,7 +238,7 @@
     line-height: 1.33;
     letter-spacing: -0.01em;
     text-transform: uppercase;
-    margin: 40px 0px;
+    margin: 40px 0px 8px;
     border-radius: 40px;
     border: 2px solid #4f2ee8;
     background-color: #ffffff;
@@ -258,7 +257,7 @@
 @media screen and (min-width: 1440px) {
   .container-modal-fav {
     width: 579px;
-    height: 501px;
+    height: 465px;
     padding: 40px;
     display: flex;
     flex-wrap: wrap;
@@ -270,7 +269,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 579px;
-    height: 501px;
     background-color: #ffffff;
     overflow: hidden;
     overflow-x: hidden;

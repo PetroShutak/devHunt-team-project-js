@@ -9,15 +9,18 @@ import {
 
 export default function onBookClick(e) {
   let btnText = '';
+  let containerHeight = 0;
   if (localStorage.getItem(e.currentTarget.dataset.id)) {
-    console.log('in local storage');
     btnText = 'Remove from shopping list';
+    containerHeight = 501;
   } else {
-    console.log('not in local storage');
     btnText = 'ADD TO SHOPPING LIST';
+    containerHeight = 465;
   }
   fetchingByBook(e.currentTarget.dataset.id).then(book => {
     const bookInfo = document.querySelector('.container-modal-fav');
+    bookInfo.style.height = `${containerHeight}px`;
+    console.log(bookInfo.style.height);
     bookInfo.innerHTML = '';
     const markup = `<div class="img-book" style="background-image: url('${book.book_image}');   background-size: cover;">
                     </div>
@@ -75,10 +78,12 @@ export default function onBookClick(e) {
     addToShoppingListBtn.addEventListener('click', e => {
       if (addToShoppingListBtn.innerHTML === 'ADD TO SHOPPING LIST') {
         addingToShopList(e);
+        bookInfo.style.height = '501px';
         addToShoppingListBtn.innerHTML = 'Remove from shopping list';
         addToShoppingListBtn.nextElementSibling.innerHTML =
           'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
       } else {
+        bookInfo.style.height = '465px';
         addToShoppingListBtn.innerHTML = 'ADD TO SHOPPING LIST';
         addToShoppingListBtn.nextElementSibling.innerHTML = '';
         removingBookFromShoppingList(e);
