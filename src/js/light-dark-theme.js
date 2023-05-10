@@ -57,3 +57,14 @@ if (document.querySelector('.home-page') === null) {
     headerNavLinks[index].classList.toggle("heder-active");    
   }
 }
+
+// const nameShopBookLinks = document.querySelector('.shop-book').querySelectorAll('.name-shop-book');
+// if (nameShopBookLinks.length > 0) {
+//   for (let index = 0; index < nameShopBookLinks.length; index++) {
+//     if (nameShopBookLinks[index].getAttribute('alt') === "logo Amazon") {
+//       // зміна картинки ../images/amazon-light-2x.png і ../images/amazon-light.png
+//     }
+    
+//     break;
+//   }
+// }

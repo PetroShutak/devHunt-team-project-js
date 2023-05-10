@@ -61,7 +61,7 @@
     display: flex;
     font-size: 14px;
     line-height: 18px;
-    color:var(primary-text-color-ligth);
+    color:var(--primary-text-color-ligth);
     text-transform: uppercase
 }
 .logo {
