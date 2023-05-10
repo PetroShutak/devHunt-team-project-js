@@ -80,11 +80,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 335px;
-    height: 762px;
     background-color: #ffffff;
     overflow: hidden;
     overflow-x: hidden;
-    /* overflow-y: hidden; */
   }
 
   .container-modal-fav {
@@ -99,8 +97,8 @@
 
   .title-name {
     font-weight: 700;
-    font-size: 24px;
-    line-height: 1.17;
+    font-size: 16px;
+    line-height: 1.12;
     margin-top: 14px;
     color: #111111;
     letter-spacing: -0.04em;
@@ -117,7 +115,7 @@
 
   .description-book {
     width: 287px;
-    height: auto;
+    height: 70px;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.29;
@@ -139,13 +137,13 @@
   }
 
   .choice-btn {
-    width: 211px;
+    width: 279px;
     height: 46px;
     font-family: DM Sans;
     font-size: 12px;
     line-height: 1.28;
     padding: 14px 23px;
-    margin: 40px 35px;
+    margin: 40px 4px 8px;
     border-radius: 40px;
     border: 2px solid #4f2ee8;
     background-color: #ffffff;
@@ -156,6 +154,20 @@
   .choice-btn:focus {
     color: #ffffff;
     background-color: #4f2ee8;
+  }
+
+  .congrats {
+    margin-left: auto;
+    margin-right: auto;
+    width: 242px;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 11px;
+    line-height: 12px;
+    text-align: center;
+    letter-spacing: -0.04em;
+
+    color: rgba(17, 17, 17, 0.5);
   }
 }
 

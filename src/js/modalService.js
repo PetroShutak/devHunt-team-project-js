@@ -6,6 +6,9 @@ import {
   addingToShopList,
   removingBookFromShoppingList,
 } from './shoppingListService';
+import getRefs from './homeRefs';
+
+const { bookInfo, modal } = getRefs();
 
 export default function onBookClick(e) {
   let btnText = '';
@@ -18,7 +21,6 @@ export default function onBookClick(e) {
     containerHeight = 465;
   }
   fetchingByBook(e.currentTarget.dataset.id).then(book => {
-    const bookInfo = document.querySelector('.container-modal-fav');
     bookInfo.style.height = `${containerHeight}px`;
     bookInfo.innerHTML = '';
     const markup = `<div class="img-book" style="background-image: url('${book.book_image}');   background-size: cover;">
@@ -58,35 +60,59 @@ export default function onBookClick(e) {
                     <p class="congrats"></p>`;
 
     bookInfo.insertAdjacentHTML('beforeend', markup);
+
     // modal is shown
-    const modal = document.querySelector('[data-modal]');
     modal.classList.remove('is-hidden');
 
     // remove scrolling
     document.body.style.overflow = 'hidden';
 
+    renderingModal();
+
     // adding to shopping list
     const addToShoppingListBtn = document.querySelector('.choice-btn');
-    if (addToShoppingListBtn.innerHTML === 'Remove from shopping list') {
-      addToShoppingListBtn.nextElementSibling.innerHTML =
-        'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
-    } else {
-      addToShoppingListBtn.nextElementSibling.innerHTML = '';
-    }
-
     addToShoppingListBtn.addEventListener('click', e => {
       if (addToShoppingListBtn.innerHTML === 'ADD TO SHOPPING LIST') {
         addingToShopList(e);
-        bookInfo.style.height = '501px';
+        if (document.documentElement.clientWidth < 768) {
+          bookInfo.style.height = '806px';
+        } else {
+          bookInfo.style.height = '501px';
+        }
         addToShoppingListBtn.innerHTML = 'Remove from shopping list';
         addToShoppingListBtn.nextElementSibling.innerHTML =
           'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
       } else {
-        bookInfo.style.height = '465px';
+        if (document.documentElement.clientWidth < 768) {
+          bookInfo.style.height = '762px';
+        } else {
+          bookInfo.style.height = '465px';
+        }
         addToShoppingListBtn.innerHTML = 'ADD TO SHOPPING LIST';
         addToShoppingListBtn.nextElementSibling.innerHTML = '';
         removingBookFromShoppingList(e);
       }
     });
   });
+}
+
+export function renderingModal() {
+  const bookInfo = document.querySelector('.container-modal-fav');
+  const addToShoppingListBtn = document.querySelector('.choice-btn');
+  if (addToShoppingListBtn.innerHTML === 'Remove from shopping list') {
+    addToShoppingListBtn.nextElementSibling.innerHTML =
+      'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
+    if (document.documentElement.clientWidth < 768) {
+      bookInfo.style.height = '806px';
+    } else {
+      bookInfo.style.height = '501px';
+    }
+  } else {
+    addToShoppingListBtn.nextElementSibling.innerHTML = '';
+    if (document.documentElement.clientWidth < 768) {
+      bookInfo.style.height = '762px';
+    } else {
+      bookInfo.style.height = '465px';
+    }
+  }
 }

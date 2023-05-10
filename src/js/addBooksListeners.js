@@ -1,4 +1,4 @@
-import onBookClick from './onBookClick';
+import onBookClick from './modalService';
 
 export default function addBooksListeners() {
   const booksRefs = document.querySelectorAll('.gallery-book-home-link');

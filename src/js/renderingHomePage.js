@@ -1,4 +1,4 @@
-import { getRefs } from './homeRefs';
+import getRefs from './homeRefs';
 import { fetchingTopBooks } from './apiService';
 import { createHomeBookCard } from './createBookCard';
 import renderingByCategory from './renderingByCategory';

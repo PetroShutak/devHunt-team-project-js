@@ -1,9 +1,9 @@
-import { getRefs } from './homeRefs';
+import getRefs from './homeRefs';
 import { createBookCard } from './createBookCard';
 import { fetchingByCategory } from './apiService';
 import { renderingHomePage } from './renderingHomePage';
 import addBooksListeners from './addBooksListeners';
-const { galleryRef } = getRefs();
+const { galleryRef, categoriesRef } = getRefs();
 
 export default function renderingByCategory(e) {
   console.log('Rendering by category');
@@ -31,6 +31,13 @@ export default function renderingByCategory(e) {
       });
       addBooksListeners();
     });
+
+    // Switching class active to new category
+    categoriesRef.querySelector('.active').classList.remove('active');
+    document
+      .querySelector(`[data-id="${e.target.dataset.category}"]`)
+      .classList.add('active');
+
     return;
   }
   if (e.target.innerHTML.trim() === 'All categories') {
