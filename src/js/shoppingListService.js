@@ -1,5 +1,9 @@
 import { fetchingByBook } from './apiService';
 import Notiflix from 'notiflix';
+import amazon from '../images/amazon.png';
+import appleBooks from '../images/apple-books.png';
+import bookShop from '../images/book-shop.png';
+import trash from '../images/icon.svg#icon-trash';
 
 const emptyRef = document.querySelector('.empty-shopping-list');
 const booksList = document.querySelector('.shopping-list');
@@ -16,12 +20,12 @@ function renderingShoppingList() {
   }
   booksList.innerHTML = '';
   // Clearing the empty-shopping-list-image and text
-  if (localStorage.key(0)) {
-    emptyRef.classList.add('visuallyhidden');
-  } else {
+  if (booksArray.length === 0) {
     emptyRef.classList.remove('visuallyhidden');
+  } else {
+    emptyRef.classList.add('visuallyhidden');
+    emptyRef.remove();
   }
-
   const dataJSON = localStorage.getItem('books');
   if (dataJSON) {
     booksArray = JSON.parse(dataJSON);
@@ -34,7 +38,7 @@ function renderingShoppingList() {
       `<div class="shopping-list-thumb">
       <button class="delete-shopping-list-btn" type="button" data-id="${book._id}">
       <svg class="delete-shopping-list-icon">
-        <use href="./images/icon.svg#icon-trash"></use>
+        <use href="${trash}"></use>
       </svg>
     </button>
     <div class="cover-shopping-list" style="background-image: url('${book.book_image}'); background-size: cover;">
@@ -48,7 +52,7 @@ function renderingShoppingList() {
         <li class="shopping-list-trading-item">
           <a class="shopping-list-trading-link">
             <img
-              src="./images/amazon.png"
+              src="${amazon}"
               class="shopping-list-trading-icon-amazon"
             />
           </a>
@@ -56,7 +60,7 @@ function renderingShoppingList() {
         <li class="shopping-list-trading-item">
           <a class="shopping-list-trading-link">
             <img
-              src="./images/apple-books.png"
+              src="${appleBooks}"
               class="shopping-list-trading-icon-apple-books"
             />
           </a>
@@ -64,7 +68,7 @@ function renderingShoppingList() {
         <li class="shopping-list-trading-item">
           <a class="shopping-list-trading-link">
             <img
-              src="./images/book-shop.png"
+              src="${bookShop}"
               class="shopping-list-trading-icon-book-shop"
             />
           </a>
