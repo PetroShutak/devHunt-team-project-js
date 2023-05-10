@@ -31,28 +31,34 @@ export default function onBookClick(e) {
                         <p class="description-book">${book.description}</p>
                         <ul class="shop-book">
                         <li class="name-shop-book">
+                         <a href="${book.buy_links[0].url}" target="_blank">
                             <img
                             src="${amazon}"
                             alt="logo Amazon"
                             width="62"
                             height="19"
                             />
+                          </a>
                         </li>
                         <li class="name-shop-book">
+                          <a href="${book.buy_links[1].url}" target="_blank">
                             <img
                             src="${appleBooks}"
                             alt="logo Yellow shop"
                             width="33"
                             height="32"
                             />
+                          </a>
                         </li>
                         <li class="name-shop-book">
+                          <a href="${book.buy_links[4].url}" target="_blank">
                             <img
                             src="${bookShop}"
                             alt="logo Dark shop"
                             width="38"
                             height="36"
                             />
+                          </a>
                         </li>
                         </ul>
                     </div>
@@ -115,4 +121,9 @@ export function renderingModal() {
       bookInfo.style.height = '465px';
     }
   }
+}
+
+function openTab(url) {
+  console.log(url);
+  window.open(url, '_blank').focus();
 }
