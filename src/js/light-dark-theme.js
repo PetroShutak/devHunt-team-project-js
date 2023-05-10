@@ -2,6 +2,7 @@
 // import logos1 from '../images/sprite.svg#icon-logo-1';
 const inputTheme = document.querySelector('.div-theme');
 const spanTheme = document.querySelector('.span-theme');
+const switchTheme = document.querySelector('.label-them');
 
 // v1
 const body = document.querySelector('body');
@@ -11,11 +12,13 @@ inputTheme.addEventListener('change', () => {
   if (indexTheme) {
     indexTheme = false;
     localStorage.setItem('userTheme', 'light'); // запис теми в localStorage
+    switchTheme.classList.remove('dark-theme-switch');
   } else {
     indexTheme = true;
     localStorage.setItem('userTheme', 'dark'); // запис теми в localStorage
+    switchTheme.classList.add('dark-theme-switch');
   }
-  
+
   currentTheme();
 });
 
@@ -51,10 +54,12 @@ function currentTheme() {
 currentTheme();
 
 // виділення сторінок при перемиканні
-const headerNavLinks = document.querySelector('.header-nav-item').querySelectorAll('a');
+const headerNavLinks = document
+  .querySelector('.header-nav-item')
+  .querySelectorAll('a');
 if (document.querySelector('.home-page') === null) {
   for (let index = 0; index < headerNavLinks.length; index++) {
-    headerNavLinks[index].classList.toggle("heder-active");    
+    headerNavLinks[index].classList.toggle('heder-active');
   }
 }
 
@@ -64,7 +69,7 @@ if (document.querySelector('.home-page') === null) {
 //     if (nameShopBookLinks[index].getAttribute('alt') === "logo Amazon") {
 //       // зміна картинки ../images/amazon-light-2x.png і ../images/amazon-light.png
 //     }
-    
+
 //     break;
 //   }
 // }
