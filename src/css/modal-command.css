@@ -73,4 +73,35 @@
         text-align: center;
     }
 
+    .employees-item {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 24px;
+        column-gap: 24px;
+    }
+
+    .employees-card {
+        flex-basis: calc((100% - 72px) / 4);
+        background-color: #FFFFFF;
+        box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+            0px 1px 1px rgba(46, 47, 66, 0.16),
+            0px 2px 1px rgba(46, 47, 66, 0.08);
+        border-radius: 0px 0px 4px 4px;
+    }
+
+    .social-list {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+    }
+
+    .social-list-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+    }
+
 }
