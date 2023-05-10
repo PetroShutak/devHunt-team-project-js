@@ -1,16 +1,14 @@
 import { teamMembers } from './team_info';
-import no_photo from '../img_command_photo/no_photo.jpg';
-console.log(teamMembers);
 
 const markupTeamInfo = teamMembers.reduce((acc, item) => {
-  const { memberName, photo, github, linkedIn } = item;
+  const { memberName, photo, github, linkedIn, width, height } = item;
 
   return (acc += ` <li class="employees-card">
   <img
     src="${photo}"
     alt="${memberName}"
-    width="40"
-    height="60"
+    width="${width}"
+    height="${height}"
   />
   <h3 class="employees-name">${memberName}</h3>
   <ul class="social-list">
