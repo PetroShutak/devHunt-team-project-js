@@ -6,9 +6,9 @@ body.dark-theme {
   background: var(--header-color-dark);
 }
 
-.dark-theme .header-logo-icon {
+/* .dark-theme .header-logo-icon {
   background-image: url(../images/logo.svg);
-}
+} */
 
 
 .dark-theme .label-them {
@@ -50,6 +50,12 @@ body.dark-theme {
 
 .dark-theme .gallery-see-more-btn {
   color: var(--secondary-text-color-dark);
+}
+
+.dark-theme .header-mobile-menu-icon,
+.dark-theme .header-burger-icon {
+  fill: var(--header-color-ligth);    /* #FFFFFF; */
+  stroke: var(--header-color-ligth);  /* #FFFFFF; */
 }
 
 /* Heder text navigation  (l 111, d fff)

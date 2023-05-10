@@ -19,6 +19,16 @@
     }
   }
 
+  // close modal on click backdrop
+  refs.modal.addEventListener('click', closeModalOnBackdropClick);
+  
+  function closeModalOnBackdropClick(e) {
+  if (e.target !== e.currentTarget) {
+    return;
+  }
+  toggleModal();
+}
+ 
   function toggleModal() {
     refs.modal.classList.toggle('is-hidden');
     document.body.style.overflow = '';

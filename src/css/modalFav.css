@@ -33,13 +33,13 @@
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;
-  fill: var(--primary-text-color-ligth);
-  transition: fill var(--timing-function), fill var(--animation-duration);
+  color: var(--primary-text-color-ligth);
+  transition: color var(--timing-function), color var(--animation-duration);
 }
 
 .close-modal-btn-fav:hover .modal-close-btn-icon,
 .close-modal-btn-fav:focus .modal-close-btn-icon {
-  fill: var(--accent-color-ligth);
+  color: var(--accent-color-ligth);
 }
 
 .modal-fav {
@@ -59,18 +59,8 @@
   background-color: #4f2ee8;
 }
 
-.congrats {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 324px;
-  height: 28px;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.17;
-  text-align: center;
-  letter-spacing: -0.04em;
-  color: rgba(17, 17, 17, 0.5);
+.name-shop-book {
+  filter: grayscale(100%);
 }
 
 /* ================ MEDIA RULES ================ */
