@@ -43,7 +43,7 @@ function currentTheme() {
     logo1.style.width = '109px';
   } else {
     body.classList.remove('dark-theme');
-    spanTheme.style.left = '2px';
+    // spanTheme.style.left = '2px';
     // logo.style.backgroundImage = `url(${logos1})`
     // logo.innerHTML = `<svg><use href="${logos}"></use></svg>`;
     logo1.style.width = '0px';

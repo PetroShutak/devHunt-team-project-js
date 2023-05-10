@@ -14,6 +14,7 @@ function renderingShoppingList() {
   }
   booksList.innerHTML = '';
   // Clearing the empty-shopping-list-image and text
+
   if (localStorage.key(0)) {
     emptyRef.classList.add('visuallyhidden');
   } else {
