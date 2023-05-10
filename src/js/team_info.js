@@ -6,7 +6,7 @@ import photo5 from '../img_command_photo/kostiantyn-krysenko.jpg';
 import photo6 from '../img_command_photo/anatolii-shkurpela.jpg';
 import photo7 from '../img_command_photo/yuliia-usova.jpg';
 import photo8 from '../img_command_photo/petro-kostrytsia.jpg';
-import no_photo from '../img_command_photo/no_photo.jpg';
+import photo9 from '../img_command_photo/serhii-kotkov.jpg';
 
 export const teamMembers = [
   {
@@ -27,7 +27,7 @@ export const teamMembers = [
   },
   {
     memberName: 'Sergii Kotkov',
-    photo: no_photo,
+    photo: photo9,
     github: '',
     linkedIn: '',
     width: 40,
