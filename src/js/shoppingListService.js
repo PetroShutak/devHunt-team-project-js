@@ -24,9 +24,17 @@ function renderingShoppingList() {
     //Rendering books from local storage
     for (let i = 0; i < localStorage.length; i++) {
       let key = localStorage.key(i);
+
+      // Проверка что данные из local storage это книга
       if (key === 'userTheme') {
         continue;
       }
+
+      if (key === 'loglevel') {
+        continue;
+      }
+
+      // Render книжных карт в shopping list
       const book = loadFromLocalStorage(key);
       booksList.insertAdjacentHTML(
         'beforeend',
@@ -76,6 +84,7 @@ function renderingShoppingList() {
     }
   }
 
+  // Добавляем eventlistenerы на новые кнопки x
   const deleteBtnRefs = document.querySelectorAll('.delete-shopping-list-btn');
   for (let i = 0; i < deleteBtnRefs.length; i++) {
     deleteBtnRefs[i].addEventListener('click', removingBookFromShoppingList);
