@@ -150,3 +150,4 @@ const intersectionObserver1 = new IntersectionObserver(function (entries) {
 // почати нагляд
 intersectionObserver.observe(donateFundsList.lastElementChild);
 intersectionObserver1.observe(donateFundsList.firstElementChild);
+
