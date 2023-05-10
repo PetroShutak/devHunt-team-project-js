@@ -4,7 +4,9 @@ import Notiflix from 'notiflix';
 const emptyRef = document.querySelector('.empty-shopping-list');
 const booksList = document.querySelector('.shopping-list');
 
-// renderingShoppingList();  !!! я закоментуваав, бо скрипт паде, і бє помилку. 
+let booksArray = [];
+
+renderingShoppingList();
 
 function renderingShoppingList() {
   console.log('Rendering shopping list');
@@ -20,10 +22,13 @@ function renderingShoppingList() {
     emptyRef.classList.remove('visuallyhidden');
   }
 
-  //Rendering books from locale storage
-  for (let i = 0; i < localStorage.length; i++) {
-    let key = localStorage.key(i);
-    const book = loadFromLocalStorage(key);
+  const dataJSON = localStorage.getItem('books');
+  if (dataJSON) {
+    booksArray = JSON.parse(dataJSON);
+  }
+
+  for (let i = 0; i < booksArray.length; i++) {
+    const book = loadFromLocalStorage(booksArray[i]._id);
     booksList.insertAdjacentHTML(
       'beforeend',
       `<div class="shopping-list-thumb">
@@ -79,30 +84,40 @@ function renderingShoppingList() {
 
 export async function addingToShopList(e) {
   const book = await fetchingByBook(e.target.dataset.id);
-  saveToLocalStorage(book._id, book);
+  saveToLocalStorage(book);
   Notiflix.Notify.success('Book added to shopping list');
 }
 
 export function removingBookFromShoppingList(e) {
-  localStorage.removeItem(e.currentTarget.dataset.id);
-  renderingShoppingList();
-  Notiflix.Notify.info('Book removed from shopping list');
+  const id = e.currentTarget.dataset.id;
+  const index = booksArray.findIndex(book => book._id === id);
+  if (index !== -1) {
+    booksArray.splice(index, 1);
+    localStorage.setItem('books', JSON.stringify(booksArray));
+    renderingShoppingList();
+    Notiflix.Notify.info('Book removed from shopping list');
+  }
 }
 
-function saveToLocalStorage(key, value) {
+function saveToLocalStorage(book) {
   try {
-    const dataJSON = JSON.stringify(value);
-    localStorage.setItem(key, dataJSON);
+    booksArray.push(book);
+    const dataJSON = JSON.stringify(booksArray);
+    localStorage.setItem('books', dataJSON);
   } catch (error) {
     console.log(error);
   }
 }
 
-function loadFromLocalStorage(key) {
-  // завантажує (віддає) значення в форматі з JSON
+function loadFromLocalStorage(id) {
   try {
-    const dataJSON = localStorage.getItem(key);
-    return dataJSON === null ? { shoppinglist } : JSON.parse(dataJSON);
+    const dataJSON = localStorage.getItem('books');
+    if (dataJSON) {
+      const booksArray = JSON.parse(dataJSON);
+      return booksArray.find(book => book._id === id);
+    } else {
+      return null;
+    }
   } catch (error) {
     console.log(error);
   }
