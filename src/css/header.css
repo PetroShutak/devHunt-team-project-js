@@ -421,7 +421,6 @@ position: absolute;
     font-size: 18px;
     line-height: 24px;
     color: rgba(17, 17, 17, 1);
-    letter-spacing: -1%;
 
 }
 .header-form-field:not(:last-child) {
@@ -439,7 +438,6 @@ position: absolute;
     border: 2px Solid #111111;
     border-radius: 40px;
     line-height: 24px;
-    letter-spacing: -1%;
     margin-bottom: 20px;
 }
 .header-form-link-box {
