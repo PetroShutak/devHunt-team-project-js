@@ -61,7 +61,7 @@
     display: flex;
     font-size: 14px;
     line-height: 18px;
-    color:var(primary-text-color-ligth);
+    color:var(--primary-text-color-ligth);
     text-transform: uppercase
 }
 .logo {
@@ -466,7 +466,6 @@ position: absolute;
     line-height: 29px;
     color: #ffffff;
     background-color: var(--accent-color-ligth);
-    letter-spacing: -2%;
     vertical-align: top;
     padding-top: 4px;
     padding-bottom: 4px;
