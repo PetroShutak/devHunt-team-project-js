@@ -14,14 +14,14 @@ const markupTeamInfo = teamMembers.reduce((acc, item) => {
   <ul class="social-list">
     <li class="social-list-itam">
       <a href="${github}" class="social-list-link">
-        <svg class="social-list-icon" width="24" height="24">
+        <svg class="social-list-icon">
           <use href="../images/sprite.svg#icon-github"></use>
         </svg>
       </a>
     </li>
     <li class="social-list-itam">
       <a href="${linkedIn}" class="social-list-link">
-        <svg class="social-list-icon" width="24" height="24">
+        <svg class="social-list-icon">
           <use href="../images/sprite.svg#icon-linkedin"></use>
         </svg>
       </a>
@@ -31,4 +31,4 @@ const markupTeamInfo = teamMembers.reduce((acc, item) => {
 }, '');
 
 const team = document.querySelector('.employees-item');
-team.insertAdjacentHTML('beforebegin', markupTeamInfo);
+team.insertAdjacentHTML('afterbegin', markupTeamInfo);
