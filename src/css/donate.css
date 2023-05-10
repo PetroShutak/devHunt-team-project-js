@@ -122,8 +122,8 @@
   justify-content: center;
   width: 32px;
   height: 32px;
-  scale: 0.7;
-}
+  transform: scale(0.7);
+  }
 
 
 .donate-button:hover,
@@ -149,22 +149,20 @@
 }
 
 .donate-arrow-up {
-    fill: var(--secondary-text-color-dark);
+  fill: var(--secondary-text-color-dark);
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: rotate(180deg);
+  transform: rotate(180deg) scale(0.7);
   width: 32px;
   height: 32px;
-  scale: 0.7;
 }
 
 .donate-button-up:focus,
 .donate-arrow-up:hover {
   fill: var(--primary-text-color-dark);
   border-radius: 50%;
-  scale: 0.7;
-}
+  }
 /* -----------------------! Arrow up!--------------------------------- */
 
 @media screen and (min-width: 768px) {
@@ -174,8 +172,8 @@
 .donate-header {
   margin-bottom: 25px;
 }
-  .donate-funds-visible {
-    height: 320px;
+.donate-funds-visible {
+  height: 320px;
 }
  
 }
