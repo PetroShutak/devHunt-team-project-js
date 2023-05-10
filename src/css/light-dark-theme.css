@@ -52,6 +52,12 @@ body.dark-theme {
   color: var(--secondary-text-color-dark);
 }
 
+.dark-theme .header-mobile-menu-icon,
+.dark-theme .header-burger-icon {
+  fill: var(--header-color-ligth);    /* #FFFFFF; */
+  stroke: var(--header-color-ligth);  /* #FFFFFF; */
+}
+
 /* Heder text navigation  (l 111, d fff)
   Shopping list gallery titel (h3)  (l 111, d fff)
   Shopping list gallery text (p)  (l 111, d fff)
