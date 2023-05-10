@@ -25,12 +25,12 @@ export default function renderingByCategory(e) {
     var galleryListRef = document.querySelector('.gallery-list2');
 
     const query = e.target.dataset.category.split(' ').join('%20');
-    fetchingByCategory(query).then(response =>
-      response.map(book =>
-        galleryListRef.insertAdjacentHTML('beforeend', createBookCard(book))
-      )
-    );
-    addBooksListeners();
+    fetchingByCategory(query).then(response => {
+      response.map(book => {
+        galleryListRef.insertAdjacentHTML('beforeend', createBookCard(book));
+      });
+      addBooksListeners();
+    });
     return;
   }
   if (e.target.innerHTML.trim() === 'All categories') {

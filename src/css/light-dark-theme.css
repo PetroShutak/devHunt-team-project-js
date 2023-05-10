@@ -6,9 +6,9 @@ body.dark-theme {
   background: var(--header-color-dark);
 }
 
-.dark-theme .header-logo-icon {
+/* .dark-theme .header-logo-icon {
   background-image: url(../images/logo.svg);
-}
+} */
 
 
 .dark-theme .label-them {
