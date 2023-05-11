@@ -26,16 +26,15 @@ function renderingShoppingList() {
       let key = localStorage.key(i);
 
       // Проверка что данные из local storage это книга
-      if (key === 'userTheme') {
+      if (!getFromLocalStorage(key)) {
         continue;
       }
 
-      if (key === 'loglevel') {
+      if (!getFromLocalStorage(key)._id) {
         continue;
       }
 
-      // Render книжных карт в shopping list
-      const book = loadFromLocalStorage(key);
+      const book = getFromLocalStorage(key);
       booksList.insertAdjacentHTML(
         'beforeend',
         `<div class="shopping-list-thumb">
@@ -112,7 +111,7 @@ function saveToLocalStorage(key, value) {
   }
 }
 
-function loadFromLocalStorage(key) {
+function getFromLocalStorage(key) {
   // завантажує (віддає) значення в форматі з JSON
   try {
     const dataJSON = localStorage.getItem(key);
