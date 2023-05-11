@@ -18,14 +18,18 @@ function renderingShoppingList() {
   if (!booksList) {
     return;
   }
-  booksList.innerHTML = '';
-  // Clearing the empty-shopping-list-image and text
-  if (booksArray.length === 0) {
+
+  // Checking if the shopplist is empty and rendering the empty-shopping-list-image and text
+  const data = localStorage.getItem('books');
+  const books = JSON.parse(data);
+  if (books.length === 0) {
     emptyRef.classList.remove('visuallyhidden');
   } else {
     emptyRef.classList.add('visuallyhidden');
-    emptyRef.remove();
   }
+
+  booksList.innerHTML = '';
+
   const dataJSON = localStorage.getItem('books');
   if (dataJSON) {
     booksArray = JSON.parse(dataJSON);
@@ -98,9 +102,10 @@ export function removingBookFromShoppingList(e) {
   if (index !== -1) {
     booksArray.splice(index, 1);
     localStorage.setItem('books', JSON.stringify(booksArray));
-    renderingShoppingList();
+
     Notiflix.Notify.info('Book removed from shopping list');
   }
+  renderingShoppingList();
 }
 
 function saveToLocalStorage(book) {
