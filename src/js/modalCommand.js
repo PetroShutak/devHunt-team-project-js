@@ -1,3 +1,4 @@
+// JS for rendered list command
 import { teamMembers } from './team_info';
 
 const markupTeamInfo = teamMembers.reduce((acc, item) => {
@@ -35,7 +36,7 @@ team.insertAdjacentHTML('afterbegin', markupTeamInfo);
 
 
 
-
+// JS for open & close modal window
 (() => {
   const refs = {
     openModalBtn: document.querySelector("[data-modal-open-command]"),
@@ -74,7 +75,7 @@ team.insertAdjacentHTML('afterbegin', markupTeamInfo);
 
   // function toggleModal(e) {
   //   e.preventDefault();
-  //   if(refs.modal.classList.toggle('active'))
+  //   (refs.modal.classList.toggle('active'))
   //   document.body.style.overflow = 'hidden';
   // }
 
