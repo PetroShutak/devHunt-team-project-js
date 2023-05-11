@@ -1,12 +1,13 @@
-import { getRefs } from './homeRefs';
+import getRefs from './homeRefs';
 import { createBookCard } from './createBookCard';
 import { fetchingByCategory } from './apiService';
 import { renderingHomePage } from './renderingHomePage';
 import addBooksListeners from './addBooksListeners';
-const { galleryRef } = getRefs();
+const { galleryRef, categoriesRef } = getRefs();
 
 export default function renderingByCategory(e) {
   console.log('Rendering by category');
+
   galleryRef.innerHTML = '';
   if (e.target.innerHTML === 'See more') {
     galleryRef.insertAdjacentHTML(
@@ -31,10 +32,22 @@ export default function renderingByCategory(e) {
       });
       addBooksListeners();
     });
+
+    // Switching class active to new category
+    categoriesRef.querySelector('.active').classList.remove('active');
+    document
+      .querySelector(`[data-id="${e.target.dataset.category}"]`)
+      .classList.add('active');
+
+    // scrolling to top
+    window.scrollTo(0, 0);
     return;
   }
   if (e.target.innerHTML.trim() === 'All categories') {
     renderingHomePage();
+
+    // scrolling to top
+    window.scrollTo(0, 0);
     return;
   }
   galleryRef.insertAdjacentHTML(
@@ -61,4 +74,7 @@ export default function renderingByCategory(e) {
     );
     addBooksListeners();
   });
+
+  // scrolling to top
+  window.scrollTo(0, 0);
 }
