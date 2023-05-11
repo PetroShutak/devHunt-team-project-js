@@ -87,11 +87,11 @@
 .logo {
   height: 28px;
   width: 109px;
-  transition: all 0.3s ease-in-out;
+  /* transition: transform 0.3s ease-in-out; */
 }
 .logo:hover {
   transform: scale(1.1);
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 .logo:hover {
   transform: scale(1.1);
