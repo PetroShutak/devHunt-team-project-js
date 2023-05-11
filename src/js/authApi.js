@@ -13,22 +13,24 @@ mark.insertAdjacentHTML('afterend', getAuthForm());
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: 'AIzaSyC8MReEemS7JV9qw93b0eXUMnIqA3WPdqE',
-  authDomain: 'devhunt-team-project-js-b2975.firebaseapp.com',
-  projectId: 'devhunt-team-project-js-b2975',
-  storageBucket: 'devhunt-team-project-js-b2975.appspot.com',
-  messagingSenderId: '824663387440',
-  appId: '1:824663387440:web:48fb6e7a6edb3c511becf5',
+  apiKey: 'AIzaSyAhTPPhyjmYiVlxak4yke42Dy8ubiIpUkY',
+  authDomain: 'devhunt-team-project-js-c262f.firebaseapp.com',
+  databaseURL:
+    'https://devhunt-team-project-js-c262f-default-rtdb.firebaseio.com',
+  projectId: 'devhunt-team-project-js-c262f',
+  storageBucket: 'devhunt-team-project-js-c262f.appspot.com',
+  messagingSenderId: '435122609975',
+  appId: '1:435122609975:web:059264b84e50ff17a384b2',
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const db = getDatabase(app);
+const database = getDatabase(app);
 
 console.log(app);
 console.log(auth);
-console.log(db);
+console.log(database);
 
 // Set up our register function
 function register() {
@@ -36,8 +38,8 @@ function register() {
   email = document.getElementById('email').value;
   password = document.getElementById('password').value;
   full_name = document.getElementById('full_name').value;
-  favourite_song = document.getElementById('favourite_song').value;
-  milk_before_cereal = document.getElementById('milk_before_cereal').value;
+  // favourite_song = document.getElementById("favourite_song").value;
+  // milk_before_cereal = document.getElementById("milk_before_cereal").value;
 
   // Validate input fields
   if (
@@ -62,17 +64,17 @@ function register() {
     .createUserWithEmailAndPassword(email, password)
     .then(function () {
       // Declare user variable
-      var user = auth.currentUser;
+      const user = auth.currentUser;
 
       // Add this user to Firebase Database
-      var database_ref = database.ref();
+      const database_ref = database.ref();
 
       // Create User data
-      var user_data = {
+      const user_data = {
         email: email,
         full_name: full_name,
-        favourite_song: favourite_song,
-        milk_before_cereal: milk_before_cereal,
+        // favourite_song: favourite_song,
+        // milk_before_cereal: milk_before_cereal,
         last_login: Date.now(),
       };
 
@@ -84,8 +86,8 @@ function register() {
     })
     .catch(function (error) {
       // Firebase will use this to alert of its errors
-      var error_code = error.code;
-      var error_message = error.message;
+      const error_code = error.code;
+      const error_message = error.message;
 
       alert(error_message);
     });
@@ -98,7 +100,10 @@ function login() {
   password = document.getElementById('password').value;
 
   // Validate input fields
-  if (validate_email(email) == false || validate_password(password) == false) {
+  if (
+    validate_email(email) === false ||
+    validate_password(password) === false
+  ) {
     alert('Email or Password is Outta Line!!');
     return;
     // Don't continue running the code
@@ -108,13 +113,13 @@ function login() {
     .signInWithEmailAndPassword(email, password)
     .then(function () {
       // Declare user variable
-      var user = auth.currentUser;
+      const user = auth.currentUser;
 
       // Add this user to Firebase Database
-      var database_ref = database.ref();
+      const database_ref = database.ref();
 
       // Create User data
-      var user_data = {
+      const user_data = {
         last_login: Date.now(),
       };
 
@@ -126,8 +131,8 @@ function login() {
     })
     .catch(function (error) {
       // Firebase will use this to alert of its errors
-      var error_code = error.code;
-      var error_message = error.message;
+      const error_code = error.code;
+      const error_message = error.message;
 
       alert(error_message);
     });
@@ -155,7 +160,7 @@ function validate_password(password) {
 }
 
 function validate_field(field) {
-  if (field == null) {
+  if (field === null) {
     return false;
   }
 
