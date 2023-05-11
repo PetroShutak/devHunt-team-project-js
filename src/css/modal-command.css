@@ -105,6 +105,7 @@
         font-weight: 700;
         font-size: 16px;
         line-height: 1.33;
+        margin-top: 8px;
     }
 
     .social-list {
@@ -151,6 +152,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            /* align-items: center; */
             row-gap: 24px;
             column-gap: 24px;
         }
@@ -162,10 +164,7 @@
                 0px 1px 1px rgba(46, 47, 66, 0.16),
                 0px 2px 1px rgba(46, 47, 66, 0.08);
             border-radius: 0px 0px 4px 4px;
-            list-style: none;
-            /* width: 256px; */
-            
-
+            list-style: none;           
         }
 
         .employees-img {
@@ -178,6 +177,7 @@
             font-weight: 700;
             font-size: 18px;
             line-height: 1.33;
+            margin-top: 8px;
         }
     
         .social-list {
@@ -224,6 +224,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        /* align-items: center; */
         row-gap: 24px;
         column-gap: 24px;
     }
@@ -251,6 +252,7 @@
         font-weight: 700;
         font-size: 20px;
         line-height: 1.33;
+        margin-top: 8px;
     }
 
     .social-list {

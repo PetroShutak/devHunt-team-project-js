@@ -10,7 +10,7 @@ import photo9 from '../img_command_photo/serhii-kotkov.jpg';
 
 export const teamMembers = [
   {
-    memberName: 'Petro Shutak',
+    memberName: 'Petro <br> Shutak',
     photo: photo1,
     github: 'https://github.com/PetroShutak',
     linkedIn: 'https://www.linkedin.com/in/petroshutak/',
@@ -26,7 +26,7 @@ export const teamMembers = [
     height: 60,
   },
   {
-    memberName: 'Sergii Kotkov',
+    memberName: 'Sergii <br> Kotkov',
     photo: photo9,
     github: 'https://github.com/Serhii-K5',
     linkedIn: 'http://www.linkedin.com/in/serhii-kotkov',
@@ -42,7 +42,7 @@ export const teamMembers = [
     height: 60,
   },
   {
-    memberName: 'Yuliia Karas',
+    memberName: 'Yuliia <br> Karas',
     photo: photo4,
     github: 'https://github.com/Yuliia-Karas',
     linkedIn: 'https://www.linkedin.com/in/yuliia-karas-38991b274/',
@@ -66,7 +66,7 @@ export const teamMembers = [
     height: 60,
   },
   {
-    memberName: 'Yuliia Usova',
+    memberName: 'Yuliia <br> Usova',
     photo: photo7,
     github: 'https://github.com/Iuliia23',
     linkedIn: '',
