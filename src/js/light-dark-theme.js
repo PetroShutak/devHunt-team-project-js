@@ -34,12 +34,18 @@ function currentTheme() {
   const logo1 = document.querySelector('.header-logo-icon1');
   const shopListTitle = document.querySelectorAll('.shopping-list-book-title');
   const shopListAbout = document.querySelectorAll('.shopping-list-book-about');
+  const shopListHeader = document.querySelector('.shoping-list-header');
+  const shoppingListText = document.querySelector('.shopping-list-text');
 
   // const burger = document.querySelector('.header-burger-icon');
   // const burger1 = document.querySelector('.header-burger-icon1');
   if (indexTheme) {
     body.classList.add('dark-theme');
     switchTheme.classList.add('dark-theme-switch');
+    if (shopListHeader) {
+      shopListHeader.classList.add('dark-theme');
+      shoppingListText.classList.add('dark-theme');
+    }
     for (let i = 0; i < shopListTitle.length; i++) {
       shopListTitle[i].classList.add('dark-theme');
       shopListAbout[i].classList.add('dark-theme');
@@ -53,6 +59,10 @@ function currentTheme() {
   } else {
     body.classList.remove('dark-theme');
     switchTheme.classList.remove('dark-theme-switch');
+    if (shopListHeader) {
+      shopListHeader.classList.remove('dark-theme');
+      shoppingListText.classList.remove('dark-theme');
+    }
     for (let i = 0; i < shopListTitle.length; i++) {
       shopListTitle[i].classList.remove('dark-theme');
       shopListAbout[i].classList.remove('dark-theme');

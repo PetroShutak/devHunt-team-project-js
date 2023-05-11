@@ -13,13 +13,24 @@ function renderingShoppingList() {
     return;
   }
   booksList.innerHTML = '';
-  // Clearing the empty-shopping-list-image and text
 
-  if (localStorage.key(0)) {
-    emptyRef.classList.add('visuallyhidden');
-  } else {
-    emptyRef.classList.remove('visuallyhidden');
+  // Checking if the shopplist is empty and rendering the empty-shopping-list-image and text
+  let isEmptyFlag = true;
+  for (let i = 0; i < localStorage.length; i++) {
+    let key = localStorage.key(i);
+    if (!getFromLocalStorage(key)) {
+      continue;
+    }
+    if (getFromLocalStorage(key)._id) {
+      isEmptyFlag = false;
+    }
   }
+  if (isEmptyFlag) {
+    emptyRef.classList.remove('visuallyhidden');
+  } else {
+    emptyRef.classList.add('visuallyhidden');
+  }
+
   if (localStorage.key(0)) {
     //Rendering books from local storage
     for (let i = 0; i < localStorage.length; i++) {

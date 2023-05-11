@@ -25,6 +25,10 @@ aside {
   margin-left: 0px;
 }
 
+.shoping-list-header.dark-theme {
+  color: #ffffff;
+}
+
 .shoping-list-part {
   font-weight: 700;
   letter-spacing: -0.04em;
@@ -36,6 +40,10 @@ aside {
   text-align: center;
   letter-spacing: -0.02em;
   color: rgba(0, 0, 0, 0.6);
+}
+
+.shopping-list-text.dark-theme {
+  color: #ffffff;
 }
 
 .shopping-list-thumb {
