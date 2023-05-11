@@ -51,8 +51,6 @@
 
 
 
-
-
 @media screen and (max-width: 767px) {
     .modal-command {
         position: absolute;
@@ -60,7 +58,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         width: 335px;
-        height: 762px;
+        height: 670px;
         background-color: #ffffff;
         overflow: hidden;
         overflow-x: hidden;
@@ -131,8 +129,8 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 768px;
-            height: 972px;
+            width: 480px;
+            height: 960px;
             background-color: #ffffff;
             overflow: hidden;
             overflow-x: hidden;
@@ -204,7 +202,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 862px;
+        width: 512px;
         height: 1024px;
         background-color: #ffffff;
         overflow: hidden;

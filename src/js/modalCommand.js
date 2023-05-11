@@ -46,7 +46,27 @@ team.insertAdjacentHTML('afterbegin', markupTeamInfo);
   refs.openModalBtn.addEventListener("click", toggleModal);
   refs.closeModalBtn.addEventListener("click", toggleModal);
 
-  function toggleModal() {
-    refs.modal.classList.toggle("active");
+  function toggleModal(e) {
+    e.preventDefault();
+    refs.modal.classList.toggle('active');
+  }
+
+  document.addEventListener('keydown', onEscPress);
+
+  function onEscPress(e) {
+    if (e.code === 'Escape') {
+      refs.modal.classList.add('active');
+      document.removeEventListener('keydown', onEscPress);
+    }
+  }
+
+  refs.modal.addEventListener('click', closeModalOnBackdropClick);
+  
+  function closeModalOnBackdropClick(e) {
+    refs.modal.classList.add('active');
+    if (e.target !== e.currentTarget) {
+      return;
+    }
+    toggleModal();
   }
 })();
