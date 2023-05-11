@@ -22,7 +22,6 @@ function renderingShoppingList() {
   // Checking if the shopplist is empty and rendering the empty-shopping-list-image and text
   const data = localStorage.getItem('books');
   const books = JSON.parse(data);
-  console.log('books.length', books.length);
   if (books.length === 0) {
     emptyRef.classList.remove('visuallyhidden');
   } else {
