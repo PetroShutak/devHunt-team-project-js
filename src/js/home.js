@@ -1,5 +1,6 @@
 import throttle from 'lodash.throttle';
 import { renderingHomePage } from './renderingHomePage';
+import { renderingModal } from './onBookClick';
 
 renderingHomePage();
 
@@ -15,7 +16,7 @@ onresize = throttle(e => {
       screenSize = currentScreenSize;
     }
   } else if (screenSize < 1440) {
-    if (currentScreenSize > 1439) {
+    if (currentScreenSize > 1439 || currentScreenSize < 768) {
       reloadingHomePage();
       screenSize = currentScreenSize;
     }
@@ -24,6 +25,9 @@ onresize = throttle(e => {
       reloadingHomePage();
       screenSize = currentScreenSize;
     }
+  }
+  if (!document.querySelector('[data-modal]').classList.contains('is-hidden')) {
+    renderingModal();
   }
 }, 100);
 
