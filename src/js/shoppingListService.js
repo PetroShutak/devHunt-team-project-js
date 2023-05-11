@@ -42,7 +42,7 @@ function renderingShoppingList() {
       `<div class="shopping-list-thumb">
       <button class="delete-shopping-list-btn" type="button" data-id="${book._id}">
       <svg class="delete-shopping-list-icon">
-        <use href="${trash}"></use>
+        <use href="${trash}#icon-trash"></use>
       </svg>
     </button>
     <div class="cover-shopping-list" style="background-image: url('${book.book_image}'); background-size: cover;">
