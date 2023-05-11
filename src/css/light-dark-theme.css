@@ -57,10 +57,13 @@ body.dark-theme {
 }
 
 /* .dark-theme .shopping-list, */
+.dark-theme .shoping-list-header,
 .dark-theme .description-info .title-name,
 .dark-theme .description-info .description-book {
   color: var(--secondary-text-color-dark);
 }
+
+
 /* Shopping list gallery titel (h3)  (l 111, d fff)
   Shopping list gallery text (p)  (l 111, d fff)
   pop up  titel (h2)

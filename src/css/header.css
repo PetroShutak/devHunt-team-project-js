@@ -1,3 +1,7 @@
+.header-logo-container {
+    width: 109px;
+}
+
 .header-burger-icon {
     display: inline-block;
     width: 1em;
@@ -65,8 +69,8 @@
     text-transform: uppercase
 }
 .logo {
-    height: 28px;
-    width: 109px;
+    /* height: 28px;
+    width: 109px; */
     transition: all 0.3s ease-in-out;
 }
 .logo:hover {
@@ -87,20 +91,21 @@
     transition: all 0.3s ease-in-out;
 }
 
-
 .header-link-item-home{
     font-weight: 500;
     margin-left: 40px;
 }
 
-.header-link-item {
+.header-link-item,
+.header-link-modal {
     border-radius: 36px;
     padding: 8px 16px;
 }
 .header-link-item-home {
     margin-left: 40px;
 }
-.header-link-item.heder-active {
+.header-link-item .heder-active,
+.header-link-modal .heder-active {
     font-weight: 700;
 }
 .heder-active {
@@ -249,10 +254,10 @@ screen and (min-resolution: 2dppx) and (max-width: 767px) {
     left: 129px;
 }
 .header-link-modal-home {
-    background-color: rgba(234, 198, 69, 1);
-    border-radius: 36px;
-    padding: 8px 16px;
-    font-weight: 700;
+    /* background-color: rgba(234, 198, 69, 1); */
+    /* border-radius: 36px;
+    padding: 8px 16px; */
+    /* font-weight: 700; */
     font-size: 14px;
     line-height: 18px;
     color: var(--primary-text-color-ligth);
@@ -260,8 +265,7 @@ screen and (min-resolution: 2dppx) and (max-width: 767px) {
     text-transform: uppercase;
 }
 
-.header-link-modal-shopping {
-    font-weight: 500;
+.header-link-modal-shopping {    
     display: flex;
     align-items: center;
     text-transform: uppercase;
@@ -270,6 +274,14 @@ screen and (min-resolution: 2dppx) and (max-width: 767px) {
     line-height: 18px;
     letter-spacing: -0.04em;
 }
+.header-link-modal .heder-active {
+    border-radius: 36px;
+    padding: 8px 16px;
+}
+.header-link-modal {
+    font-weight: 500;
+}
+
 .header-item-modal {
     margin-bottom: 23px;
 }
