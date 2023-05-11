@@ -16,7 +16,7 @@ onresize = throttle(e => {
       screenSize = currentScreenSize;
     }
   } else if (screenSize < 1440) {
-    if (currentScreenSize > 1439) {
+    if (currentScreenSize > 1439 || currentScreenSize < 768) {
       reloadingHomePage();
       screenSize = currentScreenSize;
     }
