@@ -70,7 +70,7 @@ export default function onBookClick(e) {
                         <p class="description-book">${book.description}</p>
                         <ul class="shop-book">
                         <li class="name-shop-book">
-                         <a href="${book.buy_links[0].url}" target="_blank">
+                         <a href="${book.buy_links[0].url}" target="_blank" class="brightness">
                             <img
                             src="${amazon}"
                             alt="logo Amazon"
