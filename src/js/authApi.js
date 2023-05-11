@@ -1,12 +1,12 @@
-import { getAuthForm } from '../js/authForm';
+//import { getAuthForm } from '../js/authForm';
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getDatabase } from 'firebase/database';
 
-const mark = document.querySelector('.footer-book');
-mark.insertAdjacentHTML('afterend', getAuthForm());
+// const mark = document.querySelector('.footer-book');
+// mark.insertAdjacentHTML('afterend', getAuthForm());
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -31,7 +31,7 @@ const database = getDatabase(app);
 console.log(app);
 console.log(auth);
 console.log(database);
-
+export { register, login };
 // Set up our register function
 function register() {
   // Get all our input fields
@@ -94,7 +94,7 @@ function register() {
 }
 
 // Set up our login function
-function login() {
+function login(email, password) {
   // Get all our input fields
   email = document.getElementById('email').value;
   password = document.getElementById('password').value;
