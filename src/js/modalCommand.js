@@ -44,10 +44,6 @@ team.insertAdjacentHTML('afterbegin', markupTeamInfo);
     modal: document.querySelector("[data-modal-command]"),
   };
 
-
-  refs.openModalBtn.addEventListener("click", toggleModal);
-  refs.closeModalBtn.addEventListener("click", toggleModal);
-
   document.addEventListener('keydown', onEscPress);
 
   function onEscPress(e) {
@@ -56,6 +52,10 @@ team.insertAdjacentHTML('afterbegin', markupTeamInfo);
       document.removeEventListener('keydown', onEscPress);
     }
   }
+
+  refs.openModalBtn.addEventListener("click", toggleModal);
+  // refs.closeModalBtn.addEventListener("click", toggleModal);
+
 
   refs.modal.addEventListener('click', closeModalOnBackdropClick);
   
@@ -72,9 +72,5 @@ team.insertAdjacentHTML('afterbegin', markupTeamInfo);
     refs.modal.classList.toggle('is-hidden');
     document.body.style.overflow = document.body.style.overflow === 'hidden' ? '' : 'hidden';
   }
-
-
+  
 })();
-
-
-
