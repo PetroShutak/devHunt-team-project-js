@@ -5,11 +5,6 @@ aside {
   padding-bottom: 40px;
 }
 
-/* .wrapper-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100svh;
-} */
 .main-wrapper {
   flex: 1;
 }

@@ -102,10 +102,10 @@ body.dark-theme,
 .dark-theme .header-form-input,
 .dark-theme .autoriz-icon {
   fill: none;
-  stroke: #F6F6F6;  /* #FFFFFF; */ 
+  stroke: #F6F6F6;   
   color: #F6F6F6
 }
-/* #FFFFFF; */ 
+ 
 .dark-theme .header-form-btn {
   background: #F6F6F6;
   color: #111111;

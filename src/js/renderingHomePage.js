@@ -6,8 +6,6 @@ import addBooksListeners from './addBooksListeners';
 const { galleryRef } = getRefs();
 
 export function renderingHomePage() {
-  console.log('Rendering home page');
-
   galleryRef.innerHTML = '';
   if (document.documentElement.clientWidth < 768) {
     galleryRef.insertAdjacentHTML(
