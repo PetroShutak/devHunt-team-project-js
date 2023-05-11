@@ -63,15 +63,15 @@ function renderingShoppingList() {
         <p class="shopping-list-book-author">${book.author}</p>
         <ul class="shopping-list-trading">
           <li class="shopping-list-trading-item">
-            <a class="shopping-list-trading-link">
+            <a class="shopping-list-trading-link" href="${book.buy_links[0].url}" target="_blank">
               <img
                 src="./images/amazon.png"
                 class="shopping-list-trading-icon-amazon"
               />
-            </a>
+            </href=>
           </li>
           <li class="shopping-list-trading-item">
-            <a class="shopping-list-trading-link">
+            <a class="shopping-list-trading-link" href="${book.buy_links[1].url}" target="_blank">
               <img
                 src="./images/apple-books.png"
                 class="shopping-list-trading-icon-apple-books"
@@ -79,7 +79,7 @@ function renderingShoppingList() {
             </a>
           </li>
           <li class="shopping-list-trading-item">
-            <a class="shopping-list-trading-link">
+            <a class="shopping-list-trading-link" href="${book.buy_links[4].url}" target="_blank">
               <img
                 src="./images/book-shop.png"
                 class="shopping-list-trading-icon-book-shop"
