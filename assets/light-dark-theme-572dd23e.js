@@ -24,7 +24,7 @@ Notiflix needs to be appended to the "<`+s+'>" element, but you called it before
       <p class="shopping-list-book-author">${i.author}</p>
       <ul class="shopping-list-trading">
         <li class="shopping-list-trading-item">
-          <a class="shopping-list-trading-link">
+          <a class="shopping-list-trading-link" href="${i.buy_links[0].url}" target="_blank">
             <img
               src="${Ui}"
               class="shopping-list-trading-icon-amazon"
@@ -32,7 +32,7 @@ Notiflix needs to be appended to the "<`+s+'>" element, but you called it before
           </a>
         </li>
         <li class="shopping-list-trading-item">
-          <a class="shopping-list-trading-link">
+          <a class="shopping-list-trading-link" href="${i.buy_links[1].url}" target="_blank">
             <img
               src="${ji}"
               class="shopping-list-trading-icon-apple-books"
@@ -40,7 +40,7 @@ Notiflix needs to be appended to the "<`+s+'>" element, but you called it before
           </a>
         </li>
         <li class="shopping-list-trading-item">
-          <a class="shopping-list-trading-link">
+          <a class="shopping-list-trading-link" href="${i.buy_links[2].url}" target="_blank">
             <img
               src="${Pi}"
               class="shopping-list-trading-icon-book-shop"
