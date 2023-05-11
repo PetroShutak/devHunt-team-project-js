@@ -32,11 +32,19 @@ function currentTheme() {
 
   const logo = document.querySelector('.header-logo-icon');
   const logo1 = document.querySelector('.header-logo-icon1');
+  const shopListTitle = document.querySelectorAll('.shopping-list-book-title');
+  const shopListAbout = document.querySelectorAll('.shopping-list-book-about');
+
   // const burger = document.querySelector('.header-burger-icon');
   // const burger1 = document.querySelector('.header-burger-icon1');
   if (indexTheme) {
     body.classList.add('dark-theme');
     switchTheme.classList.add('dark-theme-switch');
+    for (let i = 0; i < shopListTitle.length; i++) {
+      shopListTitle[i].classList.add('dark-theme');
+      shopListAbout[i].classList.add('dark-theme');
+    }
+
     // spanTheme.style.left = '20px';
     // logo.style.backgroundImage = `url(${logos})`;
     // logo.innerHTML = `<svg><use href="${logos1}"></use></svg>`;
@@ -45,6 +53,10 @@ function currentTheme() {
   } else {
     body.classList.remove('dark-theme');
     switchTheme.classList.remove('dark-theme-switch');
+    for (let i = 0; i < shopListTitle.length; i++) {
+      shopListTitle[i].classList.remove('dark-theme');
+      shopListAbout[i].classList.remove('dark-theme');
+    }
     // spanTheme.style.left = '2px';
     // logo.style.backgroundImage = `url(${logos1})`
     // logo.innerHTML = `<svg><use href="${logos}"></use></svg>`;

@@ -39,6 +39,7 @@ aside {
 }
 
 .shopping-list-thumb {
+  background: transparent;
   display: flex;
   position: relative;
   flex-direction: row;
@@ -57,7 +58,7 @@ aside {
 }
 
 .delete-shopping-list-icon {
-  fill: #fff;
+  fill: #ffffff;
 }
 
 .shopping-list-book-title {
@@ -73,6 +74,10 @@ aside {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.shopping-list-book-title.dark-theme {
+  color: #ffffff;
 }
 
 .shopping-list-book-category {
@@ -101,6 +106,10 @@ aside {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3; /* start showing ellipsis when 3rd line is reached */
   white-space: pre-wrap; /* let the text wrap preserving spaces */
+}
+
+.shopping-list-book-about.dark-theme {
+  color: #ffffff;
 }
 
 .shopping-list-book-author {
@@ -367,7 +376,6 @@ aside {
     padding: 24px;
     width: 996px;
     height: 213px;
-    background: #ffffff;
     border: 2px solid rgba(79, 46, 232, 0.4);
     border-radius: 16px;
   }
