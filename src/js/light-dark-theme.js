@@ -37,6 +37,9 @@ function currentTheme() {
   const shopListHeader = document.querySelector('.shoping-list-header');
   const shoppingListText = document.querySelector('.shopping-list-text');
   const headerLogo = document.querySelector('.header-logo');
+  const amazonIcon = document.querySelectorAll(
+    '.shopping-list-trading-icon-amazon'
+  );
 
   // const burger = document.querySelector('.header-burger-icon');
   // const burger1 = document.querySelector('.header-burger-icon1');
@@ -50,6 +53,7 @@ function currentTheme() {
     for (let i = 0; i < shopListTitle.length; i++) {
       shopListTitle[i].classList.add('dark-theme');
       shopListAbout[i].classList.add('dark-theme');
+      amazonIcon[i].classList.add('dark-theme');
     }
 
     // spanTheme.style.left = '20px';
@@ -70,6 +74,7 @@ function currentTheme() {
     for (let i = 0; i < shopListTitle.length; i++) {
       shopListTitle[i].classList.remove('dark-theme');
       shopListAbout[i].classList.remove('dark-theme');
+      amazonIcon[i].classList.remove('dark-theme');
     }
     // spanTheme.style.left = '2px';
     // logo.style.backgroundImage = `url(${logos1})`

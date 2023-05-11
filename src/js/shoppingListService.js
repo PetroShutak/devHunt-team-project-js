@@ -51,7 +51,7 @@ function renderingShoppingList() {
         `<div class="shopping-list-thumb">
         <button class="delete-shopping-list-btn" type="button" data-id="${book._id}">
           <div class="delete-shopping-list-icon">
-            <img src="./images/trash-04.svg" alt="" width="12" height="12"/>
+            <img src="./images/trash-04.svg" alt="" />
           </div>
       </button>
       <div class="cover-shopping-list" style="background-image: url('${book.book_image}'); background-size: cover;">
@@ -64,11 +64,8 @@ function renderingShoppingList() {
         <ul class="shopping-list-trading">
           <li class="shopping-list-trading-item">
             <a class="shopping-list-trading-link" href="${book.buy_links[0].url}" target="_blank">
-              <img
-                src="./images/amazon.png"
-                class="shopping-list-trading-icon-amazon"
-              />
-            </href=>
+            <div width="32" height="11" class="shopping-list-trading-icon-amazon">
+            </div>
           </li>
           <li class="shopping-list-trading-item">
             <a class="shopping-list-trading-link" href="${book.buy_links[1].url}" target="_blank">
@@ -80,10 +77,10 @@ function renderingShoppingList() {
           </li>
           <li class="shopping-list-trading-item">
             <a class="shopping-list-trading-link" href="${book.buy_links[4].url}" target="_blank">
-              <img
-                src="./images/book-shop.png"
-                class="shopping-list-trading-icon-book-shop"
-              />
+                  <img
+                  src="./images/book-shop.png"
+                  class="shopping-list-trading-icon-book-shop"
+                />
             </a>
           </li>
         </ul>
