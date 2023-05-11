@@ -104,8 +104,7 @@
 .header-link-item-home {
     margin-left: 40px;
 }
-.header-link-item .heder-active,
-.header-link-modal .heder-active {
+.header-link-item .heder-active {
     font-weight: 700;
 }
 .heder-active {
@@ -257,12 +256,16 @@ screen and (min-resolution: 2dppx) and (max-width: 767px) {
     /* background-color: rgba(234, 198, 69, 1); */
     /* border-radius: 36px;
     padding: 8px 16px; */
-    /* font-weight: 700; */
+    font-weight: 500;
     font-size: 14px;
     line-height: 18px;
     color: var(--primary-text-color-ligth);
     letter-spacing: -0.04em;
     text-transform: uppercase;
+}
+
+.header-link-modal.heder-active {
+    font-weight: 700;
 }
 
 .header-link-modal-shopping {    
@@ -278,9 +281,9 @@ screen and (min-resolution: 2dppx) and (max-width: 767px) {
     border-radius: 36px;
     padding: 8px 16px;
 }
-.header-link-modal {
+/* .header-link-modal {
     font-weight: 500;
-}
+} */
 
 .header-item-modal {
     margin-bottom: 23px;

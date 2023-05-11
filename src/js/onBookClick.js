@@ -28,7 +28,7 @@ export default function onBookClick(e) {
                         <h3 class="title-author">${book.author}</h3>
                         <p class="description-book">${book.description}</p>
                         <ul class="shop-book">
-                        <li class="name-shop-book">
+                        <li class="name-shop-book brightness">
                             <img
                             src="${amazon}"
                             alt="logo Amazon"

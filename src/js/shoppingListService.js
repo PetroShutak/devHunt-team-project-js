@@ -49,7 +49,7 @@ function renderingShoppingList() {
       <p class="shopping-list-book-about">${book.description}</p>
       <p class="shopping-list-book-author">${book.author}</p>
       <ul class="shopping-list-trading">
-        <li class="shopping-list-trading-item">
+        <li class="shopping-list-trading-item brightness">
           <a class="shopping-list-trading-link">
             <img
               src="${amazon}"
