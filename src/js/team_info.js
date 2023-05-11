@@ -69,7 +69,7 @@ export const teamMembers = [
     memberName: 'Yuliia <br> Usova',
     photo: photo7,
     github: 'https://github.com/Iuliia23',
-    linkedIn: '',
+    linkedIn: 'https://www.linkedin.com/in/julia-usova-a8802b276/',
     width: 40,
     height: 60,
   },
