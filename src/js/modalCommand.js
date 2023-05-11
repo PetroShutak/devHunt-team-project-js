@@ -48,16 +48,11 @@ team.insertAdjacentHTML('afterbegin', markupTeamInfo);
   refs.openModalBtn.addEventListener("click", toggleModal);
   refs.closeModalBtn.addEventListener("click", toggleModal);
 
-  function toggleModal(e) {
-    e.preventDefault();
-    refs.modal.classList.toggle('active');
-  }
-
   document.addEventListener('keydown', onEscPress);
 
   function onEscPress(e) {
     if (e.code === 'Escape') {
-      refs.modal.classList.add('active');
+      refs.modal.classList.add('is-hidden');
       document.removeEventListener('keydown', onEscPress);
     }
   }
@@ -65,18 +60,21 @@ team.insertAdjacentHTML('afterbegin', markupTeamInfo);
   refs.modal.addEventListener('click', closeModalOnBackdropClick);
   
   function closeModalOnBackdropClick(e) {
-    refs.modal.classList.add('active');
+    refs.modal.classList.add('is-hidden');
     if (e.target !== e.currentTarget) {
       return;
     }
     toggleModal();
   }
 
+  function toggleModal(e) {
+    e.preventDefault();
+    refs.modal.classList.toggle('is-hidden');
+    document.body.style.overflow = document.body.style.overflow === 'hidden' ? '' : 'hidden';
+  }
 
-  // function toggleModal(e) {
-  //   e.preventDefault();
-  //   (refs.modal.classList.toggle('active'))
-  //   document.body.style.overflow = 'hidden';
-  // }
 
 })();
+
+
+
