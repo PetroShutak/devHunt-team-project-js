@@ -17,6 +17,6 @@ modalBackdrop.addEventListener('click', () => {
   modalBackdrop.classList.add('is-hidden');
   modalAutoriz.classList.add('is-hidden');
 });
-console.log(openModalButton);
+
 
 

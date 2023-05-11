@@ -4,7 +4,6 @@ export default function getRefs() {
     galleryRef: document.querySelector('.gallery'),
     activeCategory: document.querySelectorAll('.active'),
     categoriesRef: document.querySelector('.nav-categories-list'),
-    // categoriesRef: document.querySelectorAll('.nav-category-item'),
     bookInfo: document.querySelector('.container-modal-fav'),
     modal: document.querySelector('[data-modal]'),
   };
