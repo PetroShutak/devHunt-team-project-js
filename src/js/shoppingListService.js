@@ -50,7 +50,7 @@ function renderingShoppingList() {
       <p class="shopping-list-book-author">${book.author}</p>
       <ul class="shopping-list-trading">
         <li class="shopping-list-trading-item">
-          <a class="shopping-list-trading-link" href="${book.buy_links[0].url}" target="_blank">
+          <a class="shopping-list-trading-link brightness" href="${book.buy_links[0].url}" target="_blank">
             <img
               src="${amazon}"
               class="shopping-list-trading-icon-amazon"
