@@ -95,6 +95,9 @@ aside {
   line-height: 14px;
   letter-spacing: 0.03em;
   color: var(--secondary-text-color-ligth);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .book-interface {
@@ -144,8 +147,8 @@ aside {
 }
 
 .shopping-list-trading-link {
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
   cursor: pointer;
 }
 
@@ -228,6 +231,7 @@ aside {
 
   .shopping-list-book-category {
     margin-bottom: 8px;
+    width: 165px;
   }
 
   .shopping-list-book-about {
@@ -235,8 +239,15 @@ aside {
     margin-bottom: 28px;
   }
 
+  .shopping-list-book-author {
+    width: 100px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
   .shopping-list-trading {
-    bottom: 14px;
+    bottom: 8px;
     right: 14px;
   }
 

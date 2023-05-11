@@ -127,7 +127,6 @@ function loadFromLocalStorage(id) {
   }
 }
 
-
 // import { fetchingByBook } from './apiService';
 // import Notiflix from 'notiflix';
 // import amazon from '../images/amazon.png';
