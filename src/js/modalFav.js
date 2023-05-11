@@ -16,19 +16,20 @@
       //keycode is an Integer, not a String
       refs.modal.classList.add('is-hidden');
       document.removeEventListener('keydown', onEscPress);
+      console.log('esc');
     }
   }
 
   // close modal on click backdrop
   refs.modal.addEventListener('click', closeModalOnBackdropClick);
-  
+
   function closeModalOnBackdropClick(e) {
-  if (e.target !== e.currentTarget) {
-    return;
+    if (e.target !== e.currentTarget) {
+      return;
+    }
+    toggleModal();
   }
-  toggleModal();
-}
- 
+
   function toggleModal() {
     refs.modal.classList.toggle('is-hidden');
     document.body.style.overflow = '';
