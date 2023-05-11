@@ -1,6 +1,6 @@
 import throttle from 'lodash.throttle';
 import { renderingHomePage } from './renderingHomePage';
-import { renderingModal } from './modalService';
+import { renderingModal } from './onBookClick';
 
 renderingHomePage();
 
