@@ -2,25 +2,66 @@ import { fetchingByBook } from './apiService';
 import amazon from '../images/amazon.png';
 import appleBooks from '../images/apple-books.png';
 import bookShop from '../images/book-shop.png';
+import getRefs from './homeRefs';
 import {
   addingToShopList,
   removingBookFromShoppingList,
   booksArray,
 } from './shoppingListService';
+const { bookInfo, modal } = getRefs();
 
 export default function onBookClick(e) {
   let btnText = '';
+  let containerHeight = 0;
   const bookId = e.currentTarget.dataset.id;
   const bookIndex = booksArray.findIndex(book => book._id === bookId);
 
   if (bookIndex !== -1) {
     btnText = 'Remove from shopping list';
+    containerHeight = 501;
   } else {
     btnText = 'ADD TO SHOPPING LIST';
+    containerHeight = 465;
   }
   fetchingByBook(e.currentTarget.dataset.id).then(book => {
-    const bookInfo = document.querySelector('.container-modal-fav');
+    // const bookInfo = document.querySelector('.container-modal-fav');
+    bookInfo.style.height = `${containerHeight}px`;
     bookInfo.innerHTML = '';
+    // const markup = `<div class="img-book" style="background-image: url('${book.book_image}');   background-size: cover;">
+    //                 </div>
+    //                 <div class="description-info">
+    //                     <h2 class="title-name">${book.title}</h2>
+    //                     <h3 class="title-author">${book.author}</h3>
+    //                     <p class="description-book">${book.description}</p>
+    //                     <ul class="shop-book">
+    //                     <li class="name-shop-book">
+    //                         <img
+    //                         src="${amazon}"
+    //                         alt="logo Amazon"
+    //                         width="62"
+    //                         height="19"
+    //                         />
+    //                     </li>
+    //                     <li class="name-shop-book">
+    //                         <img
+    //                         src="${appleBooks}"
+    //                         alt="logo Yellow shop"
+    //                         width="33"
+    //                         height="32"
+    //                         />
+    //                     </li>
+    //                     <li class="name-shop-book">
+    //                         <img
+    //                         src="${bookShop}"
+    //                         alt="logo Dark shop"
+    //                         width="38"
+    //                         height="36"
+    //                         />
+    //                     </li>
+    //                     </ul>
+    //                 </div>
+    //                 <button type="submit" class="choice-btn" data-id="${book._id}">${btnText}</button>
+    //                 <p class="congrats"></p>`;
     const markup = `<div class="img-book" style="background-image: url('${book.book_image}');   background-size: cover;">
                     </div>
                     <div class="description-info">
@@ -29,28 +70,34 @@ export default function onBookClick(e) {
                         <p class="description-book">${book.description}</p>
                         <ul class="shop-book">
                         <li class="name-shop-book">
+                         <a href="${book.buy_links[0].url}" target="_blank">
                             <img
                             src="${amazon}"
                             alt="logo Amazon"
                             width="62"
                             height="19"
                             />
+                          </a>
                         </li>
                         <li class="name-shop-book">
+                          <a href="${book.buy_links[1].url}" target="_blank">
                             <img
                             src="${appleBooks}"
                             alt="logo Yellow shop"
                             width="33"
                             height="32"
                             />
+                          </a>
                         </li>
                         <li class="name-shop-book">
+                          <a href="${book.buy_links[4].url}" target="_blank">
                             <img
                             src="${bookShop}"
                             alt="logo Dark shop"
                             width="38"
                             height="36"
                             />
+                          </a>
                         </li>
                         </ul>
                     </div>
@@ -59,28 +106,53 @@ export default function onBookClick(e) {
 
     bookInfo.insertAdjacentHTML('beforeend', markup);
     // modal is shown
-    const modal = document.querySelector('[data-modal]');
+    // const modal = document.querySelector('[data-modal]');
     modal.classList.remove('is-hidden');
 
     // remove scrolling
     document.body.style.overflow = 'hidden';
 
+    // // adding to shopping list
+    // const addToShoppingListBtn = document.querySelector('.choice-btn');
+    // if (addToShoppingListBtn.innerHTML === 'Remove from shopping list') {
+    //   addToShoppingListBtn.nextElementSibling.innerHTML =
+    //     'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
+    // } else {
+    //   addToShoppingListBtn.nextElementSibling.innerHTML = '';
+    // }
+
+    // addToShoppingListBtn.addEventListener('click', e => {
+    //   if (addToShoppingListBtn.innerHTML === 'ADD TO SHOPPING LIST') {
+    //     addingToShopList(e);
+    //     addToShoppingListBtn.innerHTML = 'Remove from shopping list';
+    //     addToShoppingListBtn.nextElementSibling.innerHTML =
+    //       'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
+    //   } else {
+    //     addToShoppingListBtn.innerHTML = 'ADD TO SHOPPING LIST';
+    //     addToShoppingListBtn.nextElementSibling.innerHTML = '';
+    //     removingBookFromShoppingList(e);
+    //   }
+    renderingModal();
+
     // adding to shopping list
     const addToShoppingListBtn = document.querySelector('.choice-btn');
-    if (addToShoppingListBtn.innerHTML === 'Remove from shopping list') {
-      addToShoppingListBtn.nextElementSibling.innerHTML =
-        'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
-    } else {
-      addToShoppingListBtn.nextElementSibling.innerHTML = '';
-    }
-
     addToShoppingListBtn.addEventListener('click', e => {
       if (addToShoppingListBtn.innerHTML === 'ADD TO SHOPPING LIST') {
         addingToShopList(e);
+        if (document.documentElement.clientWidth < 768) {
+          bookInfo.style.height = '806px';
+        } else {
+          bookInfo.style.height = '501px';
+        }
         addToShoppingListBtn.innerHTML = 'Remove from shopping list';
         addToShoppingListBtn.nextElementSibling.innerHTML =
           'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
       } else {
+        if (document.documentElement.clientWidth < 768) {
+          bookInfo.style.height = '762px';
+        } else {
+          bookInfo.style.height = '465px';
+        }
         addToShoppingListBtn.innerHTML = 'ADD TO SHOPPING LIST';
         addToShoppingListBtn.nextElementSibling.innerHTML = '';
         removingBookFromShoppingList(e);
@@ -88,3 +160,29 @@ export default function onBookClick(e) {
     });
   });
 }
+
+export function renderingModal() {
+    const bookInfo = document.querySelector('.container-modal-fav');
+    const addToShoppingListBtn = document.querySelector('.choice-btn');
+    if (addToShoppingListBtn.innerHTML === 'Remove from shopping list') {
+      addToShoppingListBtn.nextElementSibling.innerHTML =
+        'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
+      if (document.documentElement.clientWidth < 768) {
+        bookInfo.style.height = '806px';
+      } else {
+        bookInfo.style.height = '501px';
+      }
+    } else {
+      addToShoppingListBtn.nextElementSibling.innerHTML = '';
+      if (document.documentElement.clientWidth < 768) {
+        bookInfo.style.height = '762px';
+      } else {
+        bookInfo.style.height = '465px';
+      }
+    }
+  }
+  
+  function openTab(url) {
+    console.log(url);
+    window.open(url, '_blank').focus();
+  }
