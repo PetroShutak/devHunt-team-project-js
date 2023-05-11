@@ -67,6 +67,11 @@
   filter: grayscale(100%);
 }
 
+.name-shop-book:hover {
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.15);
+  filter: hue-rotate(360deg);
+}
+
 .congrats {
   text-align: center;
 }
