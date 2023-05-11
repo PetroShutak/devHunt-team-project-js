@@ -43,6 +43,7 @@ team.insertAdjacentHTML('afterbegin', markupTeamInfo);
     modal: document.querySelector("[data-modal-command]"),
   };
 
+
   refs.openModalBtn.addEventListener("click", toggleModal);
   refs.closeModalBtn.addEventListener("click", toggleModal);
 
@@ -69,4 +70,12 @@ team.insertAdjacentHTML('afterbegin', markupTeamInfo);
     }
     toggleModal();
   }
+
+
+  // function toggleModal(e) {
+  //   e.preventDefault();
+  //   if(refs.modal.classList.toggle('active'))
+  //   document.body.style.overflow = 'hidden';
+  // }
+
 })();
