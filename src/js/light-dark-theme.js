@@ -36,6 +36,7 @@ function currentTheme() {
   const shopListAbout = document.querySelectorAll('.shopping-list-book-about');
   const shopListHeader = document.querySelector('.shoping-list-header');
   const shoppingListText = document.querySelector('.shopping-list-text');
+  const headerLogo = document.querySelector('.header-logo');
 
   // const burger = document.querySelector('.header-burger-icon');
   // const burger1 = document.querySelector('.header-burger-icon1');
@@ -54,8 +55,11 @@ function currentTheme() {
     // spanTheme.style.left = '20px';
     // logo.style.backgroundImage = `url(${logos})`;
     // logo.innerHTML = `<svg><use href="${logos1}"></use></svg>`;
-    logo.style.width = '0px';
-    logo1.style.width = '109px';
+    headerLogo.innerHTML = `<svg class="header-logo-icon1 logo">
+    <use href="./images/sprite.svg#icon-logo-1"></use>
+  </svg>`;
+    // logo.style.width = '0px';
+    // logo1.style.width = '109px';
   } else {
     body.classList.remove('dark-theme');
     switchTheme.classList.remove('dark-theme-switch');
@@ -70,8 +74,11 @@ function currentTheme() {
     // spanTheme.style.left = '2px';
     // logo.style.backgroundImage = `url(${logos1})`
     // logo.innerHTML = `<svg><use href="${logos}"></use></svg>`;
-    logo1.style.width = '0px';
-    logo.style.width = '109px';
+    headerLogo.innerHTML = `<svg class="header-logo-icon1 logo">
+    <use href="./images/sprite.svg#icon-logo"></use>
+  </svg>`;
+    // logo1.style.width = '0px';
+    // logo.style.width = '109px';
   }
 }
 

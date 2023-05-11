@@ -20,7 +20,7 @@
   margin: 0 auto;
   justify-content: space-between;
 }
-.header-logo {
+.header-logo.logo {
   display: flex;
 }
 .header-mobile {
