@@ -78,8 +78,12 @@
   font-size: 14px;
   margin-left: 211px;
   text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
 }
-
+.gallery-see-more-btn:hover {
+  background-color: #4f2ee8;
+  color: #ffffff;
+}
 .gallery-see-more-btn:not(:last-child) {
   margin-bottom: 40px;
 }

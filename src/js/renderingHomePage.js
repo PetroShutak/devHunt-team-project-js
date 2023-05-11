@@ -1,4 +1,4 @@
-import { getRefs } from './homeRefs';
+import getRefs from './homeRefs';
 import { fetchingTopBooks } from './apiService';
 import { createHomeBookCard } from './createBookCard';
 import renderingByCategory from './renderingByCategory';
@@ -7,6 +7,7 @@ const { galleryRef } = getRefs();
 
 export function renderingHomePage() {
   console.log('Rendering home page');
+
   galleryRef.innerHTML = '';
   if (document.documentElement.clientWidth < 768) {
     galleryRef.insertAdjacentHTML(
@@ -97,4 +98,7 @@ export function renderingHomePage() {
       addBooksListeners();
     });
   }
+
+  // scrolling to top
+  window.scrollTo(0, 0);
 }

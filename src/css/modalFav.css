@@ -16,6 +16,10 @@
   pointer-events: none;
 }
 
+.container-modal-fav {
+  transition: height 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .close-modal-btn-fav {
   position: absolute;
   top: 18px;
@@ -63,6 +67,15 @@
   filter: grayscale(100%);
 }
 
+.name-shop-book:hover {
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.15);
+  filter: hue-rotate(360deg);
+}
+
+.congrats {
+  text-align: center;
+}
+
 /* ================ MEDIA RULES ================ */
 
 @media screen and (max-width: 767px) {
@@ -72,11 +85,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 335px;
-    height: 762px;
     background-color: #ffffff;
     overflow: hidden;
     overflow-x: hidden;
-    /* overflow-y: hidden; */
   }
 
   .container-modal-fav {
@@ -91,8 +102,8 @@
 
   .title-name {
     font-weight: 700;
-    font-size: 24px;
-    line-height: 1.17;
+    font-size: 16px;
+    line-height: 1.12;
     margin-top: 14px;
     color: #111111;
     letter-spacing: -0.04em;
@@ -109,7 +120,7 @@
 
   .description-book {
     width: 287px;
-    height: auto;
+    height: 70px;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.29;
@@ -131,13 +142,13 @@
   }
 
   .choice-btn {
-    width: 211px;
+    width: 279px;
     height: 46px;
     font-family: DM Sans;
     font-size: 12px;
     line-height: 1.28;
     padding: 14px 23px;
-    margin: 40px 35px;
+    margin: 40px 4px 8px;
     border-radius: 40px;
     border: 2px solid #4f2ee8;
     background-color: #ffffff;
@@ -148,6 +159,20 @@
   .choice-btn:focus {
     color: #ffffff;
     background-color: #4f2ee8;
+  }
+
+  .congrats {
+    margin-left: auto;
+    margin-right: auto;
+    width: 242px;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 11px;
+    line-height: 12px;
+    text-align: center;
+    letter-spacing: -0.04em;
+
+    color: rgba(17, 17, 17, 0.5);
   }
 }
 
@@ -166,7 +191,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 579px;
-    height: 465px;
     background-color: #ffffff;
     overflow: hidden;
     overflow-x: hidden;
@@ -229,7 +253,7 @@
     line-height: 1.33;
     letter-spacing: -0.01em;
     text-transform: uppercase;
-    margin: 40px 0px;
+    margin: 40px 0px 8px;
     border-radius: 40px;
     border: 2px solid #4f2ee8;
     background-color: #ffffff;
@@ -248,7 +272,7 @@
 @media screen and (min-width: 1440px) {
   .container-modal-fav {
     width: 579px;
-    height: 501px;
+    height: 465px;
     padding: 40px;
     display: flex;
     flex-wrap: wrap;
@@ -260,7 +284,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 579px;
-    height: 501px;
     background-color: #ffffff;
     overflow: hidden;
     overflow-x: hidden;
