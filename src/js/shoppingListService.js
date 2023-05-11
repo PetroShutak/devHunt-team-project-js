@@ -3,7 +3,8 @@ import Notiflix from 'notiflix';
 import amazon from '../images/amazon.png';
 import appleBooks from '../images/apple-books.png';
 import bookShop from '../images/book-shop.png';
-import trash from '../images/icon.svg#icon-trash';
+// import trash from '../images/icon.svg#icon-trash';
+
 
 const emptyRef = document.querySelector('.empty-shopping-list');
 const booksList = document.querySelector('.shopping-list');
@@ -37,10 +38,10 @@ function renderingShoppingList() {
       'beforeend',
       `<div class="shopping-list-thumb">
       <button class="delete-shopping-list-btn" type="button" data-id="${book._id}">
-      <svg class="delete-shopping-list-icon">
-        <use href="${trash}"></use>
-      </svg>
-    </button>
+      <div class="delete-shopping-list-icon">
+      <img src="./images/trash-04.svg" alt="" />
+      </div>
+          </button>
     <div class="cover-shopping-list" style="background-image: url('${book.book_image}'); background-size: cover;">
     </div>
     <div class="book-interface">
