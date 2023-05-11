@@ -12,6 +12,7 @@
 .header-mobile-burger {
   /* background-color: #ffffff; */
   background-color: transparent;
+  padding: 0px;
 }
 
 .header-container {
@@ -315,6 +316,7 @@
   .header-container {
     padding-top: 18px;
     padding-bottom: 18px;
+    height: 64px;
   }
 }
 .header-box {
@@ -332,12 +334,17 @@
   .header-container {
     padding-top: 14px;
     padding-bottom: 13px;
+    height: 72px;
   }
 
   .header-modal-container,
   .header-modal,
   .header-modal-content {
     display: none;
+  }
+
+  .label-them {
+    right: 24px;
   }
 }
 @media screen and (min-width: 1440px) {
