@@ -1,3 +1,7 @@
+.header-logo-container {
+    width: 109px;
+}
+
 .header-burger-icon {
   display: inline-block;
   width: 1em;
@@ -84,9 +88,9 @@
   font-weight: 500;
 }
 .logo {
-  height: 28px;
-  width: 109px;
-  transition: all 0.3s ease-in-out;
+    /* height: 28px;
+    width: 109px; */
+    transition: all 0.3s ease-in-out; /* перевірити*/
 }
 .logo:hover {
   transform: scale(1.1);
@@ -105,20 +109,22 @@
   transition: all 0.3s ease-in-out;
 }
 
-.header-link-item-home {
-  font-weight: 500;
-  margin-left: 40px;
+.header-link-item-home{
+    font-weight: 500;
+    margin-left: 40px;
 }
 
-.header-link-item {
-  border-radius: 36px;
-  padding: 8px 16px;
+.header-link-item,
+.header-link-modal {
+    border-radius: 36px;
+    padding: 8px 16px;
 }
 .header-link-item-home {
   margin-left: 40px;
 }
-.header-link-item.heder-active {
-  font-weight: 700;
+.header-link-item .heder-active,
+.header-link-modal .heder-active {
+    font-weight: 700;
 }
 .heder-active {
   background-color: rgba(234, 198, 69, 1);
@@ -269,27 +275,34 @@
   left: 129px;
 }
 .header-link-modal-home {
-  background-color: rgba(234, 198, 69, 1);
-  border-radius: 36px;
-  padding: 8px 16px;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 18px;
-  color: var(--primary-text-color-ligth);
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
+    /* background-color: rgba(234, 198, 69, 1); */
+    /* border-radius: 36px;
+    padding: 8px 16px; */
+    /* font-weight: 700; */
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--primary-text-color-ligth);
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
 }
 
-.header-link-modal-shopping {
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  text-transform: uppercase;
-  color: var(--header-color-ligth);
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: -0.04em;
+.header-link-modal-shopping {    
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: var(--header-color-ligth);
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.04em;
 }
+.header-link-modal .heder-active {
+    border-radius: 36px;
+    padding: 8px 16px;
+}
+.header-link-modal {
+    font-weight: 500;
+}
+
 .header-item-modal {
   margin-bottom: 23px;
 }
