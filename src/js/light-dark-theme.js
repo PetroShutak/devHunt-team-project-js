@@ -1,7 +1,7 @@
 // import logos from '../images/sprite.svg#icon-logo';
 // import logos1 from '../images/sprite.svg#icon-logo-1';
 const inputTheme = document.querySelector('.div-theme');
-const spanTheme = document.querySelector('.span-theme');
+// const spanTheme = document.querySelector('.span-theme');
 const switchTheme = document.querySelector('.label-them');
 
 // v1
@@ -36,13 +36,15 @@ function currentTheme() {
   // const burger1 = document.querySelector('.header-burger-icon1');
   if (indexTheme) {
     body.classList.add('dark-theme');
-    spanTheme.style.left = '20px';
+    switchTheme.classList.add('dark-theme-switch');
+    // spanTheme.style.left = '20px';
     // logo.style.backgroundImage = `url(${logos})`;
     // logo.innerHTML = `<svg><use href="${logos1}"></use></svg>`;
     logo.style.width = '0px';
     logo1.style.width = '109px';
   } else {
     body.classList.remove('dark-theme');
+    switchTheme.classList.remove('dark-theme-switch');
     // spanTheme.style.left = '2px';
     // logo.style.backgroundImage = `url(${logos1})`
     // logo.innerHTML = `<svg><use href="${logos}"></use></svg>`;

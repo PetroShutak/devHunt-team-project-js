@@ -18,7 +18,7 @@ aside {
 }
 
 .shoping-list-header {
-  color: #111111;
+  color: var(--primary-text-color-ligth);
   margin-bottom: 40px;
   letter-spacing: -0.04em;
   font-weight: 700;
@@ -69,7 +69,7 @@ aside {
   line-height: 18px;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: #111111;
+  color: var(--primary-text-color-ligth);
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -94,7 +94,7 @@ aside {
   font-size: 14px;
   line-height: 18px;
   letter-spacing: -0.04em;
-  color: #111111;
+  color: var(--primary-text-color-ligth);
   margin-bottom: 16px;
   overflow: hidden;
   display: -webkit-box;
