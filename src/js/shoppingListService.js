@@ -8,12 +8,11 @@ import trash from '../images/icon.svg#icon-trash';
 const emptyRef = document.querySelector('.empty-shopping-list');
 const booksList = document.querySelector('.shopping-list');
 
-export let booksArray = [];
+export let booksArray = JSON.parse(localStorage.getItem('books'));
 
 renderingShoppingList();
 
 function renderingShoppingList() {
-  
   if (!booksList) {
     return;
   }
@@ -83,6 +82,7 @@ function renderingShoppingList() {
     );
   }
 
+  // Adding event listeners to delete-buttons
   const deleteBtnRefs = document.querySelectorAll('.delete-shopping-list-btn');
   for (let i = 0; i < deleteBtnRefs.length; i++) {
     deleteBtnRefs[i].addEventListener('click', removingBookFromShoppingList);
