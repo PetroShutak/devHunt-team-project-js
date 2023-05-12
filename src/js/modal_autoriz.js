@@ -16,7 +16,7 @@ const refs = {
   closeMdlBtn: document.querySelector('.js-modal-autoriz-close'),
   signInBtn: document.querySelector('.header-form-btn'),
   formAuth: document.getElementById('header-form-auth'),
-  signInRef: document.getElementById('sign-in-ref'),
+  signIn: document.getElementById('signIn'),
   logout: document.getElementById('logout'),
   shopLst: document.getElementById('shoplst'),
   loginBtn: document.getElementById('loginBtn'),
@@ -62,7 +62,10 @@ onAuthStateChanged(auth, user => {
   if (user) {
     refs.shopLst.classList.remove('visual-hidden');
     const uid = user.uid;
-    refs.loginBtn.innerHTML = 'Log out';
+    refs.loginBtn.innerHTML = `Log out
+    <svg class="header-icon arrow-to-right-sign" width="20" height="20">
+      <use href="/images/sprite.svg#icon-arrow-narrow-right"></use>
+    </svg>`;
     console.log('Hello', uid);
   } else {
     refs.shopLst.classList.add('visual-hidden');
@@ -70,72 +73,54 @@ onAuthStateChanged(auth, user => {
   }
 });
 
-refs.formAuth.addEventListener('submit', e => {
+refs.formAuth.addEventListener('click', e => {
   e.preventDefault();
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
   const username = document.getElementById('username').value;
 
-  createUserWithEmailAndPassword(auth, email, password)
-    .then(userCredential => {
-      // Signed in
-      const user = userCredential.user;
+  if (e.target.innerText.toLowerCase() === 'sign in') {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(userCredential => {
+        // Signed in
+        const user = userCredential.user;
 
-      set(ref(database, 'users/' + user.uid), {
-        username: username,
-        email: email,
+        set(ref(database, 'users/' + user.uid), {
+          username: username,
+          email: email,
+        });
+        Notify.success(`User ${username} was created`);
+        // ...
+      })
+      .catch(error => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        Notify.failure(`${error.message}`);
+        // ..
       });
-      Notify.success(`User ${username} was created`);
-      // ...
-    })
-    .catch(error => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
+  }
+  //});
 
-      Notify.failure(`${error.message}`);
-      // ..
-    });
-});
+  if (e.target.innerText.toLowerCase() === 'sign up') {
+    signInWithEmailAndPassword(auth, email, password)
+      .then(userCredential => {
+        // Signed in
+        const user = userCredential.user;
 
-refs.signInRef.addEventListener('click', e => {
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
+        const dt = new Date();
+        update(ref(database, 'users/' + user.uid), {
+          last_login: dt,
+        });
+        refs.mdlBackdrop.classList.add('is-hidden');
+        refs.mdlBackdrop.classList.add('is-hidden');
+        //Notify.info(`Hello my, friend ${user} `);
+      })
+      .catch(error => {
+        //const errorCode = error.code;
+        //const errorMessage = error.message;
 
-  signInWithEmailAndPassword(auth, email, password)
-    .then(userCredential => {
-      // Signed in
-      const user = userCredential.user;
-
-      const dt = new Date();
-      update(ref(database, 'users/' + user.uid), {
-        last_login: dt,
+        Notify.failure(`${error.message}`);
       });
-      refs.mdlBackdrop.classList.add('is-hidden');
-      refs.mdlBackdrop.classList.add('is-hidden');
-      Notify.info(`Hello my, friend ${user} `);
-      // ...
-    })
-    .catch(error => {
-      //const errorCode = error.code;
-      //const errorMessage = error.message;
-
-      Notify.failure(`${error.message}`);
-    });
+  }
 });
-
-//refs.logout.addEventListener('click', e => {
-// signOut(auth)
-//   .then(() => {
-//     // Sign-out successful.
-//     Notify.success('User loged out');
-//     refs.mdlBackdrop.classList.add('is-hidden');
-//     window.location.href = '../index.html';
-//   })
-//   .catch(error => {
-//     // An error happened.
-//     const errorCode = error.code;
-//     const errorMessage = error.message;
-
-//     Notify.failure(`${error.message}`);
-//   });
-//});
