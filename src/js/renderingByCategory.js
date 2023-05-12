@@ -26,7 +26,7 @@ export default function renderingByCategory(e) {
       `<div class="gallery-list2"></div>`
     );
 
-    var galleryListRef = document.querySelector('.gallery-list2');
+    const galleryListRef = document.querySelector('.gallery-list2');
 
     const query = e.target.dataset.category.split(' ').join('%20');
     fetchingByCategory(query).then(response => {
