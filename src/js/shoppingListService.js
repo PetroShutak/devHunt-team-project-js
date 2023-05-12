@@ -8,12 +8,12 @@ import trash from '../images/icon.svg#icon-trash';
 const emptyRef = document.querySelector('.empty-shopping-list');
 const booksList = document.querySelector('.shopping-list');
 
-export let booksArray = [];
+export let booksArray = JSON.parse(localStorage.getItem('books'));
 
 renderingShoppingList();
 
 function renderingShoppingList() {
-  
+  console.log('Rendering shopping list');
   if (!booksList) {
     return;
   }
