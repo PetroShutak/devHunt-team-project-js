@@ -2,7 +2,7 @@
 import { teamMembers } from './team_info';
 
 const markupTeamInfo = teamMembers.reduce((acc, item) => {
-  const { memberName, photo, github, linkedIn, width, height } = item;
+  const { memberName, photo, github, iconGit, linkedIn, iconLink, width, height } = item;
 
   return (acc += ` <li class="employees-card">
   <img class="employees-img"
@@ -16,14 +16,14 @@ const markupTeamInfo = teamMembers.reduce((acc, item) => {
     <li class="social-list-itam">
       <a href="${github}" class="social-list-link" target="_blank">
         <svg class="social-list-icon">
-          <use href="../images/sprite.svg#icon-github"></use>
+          <use href="${iconGit}"></use>
         </svg>
       </a>
     </li>
     <li class="social-list-itam">
       <a href="${linkedIn}" class="social-list-link" target="_blank">
         <svg class="social-list-icon">
-          <use href="../images/sprite.svg#icon-linkedin"></use>
+          <use href="${iconLink}"></use>
         </svg>
       </a>
     </li>
