@@ -105,6 +105,7 @@ refs.logout.addEventListener('click', e => {
       // Sign-out successful.
       Notify.success('User loged out');
       refs.mdlBackdrop.classList.add('is-hidden');
+      window.location.href = '../index.html';
     })
     .catch(error => {
       // An error happened.
