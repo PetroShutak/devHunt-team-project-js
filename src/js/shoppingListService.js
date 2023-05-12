@@ -8,12 +8,12 @@ import trash from '../images/icon.svg#icon-trash';
 const emptyRef = document.querySelector('.empty-shopping-list');
 const booksList = document.querySelector('.shopping-list');
 
-export let booksArray = [];
+export let booksArray = JSON.parse(localStorage.getItem('books'));
 
 renderingShoppingList();
 
 function renderingShoppingList() {
-  
+  console.log('Rendering shopping list');
   if (!booksList) {
     return;
   }
@@ -57,6 +57,7 @@ function renderingShoppingList() {
             <img
               src="${amazon}"
               class="shopping-list-trading-icon-amazon"
+              alt="Amazon icon"
             />
           </a>
         </li>
@@ -65,6 +66,7 @@ function renderingShoppingList() {
             <img
               src="${appleBooks}"
               class="shopping-list-trading-icon-apple-books"
+              alt="Apple icon"
             />
           </a>
         </li>
@@ -73,6 +75,7 @@ function renderingShoppingList() {
             <img
               src="${bookShop}"
               class="shopping-list-trading-icon-book-shop"
+              alt="Book shop icon"
             />
           </a>
         </li>

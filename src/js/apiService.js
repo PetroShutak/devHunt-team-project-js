@@ -1,5 +1,10 @@
 import axios from 'axios';
-import {spinnerStart, spinnerStop, spinnerStartForCategories, spinerStopForCategories} from './spin';
+import {
+  spinnerStart,
+  spinnerStop,
+  spinnerStartForCategories,
+  spinerStopForCategories,
+} from './spin';
 
 export async function fetchingByCategory(query) {
   try {

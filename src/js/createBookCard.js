@@ -20,5 +20,3 @@ export function createHomeBookCard(book) {
               </div>
             </div>`;
 }
-
-/* <img class="gallery-book-cover-img" src="${book.book_image}"></img> */
