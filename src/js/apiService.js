@@ -2,7 +2,6 @@ import axios from 'axios';
 import {spinnerStart, spinnerStop, spinnerStartForCategories, spinerStopForCategories} from './spin';
 
 export async function fetchingByCategory(query) {
-  // console.log('Fetching by category');
   try {
     spinnerStartForCategories();
     const response = await axios.get(
@@ -16,7 +15,6 @@ export async function fetchingByCategory(query) {
 }
 
 export async function fetchingTopBooks() {
-  // console.log('Fetching top books');
   try {
     spinnerStart();
     const response = await axios.get(
@@ -30,7 +28,6 @@ export async function fetchingTopBooks() {
 }
 
 export async function fetchingCategories() {
-  // console.log('Fetching categories');
   try {
     spinnerStartForCategories();
     const response = await axios.get(
@@ -44,7 +41,6 @@ export async function fetchingCategories() {
 }
 
 export async function fetchingByBook(id) {
-  // console.log('Fetching book by ID');
   try {
     spinnerStart();
     const response = await axios.get(
