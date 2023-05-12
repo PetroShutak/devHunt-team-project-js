@@ -18,6 +18,7 @@ const refs = {
   formAuth: document.getElementById('header-form-auth'),
   signInRef: document.getElementById('sign-in-ref'),
   logout: document.getElementById('logout'),
+  shopLst: document.getElementById('shoplst'),
 };
 
 const app = initializeApp(firebaseConfig);
@@ -34,18 +35,16 @@ refs.closeMdlBtn.addEventListener('click', () => {
 
 //const user = auth.currentUser;
 
-// onAuthStateChanged(auth, user => {
-//   if (user) {
-//     // User is signed in, see docs for a list of available properties
-//     // https://firebase.google.com/docs/reference/js/firebase.User
-//     const uid = user.uid;
-//     console.log('Hello', uid);
-//   } else {
-//     // User is signed out
-//     // ...
-//     //bla bla bla
-//   }
-// });
+onAuthStateChanged(auth, user => {
+  if (user) {
+    refs.shopLst.classList.remove('visual-hidden');
+    const uid = user.uid;
+    console.log('Hello', uid);
+  } else {
+    refs.shopLst.classList.add('visual-hidden');
+    console.log('BAD');
+  }
+});
 
 refs.formAuth.addEventListener('submit', e => {
   e.preventDefault();
