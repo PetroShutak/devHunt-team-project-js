@@ -64,7 +64,7 @@ team.insertAdjacentHTML('afterbegin', markupTeamInfo);
     if (e.target !== e.currentTarget) {
       return;
     }
-    toggleModal();
+    // toggleModal();
   }
 
   function toggleModal(e) {
