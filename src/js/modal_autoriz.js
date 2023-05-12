@@ -19,18 +19,41 @@ const refs = {
   signInRef: document.getElementById('sign-in-ref'),
   logout: document.getElementById('logout'),
   shopLst: document.getElementById('shoplst'),
+  loginBtn: document.getElementById('loginBtn'),
 };
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth();
 
-refs.openMdlBtn.addEventListener('click', () => {
-  refs.mdlBackdrop.classList.remove('is-hidden');
+refs.openMdlBtn.addEventListener('click', e => {
+  if (!(e.target.innerText.toLowerCase() === 'log out')) {
+    refs.mdlBackdrop.classList.remove('is-hidden');
+    return;
+  }
 });
 
 refs.closeMdlBtn.addEventListener('click', () => {
   refs.mdlBackdrop.classList.add('is-hidden');
+});
+
+refs.loginBtn.addEventListener('click', e => {
+  if (e.target.innerText.toLowerCase() === 'log out') {
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+        Notify.success('User loged out');
+        refs.mdlBackdrop.classList.add('is-hidden');
+        window.location.href = '../index.html';
+      })
+      .catch(error => {
+        // An error happened.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        Notify.failure(`${error.message}`);
+      });
+  }
 });
 
 //const user = auth.currentUser;
@@ -39,6 +62,7 @@ onAuthStateChanged(auth, user => {
   if (user) {
     refs.shopLst.classList.remove('visual-hidden');
     const uid = user.uid;
+    refs.loginBtn.innerHTML = 'Log out';
     console.log('Hello', uid);
   } else {
     refs.shopLst.classList.add('visual-hidden');
@@ -74,8 +98,8 @@ refs.formAuth.addEventListener('submit', e => {
 });
 
 refs.signInRef.addEventListener('click', e => {
-  var email = document.getElementById('email').value;
-  var password = document.getElementById('password').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
 
   signInWithEmailAndPassword(auth, email, password)
     .then(userCredential => {
@@ -99,19 +123,19 @@ refs.signInRef.addEventListener('click', e => {
     });
 });
 
-refs.logout.addEventListener('click', e => {
-  signOut(auth)
-    .then(() => {
-      // Sign-out successful.
-      Notify.success('User loged out');
-      refs.mdlBackdrop.classList.add('is-hidden');
-      window.location.href = '../index.html';
-    })
-    .catch(error => {
-      // An error happened.
-      const errorCode = error.code;
-      const errorMessage = error.message;
+//refs.logout.addEventListener('click', e => {
+// signOut(auth)
+//   .then(() => {
+//     // Sign-out successful.
+//     Notify.success('User loged out');
+//     refs.mdlBackdrop.classList.add('is-hidden');
+//     window.location.href = '../index.html';
+//   })
+//   .catch(error => {
+//     // An error happened.
+//     const errorCode = error.code;
+//     const errorMessage = error.message;
 
-      Notify.failure(`${error.message}`);
-    });
-});
+//     Notify.failure(`${error.message}`);
+//   });
+//});
