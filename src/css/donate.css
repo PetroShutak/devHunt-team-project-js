@@ -44,8 +44,7 @@
   height: 220px;
   overflow: auto;
   scroll-behavior: smooth;
- }
-
+}
 
 .donate-fund {
   display: flex;
@@ -63,35 +62,34 @@
 .donate-img {
   filter: brightness(0) invert(1);
   -webkit-filter: brightness(0) invert(1);
-   height: 32px;
+  height: 32px;
   object-fit: contain;
 }
 
 .donate-emblem {
   width: 20px;
-  height: 32px; 
-  } 
+  height: 32px;
+}
 .donate-img {
   transition: transform 500ms ease-out;
 }
-.donate-img:hover
- {
-   transform: scale(1.15);
-  }
-
- .donate-img:active,
-.donate-img:focus {
-       transform: scale(0.85);
+.donate-img:hover {
+  transform: scale(1.15);
 }
 
-  /*-------------------------- Scroll bar--------------------------------------- */
+.donate-img:active,
+.donate-img:focus {
+  transform: scale(0.85);
+}
+
+/*-------------------------- Scroll bar--------------------------------------- */
 .donate-funds-visible::-webkit-scrollbar {
   width: 0%;
-  background-color: transparent;  
+  background-color: transparent;
 }
 
 .donate-funds-visible::-webkit-scrollbar-thumb {
-  background-color: transparent;  
+  background-color: transparent;
 }
 /*-------------------------- !Scroll bar!--------------------------------------- */
 
@@ -106,11 +104,10 @@
   outline: none;
   padding: 0;
   margin: 0 auto;
- 
 }
 
 .donate-block-arrow {
- display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -123,8 +120,7 @@
   width: 32px;
   height: 32px;
   transform: scale(0.7);
-  }
-
+}
 
 .donate-button:hover,
 .donate-arrow:focus {
@@ -132,12 +128,11 @@
 }
 /* -----------------------! Arrow!--------------------------------- */
 
-
 /*---------------------------- Arrow up -------------------------------------------*/
 .donate-button-up {
   width: 32px;
   height: 32px;
-  background-color:var(--accent-color-ligth);
+  background-color: var(--accent-color-ligth);
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -162,27 +157,24 @@
 .donate-arrow-up:hover {
   fill: var(--primary-text-color-dark);
   border-radius: 50%;
-  }
+}
 /* -----------------------! Arrow up!--------------------------------- */
 
 @media screen and (min-width: 768px) {
   .donate-container {
-   height: 472px;
+    height: 472px;
   }
-.donate-header {
-  margin-bottom: 25px;
-}
-.donate-funds-visible {
-  height: 320px;
-}
- 
-}
-  
-@media screen and (min-width: 1440px) {
-   .donate-container {
-    width: 356px;
-   height: 490px;
+  .donate-header {
+    margin-bottom: 25px;
   }
+  .donate-funds-visible {
+    height: 320px;
+  }
+}
 
- 
+@media screen and (min-width: 1440px) {
+  .donate-container {
+    width: 356px;
+    height: 490px;
+  }
 }

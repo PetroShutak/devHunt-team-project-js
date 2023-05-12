@@ -61,7 +61,6 @@
         height: 670px;
         background-color: #ffffff;
         overflow: hidden;
-        overflow-x: hidden;
         overflow-y: scroll;
     }
 
@@ -134,8 +133,6 @@
             height: 960px;
             background-color: #ffffff;
             overflow: hidden;
-            overflow-x: hidden;
-            overflow-y: scroll;
         }
     
         .container-modal-command {
@@ -206,8 +203,6 @@
         height: 1024px;
         background-color: #ffffff;
         overflow: hidden;
-        overflow-x: hidden;
-        overflow-y: scroll;
     }
 
     .container-modal-command {

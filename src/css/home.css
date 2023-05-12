@@ -78,8 +78,12 @@
   font-size: 14px;
   margin-left: 211px;
   text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
 }
-
+.gallery-see-more-btn:hover {
+  background-color: #4f2ee8;
+  color: #ffffff;
+}
 .gallery-see-more-btn:not(:last-child) {
   margin-bottom: 40px;
 }
@@ -115,10 +119,6 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1439.99px) {
-  /* .gallery {
-    padding: 100px 0px 100px 0px;
-  } */
-
   .gallery-book-card {
     width: 218px;
   }

@@ -16,6 +16,7 @@ import found8 from '../img/08-found-1.png';
 import found8x from '../img/08-found-2.png';
 import found9 from '../img/09-found-1.png';
 import found9x from '../img/09-found-2.png';
+import found10 from '../img/dh_2.png';
 
 function generateDonateFundsMarkup(donateFunds) {
   const isRetina = window.devicePixelRatio > 1.1; // Check if user has a retina display
@@ -94,6 +95,12 @@ const donateFunds = [
     img: found9,
     retinaImg: found9x,
   },
+  {
+    title: 'devHunt',
+    url: 'https://github.com/PetroShutak/devHunt-team-project-js',
+    img: found10,
+    retinaImg: found10,
+  },
 ];
 
 const container = document.querySelector('.donate-funds-list');
@@ -150,3 +157,4 @@ const intersectionObserver1 = new IntersectionObserver(function (entries) {
 // почати нагляд
 intersectionObserver.observe(donateFundsList.lastElementChild);
 intersectionObserver1.observe(donateFundsList.firstElementChild);
+

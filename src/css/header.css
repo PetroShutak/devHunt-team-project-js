@@ -14,7 +14,6 @@
   height: 28px;
 }
 .header-mobile-burger {
-  /* background-color: #ffffff; */
   background-color: transparent;
 }
 
@@ -22,6 +21,7 @@
   align-items: center;
   margin: 0 auto;
   justify-content: space-between;
+  background-color: #ffffff;
 }
 .header-logo {
   display: flex;
@@ -62,6 +62,7 @@
   display: flex;
 }
 .header-link-item {
+  font-weight: 500;
   display: flex;
   font-size: 14px;
   line-height: 18px;
@@ -69,8 +70,6 @@
   text-transform: uppercase;
 }
 .logo {
-  /* height: 28px;
-    width: 109px; */
   transition: all 0.3s ease-in-out;
 }
 .logo:hover {

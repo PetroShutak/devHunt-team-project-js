@@ -1,3 +1,4 @@
+// JS for rendered list command
 import { teamMembers } from './team_info';
 
 const markupTeamInfo = teamMembers.reduce((acc, item) => {
@@ -35,7 +36,7 @@ team.insertAdjacentHTML('afterbegin', markupTeamInfo);
 
 
 
-
+// JS for open & close modal window
 (() => {
   const refs = {
     openModalBtn: document.querySelector("[data-modal-open-command]"),
@@ -43,30 +44,33 @@ team.insertAdjacentHTML('afterbegin', markupTeamInfo);
     modal: document.querySelector("[data-modal-command]"),
   };
 
-  refs.openModalBtn.addEventListener("click", toggleModal);
-  refs.closeModalBtn.addEventListener("click", toggleModal);
-
-  function toggleModal(e) {
-    e.preventDefault();
-    refs.modal.classList.toggle('active');
-  }
-
   document.addEventListener('keydown', onEscPress);
 
   function onEscPress(e) {
     if (e.code === 'Escape') {
-      refs.modal.classList.add('active');
+      refs.modal.classList.add('is-hidden');
       document.removeEventListener('keydown', onEscPress);
     }
   }
 
+  refs.openModalBtn.addEventListener("click", toggleModal);
+  // refs.closeModalBtn.addEventListener("click", toggleModal);
+
+
   refs.modal.addEventListener('click', closeModalOnBackdropClick);
   
   function closeModalOnBackdropClick(e) {
-    refs.modal.classList.add('active');
+    refs.modal.classList.add('is-hidden');
     if (e.target !== e.currentTarget) {
       return;
     }
     toggleModal();
   }
+
+  function toggleModal(e) {
+    e.preventDefault();
+    refs.modal.classList.toggle('is-hidden');
+    document.body.style.overflow = document.body.style.overflow === 'hidden' ? '' : 'hidden';
+  }
+  
 })();
