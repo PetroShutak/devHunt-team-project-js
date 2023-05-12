@@ -57,6 +57,7 @@ function renderingShoppingList() {
             <img
               src="${amazon}"
               class="shopping-list-trading-icon-amazon"
+              alt="Amazon icon"
             />
           </a>
         </li>
@@ -65,6 +66,7 @@ function renderingShoppingList() {
             <img
               src="${appleBooks}"
               class="shopping-list-trading-icon-apple-books"
+              alt="Apple icon"
             />
           </a>
         </li>
@@ -73,6 +75,7 @@ function renderingShoppingList() {
             <img
               src="${bookShop}"
               class="shopping-list-trading-icon-book-shop"
+              alt="Book shop icon"
             />
           </a>
         </li>
