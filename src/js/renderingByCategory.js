@@ -71,6 +71,8 @@ export default function renderingByCategory(e) {
     `<div class="gallery-list2"></div>`
   );
 
+  const galleryListRef = document.querySelector('.gallery-list2');
+
   const query = e.target.innerHTML.trim().split(' ').join('%20');
   fetchingByCategory(query).then(response => {
     response.map(book =>
