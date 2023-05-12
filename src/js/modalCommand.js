@@ -14,14 +14,14 @@ const markupTeamInfo = teamMembers.reduce((acc, item) => {
   <h3 class="employees-name">${memberName}</h3>
   <ul class="social-list">
     <li class="social-list-itam">
-      <a href="${github}" class="social-list-link">
+      <a href="${github}" class="social-list-link" target="_blank">
         <svg class="social-list-icon">
           <use href="../images/sprite.svg#icon-github"></use>
         </svg>
       </a>
     </li>
     <li class="social-list-itam">
-      <a href="${linkedIn}" class="social-list-link">
+      <a href="${linkedIn}" class="social-list-link" target="_blank">
         <svg class="social-list-icon">
           <use href="../images/sprite.svg#icon-linkedin"></use>
         </svg>
