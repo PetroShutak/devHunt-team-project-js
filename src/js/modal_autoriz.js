@@ -16,21 +16,39 @@ const refs = {
   closeMdlBtn: document.querySelector('.js-modal-autoriz-close'),
   signInBtn: document.querySelector('.header-form-btn'),
   formAuth: document.getElementById('header-form-auth'),
+  signInRef: document.getElementById('sign-in-ref'),
+  logout: document.getElementById('logout'),
 };
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth();
 
-refs.closeMdlBtn.addEventListener('click', () => {
-  modalBackdrop.classList.remove('is-hidden');
+refs.openMdlBtn.addEventListener('click', () => {
+  refs.mdlBackdrop.classList.remove('is-hidden');
 });
 
 refs.closeMdlBtn.addEventListener('click', () => {
   refs.mdlBackdrop.classList.add('is-hidden');
 });
 
-sighUp.addEventListener('click', e => {
+//const user = auth.currentUser;
+
+// onAuthStateChanged(auth, user => {
+//   if (user) {
+//     // User is signed in, see docs for a list of available properties
+//     // https://firebase.google.com/docs/reference/js/firebase.User
+//     const uid = user.uid;
+//     console.log('Hello', uid);
+//   } else {
+//     // User is signed out
+//     // ...
+//     //bla bla bla
+//   }
+// });
+
+refs.formAuth.addEventListener('submit', e => {
+  e.preventDefault();
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
   const username = document.getElementById('username').value;
@@ -44,8 +62,7 @@ sighUp.addEventListener('click', e => {
         username: username,
         email: email,
       });
-
-      alert('user created!');
+      Notify.success(`User ${username} was created`);
       // ...
     })
     .catch(error => {
@@ -57,7 +74,7 @@ sighUp.addEventListener('click', e => {
     });
 });
 
-login.addEventListener('click', e => {
+refs.signInRef.addEventListener('click', e => {
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
 
@@ -70,38 +87,25 @@ login.addEventListener('click', e => {
       update(ref(database, 'users/' + user.uid), {
         last_login: dt,
       });
-
-      alert('User loged in!');
+      refs.mdlBackdrop.classList.add('is-hidden');
+      refs.mdlBackdrop.classList.add('is-hidden');
+      Notify.info(`Hello my, friend ${user} `);
       // ...
     })
     .catch(error => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
+      //const errorCode = error.code;
+      //const errorMessage = error.message;
 
       Notify.failure(`${error.message}`);
     });
 });
 
-const user = auth.currentUser;
-onAuthStateChanged(auth, user => {
-  if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-    const uid = user.uid;
-    //bla bla bla
-    // ...
-  } else {
-    // User is signed out
-    // ...
-    //bla bla bla
-  }
-});
-
-logout.addEventListener('click', e => {
+refs.logout.addEventListener('click', e => {
   signOut(auth)
     .then(() => {
       // Sign-out successful.
-      alert('user loged out');
+      Notify.success('User loged out');
+      refs.mdlBackdrop.classList.add('is-hidden');
     })
     .catch(error => {
       // An error happened.
