@@ -13,7 +13,7 @@ export let booksArray = JSON.parse(localStorage.getItem('books'));
 renderingShoppingList();
 
 function renderingShoppingList() {
-  console.log('Rendering shopping list');
+  // console.log('Rendering shopping list');
   if (!booksList) {
     return;
   }
