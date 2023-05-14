@@ -112,6 +112,9 @@ export function removingBookFromShoppingList(e) {
 
 function saveToLocalStorage(book) {
   try {
+    if (booksArray === null) {
+      booksArray = [];
+    }
     booksArray.push(book);
     const dataJSON = JSON.stringify(booksArray);
     localStorage.setItem('books', dataJSON);
