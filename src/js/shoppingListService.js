@@ -91,11 +91,11 @@ function renderingShoppingList() {
     deleteBtnRefs[i].addEventListener('click', removingBookFromShoppingList);
   }
 
-  // if (!books === 0) {
+  if (!books === 0) {
     if (booksArray.length > 0) {
       emptyRef.classList.add('visuallyhidden');
     }
-  // }  
+  }  
 }
 
 export async function addingToShopList(e) {
