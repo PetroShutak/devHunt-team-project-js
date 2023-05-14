@@ -14,8 +14,9 @@ export default function onBookClick(e) {
   let btnText = '';
   let containerHeight = 0;
   const bookId = e.currentTarget.dataset.id;
-  const bookIndex = booksArray.findIndex(book => book._id === bookId);
-
+  // const bookIndex = booksArray.findIndex(book => book._id === bookId);
+  const bookIndex = booksArray === null ? -1 : booksArray.findIndex(book => book._id === bookId);
+  
   if (bookIndex !== -1) {
     btnText = 'Remove from shopping list';
     containerHeight = 501;
@@ -34,7 +35,7 @@ export default function onBookClick(e) {
                         <p class="description-book">${book.description}</p>
                         <ul class="shop-book">
                         <li class="name-shop-book">
-                         <a href="${book.buy_links[0].url}" target="_blank" class="brightness">
+                          <a href="${book.buy_links[0].url}" target="_blank" class="brightness">
                             <img
                             src="${amazon}"
                             alt="logo Amazon"
