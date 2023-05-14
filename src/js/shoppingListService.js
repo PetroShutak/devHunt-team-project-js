@@ -91,9 +91,11 @@ function renderingShoppingList() {
     deleteBtnRefs[i].addEventListener('click', removingBookFromShoppingList);
   }
 
-  if (booksArray.length > 0) {
-    emptyRef.classList.add('visuallyhidden');
-  }
+  // if (!books === 0) {
+    if (booksArray.length > 0) {
+      emptyRef.classList.add('visuallyhidden');
+    }
+  // }  
 }
 
 export async function addingToShopList(e) {
@@ -112,6 +114,11 @@ export function removingBookFromShoppingList(e) {
     Notiflix.Notify.info('Book removed from shopping list');
   }
   renderingShoppingList();
+
+  if (booksArray.length === 0) {
+    emptyRef.classList.remove('visuallyhidden');
+  }
+  
 }
 
 function saveToLocalStorage(book) {
