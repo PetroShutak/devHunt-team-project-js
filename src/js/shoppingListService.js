@@ -21,13 +21,16 @@ function renderingShoppingList() {
   // Checking if the shopplist is empty and rendering the empty-shopping-list-image and text
   const data = localStorage.getItem('books');
   const books = JSON.parse(data);
-  if (books.length === 0) {
+  if (books === null) {
+    emptyRef.classList.remove('visuallyhidden');
+    booksArray = [];
+  } else {
+    if (books.length === 0) {
     emptyRef.classList.remove('visuallyhidden');
   } else {
-    emptyRef.classList.add('visuallyhidden');
+    booksList.innerHTML = '';
   }
-
-  booksList.innerHTML = '';
+}  
 
   const dataJSON = localStorage.getItem('books');
   if (dataJSON) {
