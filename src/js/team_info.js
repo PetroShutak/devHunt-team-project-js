@@ -7,17 +7,14 @@ import photo6 from '../img_command_photo/anatolii-shkurpela.jpg';
 import photo7 from '../img_command_photo/yuliia-usova.jpg';
 import photo8 from '../img_command_photo/petro-kostrytsia.jpg';
 import photo9 from '../img_command_photo/serhii-kotkov.jpg';
-// import iconGit from '../images/sprite.svg#icon-github';
-// import iconLink from '../images/sprite.svg#icon-linkedin'
+
 
 export const teamMembers = [
   {
     memberName: 'Petro <br> Shutak',
     photo: photo1,
     github: 'https://github.com/PetroShutak',
-    iconGit: '../images/sprite.svg#icon-github',
     linkedIn: 'https://www.linkedin.com/in/petroshutak/',
-    iconLink: '../images/sprite.svg#icon-linkedin',
     width: 40,
     height: 60,
   },
@@ -25,9 +22,7 @@ export const teamMembers = [
     memberName: 'Tatiana Tereshchenko',
     photo: photo2,
     github: 'https://github.com/Tatiana-Tereshchenko',
-    iconGit: '../images/sprite.svg#icon-github',
     linkedIn: 'https://www.linkedin.com/in/tetianatereshchenkoko-41a478262/',
-    iconLink: '../images/sprite.svg#icon-linkedin',
     width: 40,
     height: 60,
   },

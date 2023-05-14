@@ -45,7 +45,7 @@ export function renderingHomePage() {
           `<h3 class="gallery-category">${elem.books[0].list_name}</h3>
           <div class="gallery-list"></div>`
         );
-        var nodes = document.querySelectorAll('.gallery-list');
+        const nodes = document.querySelectorAll('.gallery-list');
         const galleryListRef = nodes[nodes.length - 1];
         for (let i = 0; i < 3; i++) {
           galleryListRef.insertAdjacentHTML(
