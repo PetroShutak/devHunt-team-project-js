@@ -90,6 +90,10 @@ function renderingShoppingList() {
   for (let i = 0; i < deleteBtnRefs.length; i++) {
     deleteBtnRefs[i].addEventListener('click', removingBookFromShoppingList);
   }
+
+  if (booksArray.length > 0) {
+    emptyRef.classList.add('visuallyhidden');
+  }
 }
 
 export async function addingToShopList(e) {
