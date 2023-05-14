@@ -32,7 +32,10 @@ function renderingShoppingList() {
     }
   }  
   
-  if (booksArray !== null) {  
+  if (booksArray !== null) { 
+    if (booksArray.length > 0) {
+      emptyRef.classList.add('visuallyhidden');
+    }
     for (let i = 0; i < booksArray.length; i++) {
       const book = loadFromLocalStorage(booksArray[i]._id);
       booksList.insertAdjacentHTML(
@@ -83,7 +86,7 @@ function renderingShoppingList() {
           </div>
       `
       );
-    }
+    }  
   }
 
   const deleteBtnRefs = document.querySelectorAll('.delete-shopping-list-btn');
@@ -91,11 +94,11 @@ function renderingShoppingList() {
     deleteBtnRefs[i].addEventListener('click', removingBookFromShoppingList);
   }
 
-  if (!books === 0) {
-    if (booksArray.length > 0) {
-      emptyRef.classList.add('visuallyhidden');
-    }
-  }  
+  // if (!books === 0) {
+  //   if (booksArray.length > 0) {
+  //     emptyRef.classList.add('visuallyhidden');
+  //   }
+  // }  
 }
 
 export async function addingToShopList(e) {
