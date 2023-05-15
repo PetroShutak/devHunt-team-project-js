@@ -1,8 +1,13 @@
 // JS for rendered list command
 import { teamMembers } from './team_info';
+import sprite from '../images/sprite.svg';
+
+const iconGit = `${sprite}#icon-github`;
+const iconLink = `${sprite}#icon-linkedin`;
+
 
 const markupTeamInfo = teamMembers.reduce((acc, item) => {
-  const { memberName, photo, github, iconGit, linkedIn, iconLink, width, height } = item;
+  const { memberName, photo, github, linkedIn, width, height } = item;
 
   return (acc += ` <li class="employees-card">
   <img class="employees-img"
