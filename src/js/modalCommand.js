@@ -53,7 +53,8 @@ team.insertAdjacentHTML('afterbegin', markupTeamInfo);
 
   function onEscPress(e) {
     if (e.code === 'Escape') {
-      refs.modal.classList.add('is-hidden');
+      refs.modal.classList.add('is-hidden');      
+      document.body.style.overflow = '';
       document.removeEventListener('keydown', onEscPress);
     }
   }
@@ -66,6 +67,7 @@ team.insertAdjacentHTML('afterbegin', markupTeamInfo);
   
   function closeModalOnBackdropClick(e) {
     refs.modal.classList.add('is-hidden');
+    document.body.style.overflow = '';
     if (e.target !== e.currentTarget) {
       return;
     }
@@ -76,6 +78,5 @@ team.insertAdjacentHTML('afterbegin', markupTeamInfo);
     e.preventDefault();
     refs.modal.classList.toggle('is-hidden');
     document.body.style.overflow = document.body.style.overflow === 'hidden' ? '' : 'hidden';
-  }
-  
+  }  
 })();
