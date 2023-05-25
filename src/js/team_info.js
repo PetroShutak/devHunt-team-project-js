@@ -19,7 +19,7 @@ export const teamMembers = [
     height: 60,
   },
   {
-    memberName: 'Tatiana Tereshchenko',
+    memberName: 'Tatiana <br> Tereshchenko',
     photo: photo2,
     github: 'https://github.com/Tatiana-Tereshchenko',
     linkedIn: 'https://www.linkedin.com/in/tetianatereshchenkoko-41a478262/',
